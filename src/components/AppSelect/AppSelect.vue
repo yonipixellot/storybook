@@ -64,16 +64,16 @@ defineEmits<{
 
 .app-select {
   width: 100%;
-  height: 46px;
-  padding: 4px 16px;
+  height: var(--size-input-height);
+  padding: var(--space-xs) var(--space-lg);
   padding-right: 40px;
-  font-size: 16px;
-  font-weight: 400;
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
   font-family: var(--font-family-base);
   background-color: var(--color-gray-100);
   color: var(--color-gray-400);
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   appearance: none;
   cursor: pointer;
   transition: all var(--duration-base) var(--easing-standard);

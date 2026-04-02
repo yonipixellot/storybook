@@ -13,11 +13,12 @@ const meta: Meta<typeof SearchBar> = {
     },
   },
   argTypes: {
-    modelValue: { control: 'text' },
-    placeholder: { control: 'text' },
-    clearable: { control: 'boolean' },
-    readonly: { control: 'boolean' },
-    disabled: { control: 'boolean' },
+    modelValue:  { control: 'text',    description: 'v-model binding — the search query string' },
+    placeholder: { control: 'text',    description: 'Placeholder text shown when empty (default: "Search…")' },
+    clearable:   { control: 'boolean', description: 'Show the inline × clear button when there is text (default: true)' },
+    readonly:    { control: 'boolean', description: 'Makes the input non-editable but still focusable' },
+    disabled:    { control: 'boolean', description: 'Fully disables the input — muted appearance, no interaction' },
+    iconSize:    { control: 'number',  description: 'Size of the leading Search icon in px (default: 18)' },
   },
   decorators: [
     () => ({ template: '<div style="padding:20px;max-width:430px;background:#fff"><story /></div>' }),

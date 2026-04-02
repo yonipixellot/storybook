@@ -13,8 +13,9 @@ const meta: Meta<typeof BottomTabBar> = {
     },
   },
   argTypes: {
-    active: { control: 'select', options: ['games', 'saved', 'following', 'shop'] },
-    accentColor: { control: 'color' },
+    active:      { control: 'select', options: ['games', 'saved', 'following', 'shop'], description: 'ID of the currently active tab' },
+    accentColor: { control: 'color',  description: 'Override accent color for the active tab icon & label (defaults to --color-primary)' },
+    tabs:        { control: 'object', description: 'Fully custom tab array — each item: { id: string, label: string, icon: string }' },
   },
   decorators: [
     () => ({ template: '<div style="max-width:430px;background:#fff"><story /></div>' }),

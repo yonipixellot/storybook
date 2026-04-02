@@ -5,12 +5,21 @@ const meta: Meta<typeof AppSelect> = {
   title: 'Inputs/AppSelect',
   component: AppSelect,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Pill-shaped dropdown select with custom chevron icon — supports default, hover, focus, error, and disabled states. Matches AppInput height and border-radius for consistent form layouts.',
+      },
+    },
+  },
   argTypes: {
-    modelValue: { control: 'text' },
-    placeholder: { control: 'text' },
-    error: { control: 'boolean' },
-    errorMsg: { control: 'text' },
-    disabled: { control: 'boolean' },
+    modelValue:  { control: 'text',    description: 'v-model binding — the selected option value' },
+    placeholder: { control: 'text',    description: 'Placeholder text shown when no option is selected' },
+    options:     { control: 'object',  description: 'Array of options — each with `{ label: string, value: string }`' },
+    error:       { control: 'boolean', description: 'Toggles the red error border' },
+    errorMsg:    { control: 'text',    description: 'Error message shown below the select when error is true' },
+    disabled:    { control: 'boolean', description: 'Disables the select — muted appearance, no interaction' },
+    ariaLabel:   { control: 'text',    description: 'Accessible label for the select element (falls back to placeholder)' },
   },
   args: {
     placeholder: 'Age...',

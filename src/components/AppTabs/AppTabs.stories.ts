@@ -14,8 +14,10 @@ const meta: Meta<typeof AppTabs> = {
   },
   decorators: [() => ({ template: '<div style="max-width:400px;padding:20px"><story /></div>' })],
   argTypes: {
-    variant: { control: 'select', options: ['pill', 'underline'] },
-    accentColor: { control: 'color' },
+    tabs:        { control: 'object', description: 'Array of tab items — each with `{ label: string, value: string, disabled?: boolean }`' },
+    active:      { control: 'text',   description: 'Value of the currently active tab' },
+    variant:     { control: 'select', options: ['pill', 'underline'], description: 'Visual style — pill (toggle container) or underline (accent border)' },
+    accentColor: { control: 'color',  description: 'Accent color for the underline variant active indicator (defaults to --color-primary)' },
   },
 }
 

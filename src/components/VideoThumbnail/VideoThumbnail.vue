@@ -265,7 +265,7 @@ onUnmounted(() => {
   width: 398px;
   aspect-ratio: 16 / 9;
   border-radius: 14px;
-  background-color: rgb(26, 59, 138);
+  background-color: var(--color-hero-bg);
 }
 
 /* ── Orientation: Vertical ── */
@@ -273,7 +273,7 @@ onUnmounted(() => {
   width: 108px;
   height: 192px;
   border-radius: 12px;
-  background-color: rgb(26, 59, 138);
+  background-color: var(--color-hero-bg);
 }
 
 /* ── Error state ── */
@@ -317,10 +317,11 @@ onUnmounted(() => {
   display: block;
 }
 
+/* Design Gap: --gradient-hero token needed for this multi-stop hero gradient */
 .vt__placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgb(42, 74, 127) 0%, rgb(26, 58, 92) 40%, rgb(58, 106, 159) 70%, rgb(26, 42, 80) 100%);
+  background: linear-gradient(135deg, #2A4A7F 0%, #1A3A5C 40%, #3A6A9F 70%, #1A2A50 100%);
 }
 
 /* ── Blur overlay (locked) ── */
@@ -330,7 +331,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgb(42, 74, 127) 0%, rgb(26, 58, 92) 40%, rgb(58, 106, 159) 70%, rgb(26, 42, 80) 100%);
+  background: linear-gradient(135deg, #2A4A7F 0%, #1A3A5C 40%, #3A6A9F 70%, #1A2A50 100%);
   filter: blur(8px);
 }
 
@@ -556,7 +557,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgb(42, 74, 127) 0%, rgb(26, 58, 92) 40%, rgb(58, 106, 159) 70%, rgb(26, 42, 80) 100%);
+  background: linear-gradient(135deg, #2A4A7F 0%, #1A3A5C 40%, #3A6A9F 70%, #1A2A50 100%);
 }
 
 .vt__countdown-blur {
@@ -565,7 +566,7 @@ onUnmounted(() => {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background: linear-gradient(135deg, rgb(42, 74, 127) 0%, rgb(26, 58, 92) 40%, rgb(58, 106, 159) 70%, rgb(26, 42, 80) 100%);
+  background: linear-gradient(135deg, #2A4A7F 0%, #1A3A5C 40%, #3A6A9F 70%, #1A2A50 100%);
   filter: blur(8px);
 }
 
@@ -575,7 +576,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgb(42, 74, 127) 0%, rgb(26, 58, 92) 40%, rgb(58, 106, 159) 70%, rgb(26, 42, 80) 100%);
+  background: linear-gradient(135deg, #2A4A7F 0%, #1A3A5C 40%, #3A6A9F 70%, #1A2A50 100%);
 }
 
 .vt__countdown-center {

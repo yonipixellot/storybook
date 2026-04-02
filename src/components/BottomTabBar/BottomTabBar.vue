@@ -53,7 +53,7 @@
         />
         <path d="M16 8V6a4 4 0 00-8 0v2"/>
         <path :d="'M9 14c1.5 1.5 4.5 1.5 6 0'"
-          :stroke="activeTab === tab.id ? '#fff' : (activeTab === tab.id ? activeColor : 'var(--color-gray-400)')"
+          :stroke="activeTab === tab.id ? 'var(--color-white)' : 'var(--color-gray-400)'"
         />
       </svg>
 

@@ -14,10 +14,11 @@ const meta: Meta<typeof LiveGameCard> = {
   },
   decorators: [() => ({ template: '<div style="max-width:500px;padding:20px"><story /></div>' })],
   argTypes: {
-    homeTeam: { control: 'object', description: 'Home team — { name, score, logoInitial, logoColor? }' },
-    awayTeam: { control: 'object', description: 'Away team — { name, score, logoInitial, logoColor? }' },
-    date:     { control: 'text', description: 'Formatted date/time string, e.g. "21 NOV, 2024"' },
-    league:   { control: 'text', description: 'League name — shown below the score row (optional)' },
+    homeTeam:  { control: 'object',  description: 'Home team — { name, score, logoInitial, logoColor? }' },
+    awayTeam:  { control: 'object',  description: 'Away team — { name, score, logoInitial, logoColor? }' },
+    date:      { control: 'text',    description: 'Formatted date/time string, e.g. "21 NOV, 2024"' },
+    league:    { control: 'text',    description: 'League name — shown below the score row (optional)' },
+    clickable: { control: 'boolean', description: 'Shows pointer cursor — indicates the card is tappable (default: true)' },
   },
 }
 
