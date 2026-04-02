@@ -118,8 +118,8 @@ const followingTabs = [
 ]
 
 const adSlides = [
-  { imageUrl: '', title: 'Ad Slot 1' },
-  { imageUrl: '', title: 'Ad Slot 2' },
+  { bg: 'linear-gradient(135deg, #1a1a1a 0%, #333 100%)', label: 'Ad Slot 1' },
+  { bg: 'linear-gradient(135deg, #116DFF 0%, #0A4AB0 100%)', label: 'Ad Slot 2' },
 ]
 
 const liveGames = [
