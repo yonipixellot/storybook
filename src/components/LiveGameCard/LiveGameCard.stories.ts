@@ -27,8 +27,8 @@ export const Default: Story = {
         <p style="${label}">Horizontal card showing live game with live badge, date, teams, and scores</p>
         <hr style="${hr}" />
         <LiveGameCard
-          :homeTeam="{ name: 'M. Kiryat Gat', score: 87, logoInitial: 'M', logoColor: '#fff' }"
-          :awayTeam="{ name: 'H. Haifa', score: 79, logoInitial: 'H', logoColor: '#fff' }"
+          :homeTeam="{ name: 'M. Kiryat Gat', score: 87, logoInitial: 'M', logoColor: '#116DFF' }"
+          :awayTeam="{ name: 'H. Haifa', score: 79, logoInitial: 'H', logoColor: '#116DFF' }"
           date="21 NOV, 2024"
           league="Liga Leumit (Winner League)"
         />

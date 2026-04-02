@@ -15,7 +15,7 @@
         <!-- Home team -->
         <div class="live-game-card__row">
           <div class="live-game-card__team">
-            <div class="live-game-card__logo" :style="{ backgroundColor: homeTeam.logoColor || '#fff' }">
+            <div class="live-game-card__logo" :style="logoStyle(homeTeam.logoColor)">
               {{ homeTeam.logoInitial }}
             </div>
             <span class="live-game-card__name live-game-card__name--leading">{{ homeTeam.name }}</span>
@@ -26,7 +26,7 @@
         <!-- Away team -->
         <div class="live-game-card__row">
           <div class="live-game-card__team">
-            <div class="live-game-card__logo" :style="{ backgroundColor: awayTeam.logoColor || '#fff' }">
+            <div class="live-game-card__logo" :style="logoStyle(awayTeam.logoColor)">
               {{ awayTeam.logoInitial }}
             </div>
             <span class="live-game-card__name">{{ awayTeam.name }}</span>
@@ -57,6 +57,17 @@ withDefaults(defineProps<{
 }>(), {
   clickable: true,
 })
+
+/**
+ * logoColor is the accent/letter color (e.g. '#116DFF').
+ * Background is auto-derived as a 12% opacity tint of that color.
+ */
+function logoStyle(color?: string) {
+  const accent = color || '#116DFF'
+  // Append '1E' (~12% opacity) to a 6-char hex to get the tint
+  const bg = /^#[0-9A-Fa-f]{6}$/.test(accent) ? accent + '1E' : '#EBF2FF'
+  return { backgroundColor: bg, color: accent }
+}
 </script>
 
 <style scoped>
@@ -138,10 +149,11 @@ withDefaults(defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--color-dark-text);
+  font-size: 13px;
+  font-weight: 600;
   flex-shrink: 0;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+  /* color is set inline via logoStyle() */
 }
 
 .live-game-card__name {

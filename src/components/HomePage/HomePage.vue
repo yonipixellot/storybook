@@ -125,22 +125,22 @@ const adSlides = [
 const liveGames = [
   {
     id: 1,
-    homeTeam: { name: 'Maccabi TA',    score: 62 },
-    awayTeam: { name: 'Hapoel Holon',  score: 55 },
+    homeTeam: { name: 'Maccabi TA',    score: 62, logoInitial: 'M', logoColor: '#FFE000' },
+    awayTeam: { name: 'Hapoel Holon',  score: 55, logoInitial: 'H', logoColor: '#EF4444' },
     date: 'Q3 04:12',
     league: 'BSL',
   },
   {
     id: 2,
-    homeTeam: { name: 'Ironi Nahariya', score: 48 },
-    awayTeam: { name: 'Bnei Herzliya',  score: 51 },
+    homeTeam: { name: 'Ironi Nahariya', score: 48, logoInitial: 'I', logoColor: '#116DFF' },
+    awayTeam: { name: 'Bnei Herzliya',  score: 51, logoInitial: 'B', logoColor: '#22C55E' },
     date: 'Q2 09:33',
     league: 'BSL',
   },
   {
     id: 3,
-    homeTeam: { name: 'Hapoel TA',    score: 71 },
-    awayTeam: { name: 'Maccabi Haifa', score: 68 },
+    homeTeam: { name: 'Hapoel TA',    score: 71, logoInitial: 'H', logoColor: '#EF4444' },
+    awayTeam: { name: 'Maccabi Haifa', score: 68, logoInitial: 'M', logoColor: '#FFE000' },
     date: 'Q4 01:45',
     league: 'BSL',
   },
