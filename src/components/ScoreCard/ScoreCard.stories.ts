@@ -1,0 +1,55 @@
+import type { Meta, StoryObj } from '@storybook/vue3'
+import ScoreCard from './ScoreCard.vue'
+
+const meta: Meta<typeof ScoreCard> = {
+  title: 'Cards/ScoreCard',
+  component: ScoreCard,
+  tags: ['autodocs'],
+  decorators: [() => ({ template: '<div style="padding:20px"><story /></div>' })],
+}
+
+export default meta
+type Story = StoryObj<typeof ScoreCard>
+
+const title = 'font-size:18px;font-weight:700;margin:0 0 4px;font-family:Red Hat Display,sans-serif;color:#161616'
+const label = 'font-size:13px;color:#979797;margin:0 0 8px;font-family:Red Hat Display,sans-serif'
+const box = 'border:1px solid #E8E8E8;border-radius:16px;padding:28px 32px;margin-bottom:24px'
+const hr = 'border:none;border-top:1px solid #E8E8E8;margin:16px 0 24px'
+
+/* ── Default ── */
+
+export const Default: Story = {
+  args: {
+    homeTeam: { name: 'Maccabi KG',     score: 89, standing: '1st' },
+    awayTeam: { name: 'Ironi Nahariya', score: 77, standing: '5th' },
+    status: 'Final',
+    date: '20 NOV 2024',
+  },
+}
+
+export const LiveGame: Story = {
+  args: {
+    homeTeam: { name: 'Hapoel TA',    score: 62, standing: '2nd' },
+    awayTeam: { name: 'Bnei Herzliya', score: 55, standing: '7th' },
+    status: 'Q3 04:12',
+    date: 'Live',
+  },
+}
+
+export const Halftime: Story = {
+  args: {
+    homeTeam: { name: 'Maccabi Haifa', score: 44, standing: '3rd' },
+    awayTeam: { name: 'Hapoel Holon',  score: 41, standing: '4th' },
+    status: 'Halftime',
+    date: '28 FEB 2026',
+  },
+}
+
+export const CloseGame: Story = {
+  args: {
+    homeTeam: { name: 'Ironi Nes Z.', score: 81, standing: '6th' },
+    awayTeam: { name: 'Maccabi KG',   score: 83, standing: '1st' },
+    status: 'Final',
+    date: '5 MAR 2026',
+  },
+}
