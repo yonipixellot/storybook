@@ -6,6 +6,13 @@ const meta: Meta<typeof AppButton> = {
   title: 'Atoms/AppButton',
   component: AppButton,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Core action button with 8 variants (primary, premium, social, muted, ghost, link, danger, action) and 3 sizes (sm, md, lg). Supports leading/trailing icon slots, loading state, and full-width layout.',
+      },
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',

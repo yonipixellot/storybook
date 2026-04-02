@@ -5,6 +5,13 @@ const meta: Meta<typeof AppInput> = {
   title: 'Inputs/AppInput',
   component: AppInput,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Form text field with floating label, helper text, and error messaging. Supports text, email, password (toggle visibility), and tel input types, plus readonly and disabled states.',
+      },
+    },
+  },
   argTypes: {
     type: {
       control: 'select',

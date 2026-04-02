@@ -146,7 +146,7 @@ function removePlayer(idx: number) { removedPlayers.value = new Set([...removedP
   font-weight: var(--font-medium);
   color: var(--color-dark-text);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .mfl__add-btn:hover {
@@ -170,7 +170,7 @@ function removePlayer(idx: number) { removedPlayers.value = new Set([...removedP
   color: var(--color-error-red);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .mfl__unfollow-btn:hover {

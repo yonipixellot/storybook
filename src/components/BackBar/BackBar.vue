@@ -50,6 +50,12 @@ defineEmits<{ back: []; share: [] }>()
   padding: 0;
 }
 
+.bb__back:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-xs);
+}
+
 .bb__back-icon {
   color: var(--color-gray-500);
 }

@@ -66,7 +66,7 @@ const computedAriaLabel = computed(() =>
   outline: none;
   padding: 0;
   font-family: var(--font-family-base);
-  transition: transform 0.2s;
+  transition: transform var(--duration-base);
   text-align: left;
 }
 

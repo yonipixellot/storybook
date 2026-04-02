@@ -5,6 +5,7 @@ import SkeletonCard from './SkeletonCard.vue'
 const meta: Meta<typeof SkeletonCard> = {
   title: 'Loading States/SkeletonCard',
   component: SkeletonCard,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {

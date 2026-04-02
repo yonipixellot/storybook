@@ -5,6 +5,13 @@ const meta: Meta<typeof Accordion> = {
   title: 'Layout & Overlays/Accordion',
   component: Accordion,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Collapsible section list with animated chevron. Supports single-open or multi-open (`allowMultiple`) mode, a borderless variant for embedded use, and custom chevron sizing.',
+      },
+    },
+  },
   argTypes: {
     allowMultiple: { control: 'boolean' },
     borderless: { control: 'boolean' },

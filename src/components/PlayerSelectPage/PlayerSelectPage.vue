@@ -129,7 +129,7 @@ function handleToggle(num: string | number) {
   padding: var(--space-xs2) var(--space-sm);
   border-radius: var(--radius-md);
   outline: none;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .player-select__cancel:hover {
@@ -188,7 +188,7 @@ function handleToggle(num: string | number) {
   color: var(--color-dark-text);
   cursor: pointer;
   outline: none;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .player-select__see-all:hover {

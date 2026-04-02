@@ -5,6 +5,13 @@ const meta: Meta<typeof VideoActionBar> = {
   title: 'Video/VideoActionBar',
   component: VideoActionBar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Action toolbar below a video player with view count, bookmark toggle, share button, and optional additional actions. All actions emit discrete events.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="padding:20px;max-width:400px"><story /></div>' })],
   argTypes: {
     views: { control: 'text' },

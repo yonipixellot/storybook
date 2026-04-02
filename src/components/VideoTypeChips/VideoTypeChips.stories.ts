@@ -5,6 +5,13 @@ const meta: Meta<typeof VideoTypeChips> = {
   title: 'Video/VideoTypeChips',
   component: VideoTypeChips,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Horizontally scrollable row of filter chips for video content type (Full Game, Condensed Game, Highlights, etc.). Active chip is highlighted; emits `update:modelValue` on tap.',
+      },
+    },
+  },
   argTypes: {
     modelValue: { control: 'text' },
     ariaLabel: { control: 'text' },

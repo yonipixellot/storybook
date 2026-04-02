@@ -4,6 +4,7 @@ import PlayerSelectPage from './PlayerSelectPage.vue'
 const meta: Meta<typeof PlayerSelectPage> = {
   title: 'Pages/PlayerSelectPage',
   component: PlayerSelectPage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     docs: {

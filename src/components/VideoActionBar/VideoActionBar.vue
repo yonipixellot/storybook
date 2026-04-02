@@ -120,7 +120,7 @@ function handleBookmark() {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.15s, color 0.15s;
+  transition: background var(--duration-fast), color var(--duration-fast);
   outline: none;
   flex-shrink: 0;
 }

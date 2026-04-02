@@ -5,6 +5,13 @@ const meta: Meta<typeof AppHeader> = {
   title: 'Layout & Overlays/AppHeader',
   component: AppHeader,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Top navigation bar. Home variant shows org logo + name with notification bell and hamburger menu. Back variant shows a back arrow with optional page title.',
+      },
+    },
+  },
   argTypes: {
     variant: { control: 'select', options: ['home', 'back'] },
     orgName: { control: 'text' },

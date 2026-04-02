@@ -5,7 +5,24 @@ const meta: Meta<typeof GameResultCard> = {
   title: 'Cards/GameResultCard',
   component: GameResultCard,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Finished-game result card with a left date column (day / month / year) and a right panel showing team logos, names, final scores, league label, and an optional HIGHLIGHTS badge.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="padding:20px"><story /></div>' })],
+  argTypes: {
+    homeTeam:      { control: 'object', description: 'Home team — { name, score, logoInitial, logoColor? }' },
+    awayTeam:      { control: 'object', description: 'Away team — { name, score, logoInitial, logoColor? }' },
+    day:           { control: 'text', description: 'Day of the month, e.g. "20"' },
+    month:         { control: 'text', description: 'Month abbreviation, e.g. "NOV"' },
+    year:          { control: 'text', description: 'Full year, e.g. "2024"' },
+    league:        { control: 'text', description: 'League name (optional)' },
+    hasHighlights: { control: 'boolean', description: 'Show HIGHLIGHTS badge in the card footer' },
+    clickable:     { control: 'boolean', description: 'Pointer cursor — indicates the card is tappable' },
+  },
 }
 
 export default meta

@@ -5,6 +5,13 @@ const meta: Meta<typeof ShareCurtain> = {
   title: 'Video/ShareCurtain',
   component: ShareCurtain,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Bottom-sheet overlay for sharing content. Slides up over a dark backdrop and exposes social share targets (Copy link, WhatsApp, Facebook, Twitter/X). Controlled via the `open` prop.',
+      },
+    },
+  },
   argTypes: {
     open: { control: 'boolean' },
   },

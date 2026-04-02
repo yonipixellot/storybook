@@ -432,7 +432,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   border-radius: 20px;
   outline: none;
   box-sizing: border-box;
-  transition: background 0.15s, border-color 0.15s;
+  transition: background var(--duration-fast), border-color var(--duration-fast);
 }
 
 .app-input__field::placeholder {
@@ -491,7 +491,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   align-items: center;
   justify-content: center;
   padding: 0;
-  transition: color 0.15s;
+  transition: color var(--duration-fast);
 }
 .app-input__toggle:hover:not(:disabled) {
   color: var(--color-gray-500);
@@ -525,7 +525,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   left: 4px;
   top: 4px;
   height: 38px;
-  z-index: 2;
+  z-index: var(--z-base);
   display: flex;
   align-items: center;
   gap: 4px;
@@ -536,7 +536,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   cursor: pointer;
   font-family: var(--font-family-base);
   border-radius: 16px 0 0 16px;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .app-input__tel-btn:hover:not(:disabled) {
@@ -562,7 +562,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 
 .app-input__tel-chevron {
   color: var(--color-gray-400);
-  transition: transform 0.2s ease;
+  transition: transform var(--duration-base) var(--easing-standard);
   flex-shrink: 0;
 }
 
@@ -581,7 +581,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   border: 1px solid var(--color-gray-300);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  z-index: 100;
+  z-index: var(--z-dropdown);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -624,7 +624,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   gap: 10px;
   padding: 8px 14px;
   cursor: pointer;
-  transition: background 0.1s;
+  transition: background var(--duration-instant);
 }
 
 .app-input__dropdown-item:hover {

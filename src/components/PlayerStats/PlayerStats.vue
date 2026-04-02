@@ -130,7 +130,7 @@ const activeTab = ref(0)
   cursor: pointer;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   outline: none;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color var(--duration-fast), border-color var(--duration-fast);
 }
 
 .ps__tab--active {

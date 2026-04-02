@@ -4,6 +4,7 @@ import GameDetailPage from './GameDetailPage.vue'
 const meta: Meta<typeof GameDetailPage> = {
   title: 'Pages/GameDetailPage',
   component: GameDetailPage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     docs: {

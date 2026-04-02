@@ -5,6 +5,7 @@ import PStatCard from './PStatCard.vue'
 const meta: Meta<typeof PStatCard> = {
   title: 'Avatars & List Items/PStatCard',
   component: PStatCard,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {

@@ -5,7 +5,20 @@ const meta: Meta<typeof LiveGameCard> = {
   title: 'Cards/LiveGameCard',
   component: LiveGameCard,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Live-game score card with a LIVE badge, current period/time, team logo initials with tinted backgrounds, scores, and optional league label.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="max-width:500px;padding:20px"><story /></div>' })],
+  argTypes: {
+    homeTeam: { control: 'object', description: 'Home team — { name, score, logoInitial, logoColor? }' },
+    awayTeam: { control: 'object', description: 'Away team — { name, score, logoInitial, logoColor? }' },
+    date:     { control: 'text', description: 'Formatted date/time string, e.g. "21 NOV, 2024"' },
+    league:   { control: 'text', description: 'League name — shown below the score row (optional)' },
+  },
 }
 
 export default meta

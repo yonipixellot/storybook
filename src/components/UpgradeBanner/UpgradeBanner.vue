@@ -75,7 +75,7 @@ defineEmits<{ upgrade: [] }>()
   background: var(--color-premium-yellow);
   color: var(--color-premium-dark);
   flex-shrink: 0;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .ub__btn:hover {

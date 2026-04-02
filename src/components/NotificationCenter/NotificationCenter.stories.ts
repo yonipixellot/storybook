@@ -14,6 +14,12 @@ const meta: Meta<typeof NotificationCenter> = {
       },
     },
   },
+  argTypes: {
+    notifications: {
+      control: 'object',
+      description: 'Array of notification items — each with `jerseyNumber: number` and `text: string`. Defaults to 3 sample notifications when omitted.',
+    },
+  },
 }
 
 export default meta

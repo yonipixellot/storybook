@@ -192,7 +192,7 @@ const recentGames = [
   background: var(--color-white);
   position: sticky;
   top: 56px;
-  z-index: 10;
+  z-index: var(--z-above);
 }
 
 .home-page__scroll {
@@ -254,7 +254,7 @@ const recentGames = [
   cursor: pointer;
   padding: var(--space-xs2) var(--space-sm);
   border-radius: var(--radius-sm);
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .home-page__see-all-btn:hover {

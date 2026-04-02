@@ -16,6 +16,13 @@ const lucideNames = ['Eye', 'EyeOff', 'ChevronDown', 'Copy', 'Check', 'Search', 
 const meta: Meta = {
   title: 'Navigation/Icons',
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Catalog of all Lucide icons and custom brand SVGs used across the design system, including Google, Apple, and sport-specific iconography.',
+      },
+    },
+  },
 }
 
 export default meta

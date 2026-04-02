@@ -125,6 +125,12 @@ function selectTab(id: string) {
   min-width: 64px;
 }
 
+.btb__tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
 .btb__label {
   font-family: var(--font-family-base);
   font-size: var(--text-2xs);

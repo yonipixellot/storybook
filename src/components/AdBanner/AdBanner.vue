@@ -7,7 +7,7 @@
     @pointercancel="onPointerUp"
   >
     <!-- Slide track -->
-    <div class="ab__track" :style="trackStyle">
+    <div class="ab__track" :class="{ 'ab__track--dragging': isDragging }" :style="trackStyle">
       <div
         v-for="(slide, idx) in resolvedSlides"
         :key="idx"
@@ -59,8 +59,7 @@ const dragStart   = ref(0)
 const resolvedSlides = computed(() => props.slides ?? DEFAULT_SLIDES)
 
 const trackStyle = computed(() => ({
-  transform:  `translateX(calc(-${activeIndex.value * 100}% + ${dragOffset.value}px))`,
-  transition: isDragging.value ? 'none' : 'transform 0.3s',
+  transform: `translateX(calc(-${activeIndex.value * 100}% + ${dragOffset.value}px))`,
 }))
 
 function onPointerDown(e: PointerEvent) {
@@ -104,6 +103,11 @@ function onPointerUp() {
 /* ── Slide track ── */
 .ab__track {
   display: flex;
+  transition: transform var(--duration-slow);
+}
+
+.ab__track--dragging {
+  transition: none;
 }
 
 /* ── Individual slide ── */
@@ -138,7 +142,7 @@ function onPointerUp() {
   height: 8px;
   border-radius: var(--radius-full);
   background: rgba(255, 255, 255, 0.5);
-  transition: background 0.2s;
+  transition: background var(--duration-base);
 }
 
 .ab__dot--active {

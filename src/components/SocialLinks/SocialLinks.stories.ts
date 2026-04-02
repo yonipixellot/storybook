@@ -5,6 +5,13 @@ const meta: Meta<typeof SocialLinks> = {
   title: 'Navigation/SocialLinks',
   component: SocialLinks,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Row of social-media icon links (YouTube, Instagram, Twitter/X, Facebook, TikTok). Each icon is a tappable anchor; URLs are passed as props.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="max-width:500px;padding:20px"><story /></div>' })],
 }
 

@@ -5,6 +5,7 @@ import LoadingSpinner from './LoadingSpinner.vue'
 const meta: Meta<typeof LoadingSpinner> = {
   title: 'Loading States/LoadingSpinner',
   component: LoadingSpinner,
+  tags: ['autodocs'],
   parameters: {
     layout: 'centered',
     docs: {

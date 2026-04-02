@@ -5,7 +5,20 @@ const meta: Meta<typeof ScoreCard> = {
   title: 'Cards/ScoreCard',
   component: ScoreCard,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Compact score display tile with two team rows (name + standing), head-to-head scores, and a status line (Final / Live / Halftime / period + time).',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="padding:20px"><story /></div>' })],
+  argTypes: {
+    homeTeam: { control: 'object', description: 'Home team — { name, score, standing? }' },
+    awayTeam: { control: 'object', description: 'Away team — { name, score, standing? }' },
+    status:   { control: 'text', description: 'Game status label — "Final", "Halftime", "Q3 04:12", etc.' },
+    date:     { control: 'text', description: 'Date string shown below status, e.g. "20 NOV 2024"' },
+  },
 }
 
 export default meta

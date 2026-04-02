@@ -4,6 +4,7 @@ import HomePage from './HomePage.vue'
 const meta: Meta<typeof HomePage> = {
   title: 'Pages/HomePage',
   component: HomePage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     docs: {

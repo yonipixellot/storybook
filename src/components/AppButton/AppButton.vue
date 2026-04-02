@@ -40,7 +40,7 @@ defineEmits<{ click: [] }>()
   font-family: var(--font-family-base);
   border: none;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all var(--duration-fast) var(--easing-standard);
   display: inline-flex;
   align-items: center;
   justify-content: center;

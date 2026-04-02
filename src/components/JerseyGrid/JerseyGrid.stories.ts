@@ -4,6 +4,7 @@ import JerseyGrid from './JerseyGrid.vue'
 const meta: Meta<typeof JerseyGrid> = {
   title: 'Jersey/JerseyGrid',
   component: JerseyGrid,
+  tags: ['autodocs'],
   parameters: {
     layout: 'padded',
     docs: {

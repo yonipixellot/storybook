@@ -113,7 +113,7 @@ function toggle(id: string) {
   color: var(--color-gray-400);
   flex-shrink: 0;
   transform: rotate(-90deg);
-  transition: transform 0.2s;
+  transition: transform var(--duration-base);
 }
 
 .ac__chevron--open {

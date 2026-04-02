@@ -4,6 +4,7 @@ import AuthPage from './AuthPage.vue'
 const meta: Meta<typeof AuthPage> = {
   title: 'Pages/AuthPage',
   component: AuthPage,
+  tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
     docs: {

@@ -5,7 +5,30 @@ const meta: Meta<typeof VideoThumbnail> = {
   title: 'Videos/VideoThumbnail',
   component: VideoThumbnail,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Video card in landscape (16:9) or vertical (9:16) orientation. States: free (play icon) and premium (lock + blur). Optional badge variants: live, countdown (with auto-transition to 'new'), and jersey badge for Athlete Profile grids.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="padding:20px"><story /></div>' })],
+  argTypes: {
+    orientation:      { control: 'select', options: ['landscape', 'vertical'], description: 'Aspect ratio layout — landscape (16:9) or vertical (9:16)' },
+    locked:           { control: 'boolean', description: 'Shows lock icon + blur overlay when true (premium content)' },
+    variant:          { control: 'select', options: ['', 'live', 'countdown', 'new'], description: 'Optional badge/state variant (vertical cards only)' },
+    duration:         { control: 'text', description: 'Duration string, e.g. "1:42:15"' },
+    title:            { control: 'text', description: 'Card title text' },
+    subtitle:         { control: 'text', description: 'Card subtitle / date text' },
+    showJerseyBadge:  { control: 'boolean', description: 'Swap title/subtitle for a jersey badge (Athlete Profile grid)' },
+    jerseyNumber:     { control: 'number', description: 'Player number displayed on jersey badge' },
+    jerseyLabel:      { control: 'text', description: 'Label next to jersey badge' },
+    jerseyColor:      { control: 'color', description: 'Jersey fill color (hex); text color auto-contrasts' },
+    thumbnailUrl:     { control: 'text', description: 'Background image URL (empty = gradient placeholder)' },
+    error:            { control: 'boolean', description: 'Show error fallback state with "Report here" link' },
+    countdownSeconds: { control: 'number', description: 'Countdown start value in seconds' },
+    countdownNotify:  { control: 'boolean', description: 'Replace countdown ring with "Notify me" CTA button' },
+  },
 }
 
 export default meta

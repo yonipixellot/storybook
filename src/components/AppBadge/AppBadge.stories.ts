@@ -5,6 +5,13 @@ const meta: Meta<typeof AppBadge> = {
   title: 'Badges/AppBadge',
   component: AppBadge,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Small inline label badge for status and content type. Variants: live (red), premium (gold), free (green), claimed, highlights, and new. Used in card footers, list rows, and video tiles.',
+      },
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',

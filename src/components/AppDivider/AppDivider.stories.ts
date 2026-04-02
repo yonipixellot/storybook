@@ -5,6 +5,13 @@ const meta: Meta<typeof AppDivider> = {
   title: 'Layout/Divider',
   component: AppDivider,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Horizontal (or vertical) separator line. Configurable color, thickness, and spacing. Supports an optional centered label for use in auth and settings screens.',
+      },
+    },
+  },
   argTypes: {
     color: { control: 'text' },
     thickness: { control: 'number' },

@@ -87,7 +87,7 @@ const focused = ref(false)
   color: var(--color-dark-text);
   outline: none;
   box-sizing: border-box;
-  transition: border-color 0.15s;
+  transition: border-color var(--duration-fast);
 }
 
 .sb__input--focused {
@@ -127,5 +127,11 @@ const focused = ref(false)
 
 .sb__clear:hover {
   color: var(--color-dark-text);
+}
+
+.sb__clear:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
 }
 </style>

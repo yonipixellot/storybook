@@ -190,7 +190,7 @@ const totalFollowed = computed(() =>
   color: var(--color-gray-400);
   flex-shrink: 0;
   transform: rotate(-90deg);
-  transition: transform 0.2s;
+  transition: transform var(--duration-base);
 }
 
 .cfl__chevron--open {

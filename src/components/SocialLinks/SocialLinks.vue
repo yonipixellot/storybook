@@ -62,7 +62,7 @@ const visibleLinks = computed(() => props.links.filter(l => l.url))
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  transition: opacity 0.15s;
+  transition: opacity var(--duration-fast);
 }
 
 .social-links__icon:hover {

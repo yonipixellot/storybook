@@ -5,6 +5,13 @@ const meta: Meta<typeof BottomTabBar> = {
   title: 'Layout & Overlays/BottomTabBar',
   component: BottomTabBar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Fixed bottom navigation with icon + label tabs for the primary app sections (Games, Saved, Following, Shop). Supports custom accent color and fully custom tab configuration.',
+      },
+    },
+  },
   argTypes: {
     active: { control: 'select', options: ['games', 'saved', 'following', 'shop'] },
     accentColor: { control: 'color' },

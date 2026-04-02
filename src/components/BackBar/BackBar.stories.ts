@@ -5,6 +5,13 @@ const meta: Meta<typeof BackBar> = {
   title: 'Layout & Overlays/BackBar',
   component: BackBar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Secondary navigation bar with a back arrow and label on the left, and an optional Share icon on the right. Emits `back` and `share` events.',
+      },
+    },
+  },
   argTypes: {
     label: { control: 'text' },
     showShare: { control: 'boolean' },

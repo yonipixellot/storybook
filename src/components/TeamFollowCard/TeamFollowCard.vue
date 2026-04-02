@@ -57,7 +57,7 @@ const hovered = ref(false)
   border-radius: var(--radius-badge);
   border: 1px solid var(--color-gray-200);
   cursor: pointer;
-  transition: background 0.15s, border 0.15s;
+  transition: background var(--duration-fast), border var(--duration-fast);
   box-sizing: border-box;
 }
 

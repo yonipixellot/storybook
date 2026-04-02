@@ -128,7 +128,7 @@ const isAuthVariant    = computed(() => props.variant === 'auth')
   font-size: var(--text-sm);
   font-weight: var(--font-semibold);
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .ers__cta:hover {

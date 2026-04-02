@@ -5,6 +5,13 @@ const meta: Meta<typeof AppTabs> = {
   title: 'Navigation/AppTabs',
   component: AppTabs,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Segmented tab control in two visual modes: pill (toggle-style inside a gray container) and underline (active tab with an accent-color bottom border). Emits `update:active` on selection.',
+      },
+    },
+  },
   decorators: [() => ({ template: '<div style="max-width:400px;padding:20px"><story /></div>' })],
   argTypes: {
     variant: { control: 'select', options: ['pill', 'underline'] },

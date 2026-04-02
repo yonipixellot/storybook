@@ -646,7 +646,7 @@ onUnmounted(() => {
   font-family: var(--font-family-base);
   cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s ease;
+  transition: background var(--duration-fast) var(--easing-standard);
 }
 
 .vt__notify-btn:hover {

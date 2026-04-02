@@ -5,6 +5,13 @@ const meta: Meta<typeof SearchBar> = {
   title: 'Layout & Overlays/SearchBar',
   component: SearchBar,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: 'Pill-shaped search input with a leading Search icon, placeholder text, and an inline clear (×) button. Shows a primary-color border ring on focus; supports readonly and disabled states.',
+      },
+    },
+  },
   argTypes: {
     modelValue: { control: 'text' },
     placeholder: { control: 'text' },

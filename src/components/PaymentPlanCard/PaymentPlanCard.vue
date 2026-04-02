@@ -195,7 +195,7 @@ const isHighlighted = computed(() => props.variant === 'highlighted')
   cursor: pointer;
   background: var(--color-primary);
   color: var(--color-white);
-  transition: background 0.15s;
+  transition: background var(--duration-fast);
 }
 
 .ppc__btn:hover {

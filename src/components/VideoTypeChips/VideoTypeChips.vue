@@ -82,7 +82,7 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
   white-space: nowrap;
   flex-shrink: 0;
   scroll-snap-align: start;
-  transition: background 0.12s ease;
+  transition: background var(--duration-instant) var(--easing-standard);
   outline: none;
 }
 

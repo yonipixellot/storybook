@@ -62,12 +62,17 @@ defineEmits<{ 'update:active': [value: string] }>()
   border: none;
   cursor: pointer;
   outline: none;
-  transition: all 0.15s;
+  transition: all var(--duration-fast);
 }
 
 .app-tabs--pill .app-tabs__btn:hover:not(.app-tabs__btn--disabled) {
   background-color: var(--color-gray-300);
   color: var(--color-gray-500);
+}
+
+.app-tabs--pill .app-tabs__btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 .app-tabs--pill .app-tabs__btn--active {
@@ -102,11 +107,17 @@ defineEmits<{ 'update:active': [value: string] }>()
   border: none;
   cursor: pointer;
   outline: none;
-  transition: all 0.15s;
+  transition: all var(--duration-fast);
 }
 
 .app-tabs--underline .app-tabs__btn:hover:not(.app-tabs__btn--disabled) {
   color: var(--color-gray-500);
+}
+
+.app-tabs--underline .app-tabs__btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
 }
 
 .app-tabs--underline .app-tabs__btn--active {

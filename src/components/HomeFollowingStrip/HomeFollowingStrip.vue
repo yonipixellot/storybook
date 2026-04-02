@@ -108,7 +108,7 @@ const resolvedItems = computed(() => props.items ?? DEFAULT_ITEMS)
   padding: 0;
   overflow: hidden;
   position: relative;
-  transition: transform 0.15s ease;
+  transition: transform var(--duration-fast) var(--easing-standard);
 }
 
 .hfs__chip:hover {

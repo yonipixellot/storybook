@@ -87,7 +87,7 @@ const numberStyle = computed(() => ({
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: transform 0.15s;
+  transition: transform var(--duration-fast);
   border-radius: var(--radius-md);
 }
 
