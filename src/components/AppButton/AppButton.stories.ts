@@ -23,6 +23,7 @@ const meta: Meta<typeof AppButton> = {
       options: ['sm', 'md', 'lg'],
     },
     disabled:  { control: 'boolean' },
+    loading:   { control: 'boolean' },
     iconOnly:  { control: 'boolean' },
     fullWidth: { control: 'boolean' },
     ariaLabel: { control: 'text' },
@@ -361,6 +362,22 @@ export const WidthModes: Story = {
 }
 
 // ── Dark Mode ──
+
+export const Loading: Story = {
+  name: 'Loading State',
+  render: () => ({
+    components: { AppButton },
+    template: `
+      <div style="display:flex;flex-direction:column;gap:16px;padding:20px;max-width:300px">
+        <p style="margin:0;font-family:Red Hat Display,sans-serif;font-size:13px;color:#979797;font-weight:500">LOADING STATE</p>
+        <AppButton variant="primary" :loading="true" :full-width="true">Sign in</AppButton>
+        <AppButton variant="premium" :loading="true" :full-width="true">Buy Now</AppButton>
+        <AppButton variant="muted" :loading="true" :full-width="true">Loading…</AppButton>
+        <AppButton variant="action" :loading="true" :full-width="true">Watch Showreel</AppButton>
+      </div>
+    `,
+  }),
+}
 
 export const DarkMode: Story = {
   name: 'Dark Mode',

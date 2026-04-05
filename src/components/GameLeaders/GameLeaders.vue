@@ -191,7 +191,7 @@ defineEmits<{ 'see-all': [] }>()
   background: var(--color-gray-100);
   border: none;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: var(--radius-stat-bar);
   padding: 8px 28px;
   font-family: var(--font-family-base);
   font-size: var(--text-xs);

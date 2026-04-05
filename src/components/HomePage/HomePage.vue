@@ -246,7 +246,7 @@ const upcomingGames = [
 .home-page__scroll {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: var(--space-xxl);
+  padding-bottom: var(--space-2xl);
 }
 
 /* Following strip */

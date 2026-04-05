@@ -4,15 +4,19 @@
       'app-button',
       `app-button--${variant}`,
       `app-button--${size}`,
-      { 'app-button--icon-only': iconOnly, 'app-button--full-width': fullWidth, 'app-button--disabled': disabled }
+      { 'app-button--icon-only': iconOnly, 'app-button--full-width': fullWidth, 'app-button--disabled': disabled || loading, 'app-button--loading': loading }
     ]"
-    :disabled="disabled"
+    :disabled="disabled || loading"
     :aria-label="ariaLabel"
+    :aria-busy="loading || undefined"
     @click="$emit('click')"
   >
-    <span v-if="$slots.leading" class="app-button__icon"><slot name="leading" /></span>
-    <slot v-if="!iconOnly" />
-    <span v-if="$slots.trailing" class="app-button__icon"><slot name="trailing" /></span>
+    <span v-if="loading" class="app-button__spinner" aria-hidden="true" />
+    <template v-else>
+      <span v-if="$slots.leading" class="app-button__icon"><slot name="leading" /></span>
+      <slot v-if="!iconOnly" />
+      <span v-if="$slots.trailing" class="app-button__icon"><slot name="trailing" /></span>
+    </template>
   </button>
 </template>
 
@@ -23,6 +27,7 @@ const props = withDefaults(defineProps<{
   iconOnly?:  boolean
   fullWidth?: boolean
   disabled?:  boolean
+  loading?:   boolean
   ariaLabel?: string
 }>(), {
   variant: 'primary',
@@ -185,6 +190,24 @@ defineEmits<{ click: [] }>()
 }
 [data-theme="dark"] .app-button--premium:not(:disabled) {
   color: var(--color-premium-dark); /* yellow bg stays yellow → text must stay dark */
+}
+
+/* ── Loading ── */
+.app-button--loading {
+  pointer-events: none;
+}
+.app-button__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: app-button-spin var(--duration-slow) linear infinite;
+  opacity: 0.8;
+}
+@keyframes app-button-spin {
+  to { transform: rotate(360deg); }
 }
 
 /* ── Icon slot ── */

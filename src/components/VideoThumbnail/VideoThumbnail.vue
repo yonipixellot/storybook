@@ -491,7 +491,7 @@ onUnmounted(() => {
 }
 
 .vt__subtitle {
-  color: #DCDCDC;
+  color: var(--color-gray-300);
 }
 
 .vt--landscape .vt__subtitle {

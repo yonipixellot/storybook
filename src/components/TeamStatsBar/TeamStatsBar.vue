@@ -204,7 +204,7 @@ function rightPct(row: StatRow): number {
 .tsb__buy-btn {
   width: 160px;
   height: var(--size-button-height);
-  border-radius: 30px;
+  border-radius: var(--radius-stat-bar);
   border: none;
   cursor: pointer;
   background: var(--color-premium-yellow);

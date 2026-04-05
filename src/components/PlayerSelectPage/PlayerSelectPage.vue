@@ -153,7 +153,7 @@ function handleToggle(num: string | number) {
 
 .player-select__content {
   flex: 1;
-  padding: var(--space-xxl) var(--space-lg) 90px;
+  padding: var(--space-2xl) var(--space-lg) 90px;
   width: 100%;
   box-sizing: border-box;
 }

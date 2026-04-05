@@ -159,7 +159,7 @@ const computedAriaLabel = computed(() =>
   display: block;
   font-size: 9px;
   font-weight: 400;
-  color: #DCDCDC;
+  color: var(--color-gray-300);
   margin-top: 2px;
   text-align: left;
 }
