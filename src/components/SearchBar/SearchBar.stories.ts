@@ -74,13 +74,36 @@ export const Readonly: Story = {
 }
 
 /* ═══════════════════════════════════════════
-   5. All States
+   5. Dark Mode
+   ═══════════════════════════════════════════ */
+export const DarkMode: Story = {
+  name: 'Dark Mode',
+  decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:430px"><story /></div>' })],
+  render: () => ({
+    components: { SearchBar },
+    template: `
+      <div style="border:1px solid #444;border-radius:16px;padding:28px 32px">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;font-family:Red Hat Display,sans-serif;color:#E8E8E8">Dark Mode</p>
+        <p style="font-size:13px;color:#888;margin:0 0 16px;font-family:Red Hat Display,sans-serif">Input bg #262626, icon + text #E8E8E8, focus border primary-blue</p>
+        <hr style="border:none;border-top:1px solid #444;margin:0 0 24px" />
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <SearchBar modelValue="" placeholder="Search any team or competition..." />
+          <SearchBar modelValue="Premier League" />
+          <SearchBar :disabled="true" />
+        </div>
+      </div>
+    `,
+  }),
+}
+
+/* ═══════════════════════════════════════════
+   6. All States
    ═══════════════════════════════════════════ */
 export const States: Story = {
   render: () => ({
     components: { SearchBar },
     template: `
-      <div style="${box}">
+      <div style="${box};min-width:620px">
         <p style="${title}">All States</p>
         <hr style="${hr}" />
         <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">

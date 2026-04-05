@@ -26,7 +26,7 @@
       <Bookmark v-else-if="tab.icon === 'saved'"
         :size="24"
         :fill="activeTab === tab.id ? activeColor : 'none'"
-        :stroke="activeTab === tab.id ? activeColor : 'var(--color-gray-400)'"
+        :color="activeTab === tab.id ? activeColor : 'var(--color-gray-400)'"
         :stroke-width="activeTab === tab.id ? 2 : 1.5"
         aria-hidden="true"
       />

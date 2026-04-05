@@ -360,7 +360,7 @@ onUnmounted(() => {
 .vt__duration span {
   font-size: 11px;
   font-weight: 500;
-  color: var(--color-white);
+  color: #FFFFFF;
   line-height: 11px;
 }
 
@@ -380,7 +380,7 @@ onUnmounted(() => {
   padding: 2px 6px;
   font-size: 9px;
   font-weight: 600;
-  color: var(--color-white);
+  color: #FFFFFF;
   line-height: normal;
 }
 
@@ -388,7 +388,7 @@ onUnmounted(() => {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--color-white);
+  background: #FFFFFF;
   animation: liveDotFlicker 1.2s ease-in-out infinite;
 }
 
@@ -475,7 +475,7 @@ onUnmounted(() => {
 .vt__title {
   font-size: 14px;
   font-weight: 700;
-  color: var(--color-white);
+  color: #FFFFFF;
 }
 
 .vt--landscape .vt__title {
@@ -484,11 +484,14 @@ onUnmounted(() => {
 
 .vt--vertical .vt__title {
   line-height: 16px;
-  display: flow-root;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .vt__subtitle {
-  color: var(--color-gray-300);
+  color: #DCDCDC;
 }
 
 .vt--landscape .vt__subtitle {
@@ -608,7 +611,7 @@ onUnmounted(() => {
 .vt__countdown-timer {
   font-size: 30px;
   font-weight: 800;
-  color: var(--color-white);
+  color: #FFFFFF;
   letter-spacing: -0.6px;
   margin: 0;
   font-family: var(--font-gala);
@@ -637,7 +640,7 @@ onUnmounted(() => {
 /* ── Notify button (countdown variant) ── */
 .vt__notify-btn {
   background: var(--color-primary);
-  color: var(--color-white);
+  color: #FFFFFF;
   border: none;
   border-radius: 20px;
   padding: 0 16px;

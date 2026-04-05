@@ -138,3 +138,21 @@ export const Variants: Story = {
     `,
   }),
 }
+
+export const DarkMode: Story = {
+  name: 'Dark Mode',
+  decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px"><story /></div>' })],
+  render: () => ({
+    components: { AppSelect },
+    template: `
+      <div style="border:1px solid #444;border-radius:16px;padding:28px 32px;max-width:400px">
+        <p style="font-size:18px;font-weight:700;margin:0 0 16px;font-family:Red Hat Display,sans-serif;color:#E8E8E8">Dark Mode</p>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <AppSelect placeholder="Age..." :options="[{label:'18',value:'18'},{label:'25',value:'25'},{label:'35+',value:'35'}]" />
+          <AppSelect placeholder="Age..." :options="[{label:'18',value:'18'}]" :error="true" errorMsg="Please select your age" />
+          <AppSelect placeholder="Age..." :options="[{label:'18',value:'18'}]" :disabled="true" />
+        </div>
+      </div>
+    `,
+  }),
+}

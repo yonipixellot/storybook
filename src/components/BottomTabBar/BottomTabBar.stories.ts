@@ -60,3 +60,17 @@ export const CustomAccent: Story = {
   name: 'Custom accent color',
   args: { accentColor: '#D0142C', active: 'following' },
 }
+
+export const DarkMode: Story = {
+  name: 'Dark Mode',
+  decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:430px"><story /></div>' })],
+  render: () => ({
+    components: { BottomTabBar },
+    template: `
+      <div style="border:1px solid #444;border-radius:16px;overflow:hidden">
+        <p style="font-size:18px;font-weight:700;margin:12px 16px;font-family:Red Hat Display,sans-serif;color:#E8E8E8">Dark Mode</p>
+        <BottomTabBar active="following" />
+      </div>
+    `,
+  }),
+}

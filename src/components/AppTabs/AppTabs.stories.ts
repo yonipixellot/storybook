@@ -12,7 +12,7 @@ const meta: Meta<typeof AppTabs> = {
       },
     },
   },
-  decorators: [() => ({ template: '<div style="max-width:400px;padding:20px"><story /></div>' })],
+  decorators: [() => ({ template: '<div style="max-width:430px;padding:20px"><story /></div>' })],
   argTypes: {
     tabs:        { control: 'object', description: 'Array of tab items — each with `{ label: string, value: string, disabled?: boolean }`' },
     active:      { control: 'text',   description: 'Value of the currently active tab' },
@@ -27,6 +27,7 @@ type Story = StoryObj<typeof AppTabs>
 const label = 'font-size:13px;color:#979797;margin:0 0 8px;font-family:Red Hat Display,sans-serif'
 const title = 'font-size:18px;font-weight:700;margin:0 0 4px;font-family:Red Hat Display,sans-serif;color:#161616'
 const box = 'border:1px solid #E8E8E8;border-radius:16px;padding:28px 32px;margin-bottom:24px'
+const boxUnderline = 'border:1px solid #E8E8E8;border-radius:16px;padding:28px 0;margin-bottom:24px'
 const hr = 'border:none;border-top:1px solid #E8E8E8;margin:16px 0 24px'
 const stLabel = 'font-size:12px;color:#979797;text-align:center;margin-top:6px;font-family:Red Hat Display,sans-serif'
 
@@ -102,9 +103,9 @@ export const UnderlineDefault: Story = {
       return { active: 'schedule' }
     },
     template: `
-      <div style="${box}">
-        <p style="${title}">underline (default — team red)</p>
-        <p style="${label}">accentColor defaults to #EF4444. Pass any team color.</p>
+      <div style="${boxUnderline}">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;padding:0 28px;font-family:Red Hat Display,sans-serif;color:#161616">underline (default — team red)</p>
+        <p style="font-size:13px;color:#979797;margin:0 0 16px;padding:0 28px;font-family:Red Hat Display,sans-serif">accentColor defaults to #EF4444. Pass any team color.</p>
         <hr style="${hr}" />
         <AppTabs
           :tabs="[{ label: 'Schedule', value: 'schedule' }, { label: 'Results', value: 'results' }, { label: 'Standings', value: 'standings' }]"
@@ -125,9 +126,9 @@ export const UnderlineInteractiveStates: Story = {
   render: () => ({
     components: { AppTabs },
     template: `
-      <div style="${box}">
-        <p style="${title}">underline — Interactive States</p>
-        <p style="${label}">Hover shows faint accent underline hint; pressed darkens text</p>
+      <div style="${boxUnderline}">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;padding:0 28px;font-family:Red Hat Display,sans-serif;color:#161616">underline — Interactive States</p>
+        <p style="font-size:13px;color:#979797;margin:0 0 16px;padding:0 28px;font-family:Red Hat Display,sans-serif">Hover shows faint accent underline hint; pressed darkens text</p>
         <hr style="${hr}" />
 
         <p style="${stLabel}">Inactive tab → default</p>
@@ -167,9 +168,9 @@ export const UnderlineCustomColors: Story = {
   render: () => ({
     components: { AppTabs },
     template: `
-      <div style="${box}">
-        <p style="${title}">underline — custom team colors</p>
-        <p style="${label}">Same component, different accentColor per team/client</p>
+      <div style="${boxUnderline}">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;padding:0 28px;font-family:Red Hat Display,sans-serif;color:#161616">underline — custom team colors</p>
+        <p style="font-size:13px;color:#979797;margin:0 0 16px;padding:0 28px;font-family:Red Hat Display,sans-serif">Same component, different accentColor per team/client</p>
         <hr style="${hr}" />
 
         <p style="${stLabel}">accentColor="#116DFF" (Maccabi blue)</p>
@@ -204,15 +205,47 @@ export const UnderlineCustomColors: Story = {
   }),
 }
 
+/* ── Dark Mode ── */
+
+export const DarkMode: Story = {
+  decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px"><story /></div>' })],
+  render: () => ({
+    components: { AppTabs },
+    template: `
+      <div style="border:1px solid #444;border-radius:16px;padding:28px 32px;margin-bottom:24px">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;font-family:Red Hat Display,sans-serif;color:#E8E8E8">Dark Mode</p>
+        <p style="font-size:13px;color:#888;margin:0 0 16px;font-family:Red Hat Display,sans-serif">Active pill = brand-blue; underline border = #555</p>
+        <hr style="border:none;border-top:1px solid #444;margin:0 0 24px" />
+
+        <p style="font-size:12px;color:#888;margin:0 0 8px;font-family:Red Hat Display,sans-serif">pill — active tab becomes brand-blue</p>
+        <AppTabs
+          :tabs="[{ label: 'Sign In', value: 'signin' }, { label: 'Sign Up', value: 'signup' }]"
+          active="signin"
+          variant="pill"
+          style="margin-bottom:24px"
+        />
+
+        <p style="font-size:12px;color:#888;margin:24px 0 8px;font-family:Red Hat Display,sans-serif">underline — border-bottom #555, active text light</p>
+        <AppTabs
+          :tabs="[{ label: 'Schedule', value: 'schedule' }, { label: 'Results', value: 'results' }, { label: 'Standings', value: 'standings' }]"
+          active="schedule"
+          variant="underline"
+          accentColor="#EF4444"
+        />
+      </div>
+    `,
+  }),
+}
+
 /* ── Disabled Tabs ── */
 
 export const DisabledTabs: Story = {
   render: () => ({
     components: { AppTabs },
     template: `
-      <div style="${box}">
-        <p style="${title}">Disabled Tabs</p>
-        <p style="${label}">Individual tabs can be disabled — grayed out, not clickable</p>
+      <div style="${boxUnderline}">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;padding:0 28px;font-family:Red Hat Display,sans-serif;color:#161616">Disabled Tabs</p>
+        <p style="font-size:13px;color:#979797;margin:0 0 16px;padding:0 28px;font-family:Red Hat Display,sans-serif">Individual tabs can be disabled — grayed out, not clickable</p>
         <hr style="${hr}" />
 
         <p style="${stLabel}">pill — "Sign Up" disabled</p>

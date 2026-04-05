@@ -14,8 +14,8 @@ const meta: Meta<typeof LiveGameCard> = {
   },
   decorators: [() => ({ template: '<div style="max-width:500px;padding:20px"><story /></div>' })],
   argTypes: {
-    homeTeam:  { control: 'object',  description: 'Home team — { name, score, logoInitial, logoColor? }' },
-    awayTeam:  { control: 'object',  description: 'Away team — { name, score, logoInitial, logoColor? }' },
+    homeTeam:  { control: 'object',  description: 'Home team — { name, score, logoUrl? }' },
+    awayTeam:  { control: 'object',  description: 'Away team — { name, score, logoUrl? }' },
     date:      { control: 'text',    description: 'Formatted date/time string, e.g. "21 NOV, 2024"' },
     league:    { control: 'text',    description: 'League name — shown below the score row (optional)' },
     clickable: { control: 'boolean', description: 'Shows pointer cursor — indicates the card is tappable (default: true)' },
@@ -41,8 +41,8 @@ export const Default: Story = {
         <p style="${label}">Horizontal card showing live game with live badge, date, teams, and scores</p>
         <hr style="${hr}" />
         <LiveGameCard
-          :homeTeam="{ name: 'M. Kiryat Gat', score: 87, logoInitial: 'M', logoColor: '#116DFF' }"
-          :awayTeam="{ name: 'H. Haifa', score: 79, logoInitial: 'H', logoColor: '#116DFF' }"
+          :homeTeam="{ name: 'M. Kiryat Gat', score: 87 }"
+          :awayTeam="{ name: 'H. Haifa', score: 79 }"
           date="21 NOV, 2024"
           league="Liga Leumit (Winner League)"
         />
@@ -62,8 +62,8 @@ export const CloseGame: Story = {
         <p style="${label}">When scores are close, both teams appear equally weighted</p>
         <hr style="${hr}" />
         <LiveGameCard
-          :homeTeam="{ name: 'Maccabi Tel Aviv', score: 72, logoInitial: 'M', logoColor: '#FFE000' }"
-          :awayTeam="{ name: 'Hapoel Jerusalem', score: 70, logoInitial: 'H', logoColor: '#EF4444' }"
+          :homeTeam="{ name: 'Maccabi Tel Aviv', score: 72 }"
+          :awayTeam="{ name: 'Hapoel Jerusalem', score: 70 }"
           date="15 DEC, 2024"
           league="Israeli Premier League"
         />
@@ -83,9 +83,31 @@ export const WithoutLeague: Story = {
         <p style="${label}">League line is optional</p>
         <hr style="${hr}" />
         <LiveGameCard
-          :homeTeam="{ name: 'Team Alpha', score: 3, logoInitial: 'A', logoColor: '#116DFF' }"
-          :awayTeam="{ name: 'Team Beta', score: 1, logoInitial: 'B', logoColor: '#22C55E' }"
+          :homeTeam="{ name: 'Team Alpha', score: 3 }"
+          :awayTeam="{ name: 'Team Beta', score: 1 }"
           date="30 MAR, 2026"
+        />
+      </div>
+    `,
+  }),
+}
+
+/* ── Dark Mode ── */
+
+export const DarkMode: Story = {
+  decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:500px"><story /></div>' })],
+  render: () => ({
+    components: { LiveGameCard },
+    template: `
+      <div style="border:1px solid #444;border-radius:16px;padding:28px 32px;margin-bottom:24px">
+        <p style="font-size:18px;font-weight:700;margin:0 0 4px;font-family:Red Hat Display,sans-serif;color:#E8E8E8">Dark Mode</p>
+        <p style="font-size:13px;color:#888;margin:0 0 16px;font-family:Red Hat Display,sans-serif">Header #444, body #333, leading=white, trailing=gray-500</p>
+        <hr style="border:none;border-top:1px solid #444;margin:0 0 24px" />
+        <LiveGameCard
+          :homeTeam="{ name: 'M. Kiryat Gat', score: 87 }"
+          :awayTeam="{ name: 'H. Haifa', score: 79 }"
+          date="21 NOV, 2024"
+          league="Liga Leumit (Winner League)"
         />
       </div>
     `,
@@ -104,14 +126,14 @@ export const MultipleCards: Story = {
         <hr style="${hr}" />
         <div style="display:flex;flex-direction:column;gap:16px">
           <LiveGameCard
-            :homeTeam="{ name: 'M. Kiryat Gat', score: 87, logoInitial: 'M' }"
-            :awayTeam="{ name: 'H. Haifa', score: 79, logoInitial: 'H' }"
+            :homeTeam="{ name: 'M. Kiryat Gat', score: 87 }"
+            :awayTeam="{ name: 'H. Haifa', score: 79 }"
             date="21 NOV, 2024"
             league="Liga Leumit (Winner League)"
           />
           <LiveGameCard
-            :homeTeam="{ name: 'Maccabi Tel Aviv', score: 45, logoInitial: 'M', logoColor: '#FFE000' }"
-            :awayTeam="{ name: 'Hapoel Beer Sheva', score: 38, logoInitial: 'H', logoColor: '#EF4444' }"
+            :homeTeam="{ name: 'Maccabi Tel Aviv', score: 45 }"
+            :awayTeam="{ name: 'Hapoel Beer Sheva', score: 38 }"
             date="21 NOV, 2024"
             league="Israeli Premier League"
           />
