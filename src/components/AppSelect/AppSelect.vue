@@ -116,7 +116,7 @@ defineEmits<{
 .error-message {
   display: block;
   color: var(--color-live-red);
-  font-size: 12px;
+  font-size: var(--text-caption);
   padding-left: 16px;
   margin-top: 4px;
   font-family: var(--font-family-base);

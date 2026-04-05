@@ -58,7 +58,7 @@ const computedAriaLabel = computed(() =>
   width: 108px;
   height: 192px;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   overflow: hidden;
   cursor: pointer;
   display: block;
@@ -97,7 +97,7 @@ const computedAriaLabel = computed(() =>
   top: 6px;
   left: 6px;
   background: rgba(0, 0, 0, 0.55);
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   padding: 1px 5px;
   display: flex;
   align-items: center;
@@ -116,7 +116,7 @@ const computedAriaLabel = computed(() =>
   right: 6px;
   width: 24px;
   height: 24px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--color-premium-dark);
   display: flex;
   align-items: center;
@@ -129,7 +129,7 @@ const computedAriaLabel = computed(() =>
   right: 6px;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #6C6C6C; /* fixed — card bg is always dark, token inverts to #A0A0A0 in dark mode */
   display: flex;
   align-items: center;
@@ -148,7 +148,7 @@ const computedAriaLabel = computed(() =>
 
 .highlight-card__title {
   display: block;
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 700;
   color: #FFFFFF;
   line-height: 14px;

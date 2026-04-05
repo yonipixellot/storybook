@@ -55,7 +55,7 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
 /* ── Row container ── */
 .vtc {
   display: flex;
-  gap: 12px;
+  gap: var(--space-md);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -ms-overflow-style: none;
@@ -71,14 +71,14 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
 .vtc__chip {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-sm);
   height: 40px;
-  border-radius: 26px;
+  border-radius: var(--radius-chip);
   padding: 8px 12px;
   border: none;
   cursor: pointer;
   font-family: var(--font-family-base);
-  font-size: 16px;
+  font-size: var(--text-base);
   white-space: nowrap;
   flex-shrink: 0;
   scroll-snap-align: start;

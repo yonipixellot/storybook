@@ -76,8 +76,8 @@ withDefaults(defineProps<{
 <style scoped>
 .game-result-card {
   display: flex;
-  gap: 16px;
-  border-radius: 14px;
+  gap: var(--space-lg);
+  border-radius: var(--radius-card);
   overflow: hidden;
   background-color: var(--color-gray-100);
   font-family: var(--font-family-system); /* DS uses system font throughout this card */
@@ -101,20 +101,20 @@ withDefaults(defineProps<{
 }
 
 .game-result-card__day {
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 700;
   color: var(--color-black);
 }
 
 .game-result-card__month {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 700;
   color: var(--color-black);
   text-transform: uppercase;
 }
 
 .game-result-card__year {
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 400;
   color: var(--color-black);
 }
@@ -124,7 +124,7 @@ withDefaults(defineProps<{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-sm);
   padding: 0 16px 0 0;
 }
 
@@ -137,13 +137,13 @@ withDefaults(defineProps<{
   flex: 1 1 0%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 /* logo: PTeamLogo component handles circle shape, tinting, initial, and logoUrl image */
 
 .game-result-card__name {
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
 }
 
@@ -156,7 +156,7 @@ withDefaults(defineProps<{
 }
 
 .game-result-card__score {
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
 }
 
@@ -175,7 +175,7 @@ withDefaults(defineProps<{
 }
 
 .game-result-card__league {
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 400;
   color: var(--color-gray-400);
 }
@@ -183,13 +183,13 @@ withDefaults(defineProps<{
 .game-result-card__highlights {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   background-color: var(--color-gray-500);
   color: var(--color-premium-yellow);
   border: 0.5px solid var(--color-premium-yellow);
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   padding: 4px 12px;
-  font-size: 11px;
+  font-size: var(--text-2xs);
   font-weight: 700;
   /* inherits var(--font-family-system) from .game-result-card — no override needed */
   cursor: pointer;

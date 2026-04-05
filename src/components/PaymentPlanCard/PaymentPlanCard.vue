@@ -92,7 +92,7 @@ const isHighlighted = computed(() => props.variant === 'highlighted')
 }
 
 .ppc__badge-fire {
-  font-size: 12px;
+  font-size: var(--text-caption);
   line-height: 12px;
 }
 

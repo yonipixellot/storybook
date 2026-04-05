@@ -72,7 +72,7 @@ const awayScoreColor = computed(() =>
 <style scoped>
 .score-card {
   background-color: var(--color-gray-100);
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   padding: 16px;
   font-family: var(--font-family-system); /* DS uses system font, not Red Hat Display */
 }
@@ -80,14 +80,14 @@ const awayScoreColor = computed(() =>
 .score-card__row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .score-card__side {
   flex: 1 1 0%;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .score-card__side--left {
@@ -101,23 +101,23 @@ const awayScoreColor = computed(() =>
 .score-card__logo-score {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md);
 }
 
 .score-card__score {
-  font-size: 28px;
+  font-size: var(--text-h1);
   font-weight: 400;
   color: var(--color-black);
 }
 
 .score-card__name {
-  font-size: 14px;
+  font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-black);
 }
 
 .score-card__standing {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 400;
   color: var(--color-gray-500);
 }
@@ -130,13 +130,13 @@ const awayScoreColor = computed(() =>
 }
 
 .score-card__status {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 400;
   color: var(--color-gray-500);
 }
 
 .score-card__date {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 400;
   color: var(--color-gray-500);
 }

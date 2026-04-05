@@ -31,7 +31,7 @@ withDefaults(defineProps<{
   border-radius: var(--radius-badge);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-xxs);
   overflow: hidden;
 }
 

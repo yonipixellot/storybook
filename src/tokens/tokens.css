@@ -80,6 +80,7 @@
   --font-family-base: 'Red Hat Display', sans-serif;
   --font-family-system: -apple-system, 'system-ui', 'Segoe UI', Roboto, sans-serif; /* DS uses this for badges, score cards, etc. */
   --font-gala: 'Gala', Georgia, serif;
+  --text-micro: 10px; /* small labels, timestamps, video overlays */
   --text-2xs: 11px;
   --text-caption: 12px;
   --text-body2: 13px;

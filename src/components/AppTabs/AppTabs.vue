@@ -43,7 +43,7 @@ defineEmits<{ 'update:active': [value: string] }>()
 .app-tabs--pill {
   display: flex;
   background-color: var(--color-gray-100);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   padding: 4px;
   border: none;
   gap: 0;
@@ -53,10 +53,10 @@ defineEmits<{ 'update:active': [value: string] }>()
   flex: 1 1 0%;
   background-color: transparent;
   color: var(--color-gray-400);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   height: 38px;
   padding: 1px 6px;
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 500;
   font-family: var(--font-family-base);
   border: none;
@@ -91,7 +91,7 @@ defineEmits<{ 'update:active': [value: string] }>()
 .app-tabs--underline {
   display: flex;
   gap: 0;
-  padding: 0 16px;
+  padding: 0 var(--space-lg);
   border-bottom: 1px solid var(--color-gray-100); /* DS: 1px + gray-100 (#EDEDED) */
   background-color: transparent;
   border-radius: 0;
@@ -103,7 +103,7 @@ defineEmits<{ 'update:active': [value: string] }>()
   color: var(--color-gray-400);
   border-bottom: none;
   padding: 16px 0;
-  font-size: 15px;
+  font-size: var(--text-sm);
   font-weight: 500;
   font-family: var(--font-family-base);
   border: none;

@@ -164,7 +164,7 @@ const socialLinks = [
 .tp__logo {
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   display: flex;
   align-items: center;
   justify-content: center;

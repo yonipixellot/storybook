@@ -68,7 +68,7 @@ withDefaults(defineProps<{
 }
 
 .live-game-card {
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   overflow: hidden;
   font-family: var(--font-family-base);
 }
@@ -84,26 +84,26 @@ withDefaults(defineProps<{
 .live-game-card__badge {
   background-color: var(--color-live-red);
   color: var(--color-white);
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 600;
   font-family: var(--font-family-system); /* DS badge uses system font — matches AppBadge; Red Hat adds 2px to height */
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   padding: 4px 12px;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
 }
 
 .live-game-card__dot {
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background-color: var(--color-white);
   animation: liveDotFlicker 1.5s ease-in-out infinite;
 }
 
 .live-game-card__date {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 500;
   color: var(--color-black);
 }
@@ -116,20 +116,20 @@ withDefaults(defineProps<{
 .live-game-card__teams {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-sm2);
 }
 
 .live-game-card__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .live-game-card__team {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md);
   flex: 1;
   min-width: 0;
 }
@@ -137,7 +137,7 @@ withDefaults(defineProps<{
 /* logo: PTeamLogo component handles circle shape, tinting, initial, and logoUrl image */
 
 .live-game-card__name {
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-gray-500);
   overflow: hidden;
@@ -150,7 +150,7 @@ withDefaults(defineProps<{
 }
 
 .live-game-card__score {
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 500;
   color: var(--color-black);
 }
@@ -162,7 +162,7 @@ withDefaults(defineProps<{
 .live-game-card__league {
   display: block;
   margin-top: 10px;
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 500;
   color: var(--color-gray-400);
 }

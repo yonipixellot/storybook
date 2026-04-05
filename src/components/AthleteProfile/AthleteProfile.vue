@@ -73,7 +73,7 @@
     <!-- My Highlights Section -->
     <div class="ap__highlights">
       <div class="ap__section-header-wrap">
-        <h3 class="ap__section-title" style="font-size: 24px">My Highlights</h3>
+        <h3 class="ap__section-title" style="font-size: var(--text-2xl)">My Highlights</h3>
       </div>
       <!-- Highlights Grid Row 1 -->
       <div class="ap__highlights-row">
@@ -101,7 +101,7 @@
     <!-- Season Stats -->
     <div class="ap__season">
       <div class="ap__section-header-wrap">
-        <h3 class="ap__section-title" style="font-size: 24px">Season Stats</h3>
+        <h3 class="ap__section-title" style="font-size: var(--text-2xl)">Season Stats</h3>
       </div>
       <div class="ap__stats-row">
         <div v-for="stat in seasonStats" :key="stat.label" class="ap__stat-card">
@@ -365,7 +365,7 @@ const seasonStats: StatCard[] = [
   border-radius: var(--radius-badge);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-xxs);
   overflow: hidden;
 }
 

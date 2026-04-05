@@ -53,7 +53,7 @@ const visibleLinks = computed(() => props.links.filter(l => l.url))
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  gap: var(--space-2xl);
 }
 
 .social-links__icon {

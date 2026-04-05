@@ -51,7 +51,7 @@ withDefaults(defineProps<{
 .app-divider-text {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-md);
 }
 
 .app-divider-text__line {
@@ -62,7 +62,7 @@ withDefaults(defineProps<{
 
 .app-divider-text__label {
   color: var(--color-gray-400);
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 500;
   font-family: var(--font-family-base);
   white-space: nowrap;

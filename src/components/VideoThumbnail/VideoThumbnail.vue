@@ -264,7 +264,7 @@ onUnmounted(() => {
 .vt--landscape {
   width: 398px;
   aspect-ratio: 16 / 9;
-  border-radius: 14px;
+  border-radius: var(--radius-card);
   background-color: var(--color-hero-bg);
 }
 
@@ -272,19 +272,19 @@ onUnmounted(() => {
 .vt--vertical {
   width: 108px;
   height: 192px;
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   background-color: var(--color-hero-bg);
 }
 
 /* ── Error state ── */
 .vt--error {
   background-color: var(--color-gray-100);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .vt__error-icon {
@@ -293,7 +293,7 @@ onUnmounted(() => {
 }
 
 .vt__error-text {
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 500;
   color: var(--color-gray-400);
 }
@@ -342,7 +342,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.55);
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
 }
 
 .vt--landscape .vt__duration {
@@ -358,7 +358,7 @@ onUnmounted(() => {
 }
 
 .vt__duration span {
-  font-size: 11px;
+  font-size: var(--text-2xs);
   font-weight: 500;
   color: #FFFFFF;
   line-height: 11px;
@@ -374,9 +374,9 @@ onUnmounted(() => {
 .vt__live-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   background: var(--color-live-red);
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   padding: 2px 6px;
   font-size: 9px;
   font-weight: 600;
@@ -387,7 +387,7 @@ onUnmounted(() => {
 .vt__live-dot {
   width: 5px;
   height: 5px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: #FFFFFF;
   animation: liveDotFlicker 1.2s ease-in-out infinite;
 }
@@ -400,9 +400,9 @@ onUnmounted(() => {
 .vt__new-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   background: var(--color-gray-100);
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   padding: 2px 6px;
   font-size: 9px;
   font-weight: 700;
@@ -416,7 +416,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
 }
 
 .vt__icon--lock {
@@ -473,7 +473,7 @@ onUnmounted(() => {
 
 /* ── Title / subtitle ── */
 .vt__title {
-  font-size: 14px;
+  font-size: var(--text-xs);
   font-weight: 700;
   color: #FFFFFF;
 }
@@ -495,13 +495,13 @@ onUnmounted(() => {
 }
 
 .vt--landscape .vt__subtitle {
-  font-size: 11px;
+  font-size: var(--text-2xs);
   font-weight: 400;
   line-height: 16.5px;
 }
 
 .vt--vertical .vt__subtitle {
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 700;
   line-height: 15px;
 }
@@ -510,7 +510,7 @@ onUnmounted(() => {
 .vt__jersey-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-xs2);
 }
 
 /* Jersey overlay needs different padding */
@@ -540,14 +540,14 @@ onUnmounted(() => {
   top: 14px;
   left: 50%;
   transform: translate(-50%, -4.6px);
-  font-size: 10px;
+  font-size: var(--text-micro);
   font-weight: 700;
   line-height: 10px;
   /* color set dynamically via :style based on jersey luminance */
 }
 
 .vt__jersey-label {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 700;
   color: var(--color-gray-200);
   line-height: 14px;
@@ -642,10 +642,10 @@ onUnmounted(() => {
   background: var(--color-primary);
   color: #FFFFFF;
   border: none;
-  border-radius: 20px;
-  padding: 0 16px;
+  border-radius: var(--radius-lg);
+  padding: 0 var(--space-lg);
   height: 32px;
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 500;
   font-family: var(--font-family-base);
   cursor: pointer;

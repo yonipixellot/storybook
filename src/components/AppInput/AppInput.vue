@@ -424,12 +424,12 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   height: 46px;
   padding: 4px 16px;
   font-family: var(--font-family-base);
-  font-size: 16px;
+  font-size: var(--text-base);
   font-weight: 400;
   color: var(--color-black);
   background: var(--color-gray-100);
   border: 2px solid transparent;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   outline: none;
   box-sizing: border-box;
   transition: background var(--duration-fast), border-color var(--duration-fast);
@@ -504,7 +504,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 /* ── Error Message ── */
 .app-input__error {
   font-family: var(--font-family-base);
-  font-size: 12px;
+  font-size: var(--text-caption);
   color: var(--color-error-red);
   display: block;
   margin-top: 4px;
@@ -528,14 +528,14 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   z-index: var(--z-base);
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   padding: 0 8px 0 12px;
   background: none;
   border: none;
   border-right: 1px solid var(--color-gray-200);
   cursor: pointer;
   font-family: var(--font-family-base);
-  border-radius: 16px 0 0 16px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
   transition: background var(--duration-fast);
 }
 
@@ -549,12 +549,12 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 }
 
 .app-input__tel-flag {
-  font-size: 18px;
+  font-size: var(--text-h3);
   line-height: 1;
 }
 
 .app-input__tel-code {
-  font-size: 14px;
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--color-dark-text);
   white-space: nowrap;
@@ -579,7 +579,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   max-height: 280px;
   background: var(--color-white);
   border: 1px solid var(--color-gray-300);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: var(--z-dropdown);
   display: flex;
@@ -590,7 +590,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 .app-input__dropdown-search {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-sm);
   padding: 10px 14px;
   border-bottom: 1px solid var(--color-card-hover-bg);
   color: var(--color-gray-400); /* currentColor on SVG resolves from here */
@@ -601,7 +601,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   border: none;
   outline: none;
   font-family: var(--font-family-base);
-  font-size: 14px;
+  font-size: var(--text-xs);
   font-weight: 400;
   color: var(--color-dark-text);
   background: transparent;
@@ -622,7 +622,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 .app-input__dropdown-item {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm2);
   padding: 8px 14px;
   cursor: pointer;
   transition: background var(--duration-instant);
@@ -641,21 +641,21 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 }
 
 .app-input__dropdown-flag {
-  font-size: 18px;
+  font-size: var(--text-h3);
   line-height: 1;
 }
 
 .app-input__dropdown-name {
   flex: 1;
   font-family: var(--font-family-base);
-  font-size: 14px;
+  font-size: var(--text-xs);
   font-weight: 500;
   color: var(--color-dark-text);
 }
 
 .app-input__dropdown-dial {
   font-family: var(--font-family-base);
-  font-size: 13px;
+  font-size: var(--text-body2);
   font-weight: 400;
   color: var(--color-gray-400);
 }
@@ -663,7 +663,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
 .app-input__dropdown-empty {
   padding: 16px 14px;
   font-family: var(--font-family-base);
-  font-size: 14px;
+  font-size: var(--text-xs);
   color: var(--color-gray-400);
   text-align: center;
 }

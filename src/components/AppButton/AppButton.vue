@@ -49,7 +49,7 @@ defineEmits<{ click: [] }>()
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: var(--space-sm);
   outline: none;
   box-sizing: border-box;
   white-space: nowrap;
@@ -60,9 +60,9 @@ defineEmits<{ click: [] }>()
 }
 
 /* ── Sizes ── */
-.app-button--sm  { height: 32px; font-size: 14px; font-weight: 600; padding: 0 16px; border-radius: 20px; }
-.app-button--md  { height: 40px; font-size: 15px; font-weight: 500; padding: 0 24px; border-radius: 20px; }
-.app-button--lg  { height: 48px; font-size: 16px; font-weight: 700; padding: 0 28px; border-radius: 28px; } /* DS: fw=700, radius=28px */
+.app-button--sm  { height: 32px; font-size: var(--text-xs); font-weight: 600; padding: 0 var(--space-lg); border-radius: var(--radius-lg); }
+.app-button--md  { height: 40px; font-size: var(--text-sm); font-weight: 500; padding: 0 var(--space-xl); border-radius: var(--radius-lg); }
+.app-button--lg  { height: 48px; font-size: var(--text-base); font-weight: 700; padding: 0 28px; border-radius: 28px; } /* DS: fw=700, radius=28px */
 
 .app-button--full-width { width: 100%; }
 .app-button--icon-only  { padding: 0; aspect-ratio: 1; }
@@ -83,7 +83,7 @@ defineEmits<{ click: [] }>()
 .app-button--premium {
   background: var(--color-premium-yellow);
   color: var(--color-black);
-  border-radius: 26px;
+  border-radius: var(--radius-chip);
 }
 .app-button--premium:hover:not(:disabled) {
   background: var(--color-premium-hover);
@@ -152,7 +152,7 @@ defineEmits<{ click: [] }>()
 .app-button--action {
   background: var(--color-primary);
   color: var(--color-white);
-  border-radius: 26px;
+  border-radius: var(--radius-chip);
 }
 .app-button--action:hover:not(:disabled) {
   background: var(--color-primary-hover);
@@ -202,7 +202,7 @@ defineEmits<{ click: [] }>()
   height: 16px;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: app-button-spin var(--duration-slow) linear infinite;
   opacity: 0.8;
 }

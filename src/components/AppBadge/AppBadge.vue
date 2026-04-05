@@ -38,11 +38,11 @@ const label = computed(() => labels[props.variant || 'live'])
 .app-badge {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   font-family: var(--font-family-system); /* DS uses system font, not Red Hat Display */
   font-weight: 700;
   text-transform: uppercase;
-  border-radius: 12px;
+  border-radius: var(--radius-badge);
   box-sizing: border-box;
   white-space: nowrap;
 }
@@ -50,7 +50,7 @@ const label = computed(() => labels[props.variant || 'live'])
 /* ── Sizes ── */
 .app-badge--md {
   padding: 4px 12px;
-  font-size: 11px;
+  font-size: var(--text-2xs);
 }
 .app-badge--sm {
   padding: 2px 6px;
@@ -63,7 +63,7 @@ const label = computed(() => labels[props.variant || 'live'])
   color: var(--color-white);
 }
 .app-badge--live.app-badge--md {
-  font-size: 12px;
+  font-size: var(--text-caption);
   font-weight: 600;
 }
 
@@ -71,7 +71,7 @@ const label = computed(() => labels[props.variant || 'live'])
   display: inline-block;
   width: 6px;
   height: 6px;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--color-white);
   animation: pulse 2s infinite;
 }

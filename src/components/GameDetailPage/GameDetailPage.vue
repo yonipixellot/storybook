@@ -372,7 +372,7 @@ const videoChips = computed(() => [
 .game-detail__type-btn {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-xs);
   background: transparent;
   border: none;
   font-family: var(--font-family-base);
