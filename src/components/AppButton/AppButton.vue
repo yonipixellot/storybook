@@ -145,7 +145,7 @@ defineEmits<{ click: [] }>()
   color: var(--color-error-red);
 }
 .app-button--danger:hover:not(:disabled) {
-  background: rgba(239, 68, 68, 0.08);
+  background: var(--color-error-bg);
 }
 
 /* ── Action ── */

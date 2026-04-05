@@ -464,7 +464,7 @@ const videoChips = computed(() => [
 .game-detail__paywall-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.08);
+  background: var(--color-frost-overlay);
   border-radius: var(--radius-card);
   display: flex;
   flex-direction: column;

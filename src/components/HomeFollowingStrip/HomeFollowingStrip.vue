@@ -176,4 +176,8 @@ const resolvedItems = computed(() => props.items ?? DEFAULT_ITEMS)
   color: var(--color-white);
   line-height: 1;
 }
+/* Jersey color bg is static — pin number text to white in dark mode */
+[data-theme="dark"] .hfs__number-text {
+  color: #FFFFFF;
+}
 </style>

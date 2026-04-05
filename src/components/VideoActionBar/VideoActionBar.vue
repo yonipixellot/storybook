@@ -144,7 +144,7 @@ function handleBookmark() {
 .vab__btn--disabled,
 .vab__btn:disabled {
   background: var(--color-gray-overlay);
-  color: rgba(16, 16, 16, 0.3);
+  color: var(--color-gray-400);
   cursor: not-allowed;
 }
 

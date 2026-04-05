@@ -30,4 +30,8 @@ const fontSize = computed(() => Math.round(props.size * 0.38))
   font-weight: var(--font-bold);
   flex-shrink: 0;
 }
+/* gray-500 lightens in dark mode — pin initials to white so they stay legible */
+[data-theme="dark"] .pa {
+  color: #FFFFFF;
+}
 </style>

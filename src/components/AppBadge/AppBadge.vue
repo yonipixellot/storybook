@@ -121,4 +121,14 @@ const label = computed(() => labels[props.variant || 'live'])
   /* DS dark: bg shifts from gray-500 (#6C6C6C) → gray-200 (#444444 in dark) */
   background: var(--color-gray-200);
 }
+/* Static colored backgrounds — pin text/dot to white so they don't invert */
+[data-theme="dark"] .app-badge--live,
+[data-theme="dark"] .app-badge--premium,
+[data-theme="dark"] .app-badge--free,
+[data-theme="dark"] .app-badge--claimed {
+  color: #FFFFFF;
+}
+[data-theme="dark"] .app-badge__dot {
+  background: #FFFFFF;
+}
 </style>

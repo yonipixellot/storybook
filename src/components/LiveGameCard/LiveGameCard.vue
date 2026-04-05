@@ -159,6 +159,11 @@ withDefaults(defineProps<{
   color: var(--color-gray-500);
 }
 
+/* ── Dark mode: LIVE badge has static red bg — pin text to white ── */
+[data-theme="dark"] .live-game-card__badge {
+  color: #FFFFFF;
+}
+
 .live-game-card__league {
   display: block;
   margin-top: 10px;
