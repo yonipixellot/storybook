@@ -196,6 +196,10 @@ withDefaults(defineProps<{
   outline: none;
   line-height: 1;
 }
+.game-result-card__highlights:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
 
 /* ── Dark Mode ── */
 [data-theme="dark"] .game-result-card__highlights {

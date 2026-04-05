@@ -1,5 +1,5 @@
 <template>
-  <div class="sg">
+  <div class="sg" role="group" aria-label="Statistics">
     <PStatCard
       v-for="(stat, idx) in stats"
       :key="idx"

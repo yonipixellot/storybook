@@ -185,7 +185,7 @@ const otherPlayers = [
 /* ── Video player placeholder ── */
 .vp-page__player {
   width: 100%;
-  background: #000000;
+  background: var(--color-video-bg);
   position: relative;
 }
 

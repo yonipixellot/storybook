@@ -1,5 +1,9 @@
 <template>
-  <div class="score-card">
+  <div
+    class="score-card"
+    role="article"
+    :aria-label="`${homeTeam.name} ${homeTeam.score} – ${awayTeam.name} ${awayTeam.score}, ${status}`"
+  >
     <div class="score-card__row">
       <!-- Left team -->
       <div class="score-card__side score-card__side--left">

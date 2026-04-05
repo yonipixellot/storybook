@@ -17,6 +17,8 @@
   <div
     v-else
     class="pnb"
+    role="img"
+    :aria-label="`#${number}`"
     :style="{
       width:      size + 'px',
       height:     size + 'px',

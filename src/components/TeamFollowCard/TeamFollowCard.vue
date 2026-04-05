@@ -71,6 +71,12 @@ function handleClick() {
   background: var(--color-gray-100);
 }
 
+.tfc:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-badge);
+}
+
 .tfc--followed {
   border: 2px solid var(--color-primary);
 }

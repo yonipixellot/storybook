@@ -4,7 +4,7 @@
     <AppHeader variant="home" org-name="S.D Spartans" />
 
     <!-- Scrollable content -->
-    <div class="player-page__scroll">
+    <div class="player-page__scroll" role="main">
       <!-- AthleteProfile contains: BackBar, Hero, Career Stats, My Highlights, Season Stats -->
       <AthleteProfile
         :name="playerName"

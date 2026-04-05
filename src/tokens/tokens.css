@@ -62,6 +62,7 @@
   --color-primary-bg-lighter: #DCE8FF; /* AppInput focus ring bg active */
 
   /* ── Colors — Surfaces ── */
+  --color-video-bg: #000000;   /* video player background — intentionally fixed, does not invert in dark mode */
   --color-card-bg: #F3F4F6;
   --color-card-hover-bg: #F0F0F0;
   --color-overlay: rgba(0, 0, 0, 0.7);

@@ -78,4 +78,9 @@ defineEmits<{ back: []; share: [] }>()
 .bb__share-icon {
   color: var(--color-gray-500);
 }
+.bb__share:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-full);
+}
 </style>

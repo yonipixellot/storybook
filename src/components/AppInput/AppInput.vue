@@ -25,7 +25,7 @@
     <!-- Country dropdown -->
     <div v-if="dropdownOpen" ref="dropdownRef" class="app-input__dropdown">
       <div class="app-input__dropdown-search">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#979797" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         <input
           ref="searchRef"
           v-model="countrySearch"
@@ -593,6 +593,7 @@ onUnmounted(() => document.removeEventListener('mousedown', handleClickOutside))
   gap: 8px;
   padding: 10px 14px;
   border-bottom: 1px solid var(--color-card-hover-bg);
+  color: var(--color-gray-400); /* currentColor on SVG resolves from here */
 }
 
 .app-input__dropdown-input {

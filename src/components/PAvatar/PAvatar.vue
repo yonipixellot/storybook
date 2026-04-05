@@ -1,5 +1,5 @@
 <template>
-  <div class="pa" :style="{ width: size + 'px', height: size + 'px', fontSize: fontSize + 'px' }">
+  <div class="pa" role="img" :aria-label="initials" :style="{ width: size + 'px', height: size + 'px', fontSize: fontSize + 'px' }">
     {{ initials }}
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="ia">
+  <div class="ia" role="note" :aria-label="title">
     <div class="ia__title">{{ title }}</div>
     <div class="ia__desc">{{ description }}</div>
   </div>

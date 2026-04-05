@@ -143,6 +143,11 @@ const currentYear   = computed(() => new Date().getFullYear())
 .ft__link:hover {
   color: var(--color-primary);
 }
+.ft__link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
 
 /* ── Social icons row ── */
 .ft__social {
@@ -161,6 +166,11 @@ const currentYear   = computed(() => new Date().getFullYear())
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ft__social-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: var(--radius-full);
 }
 
 /* ── Copyright / Powered by ── */

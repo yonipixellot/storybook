@@ -1,5 +1,5 @@
 <template>
-  <div class="psc">
+  <div class="psc" role="figure" :aria-label="`${labelLines ? labelLines.join(' ') : label}: ${value}`">
     <!-- Multi-line label -->
     <div v-if="labelLines && labelLines.length" class="psc__label">
       <div v-for="(line, i) in labelLines" :key="i">{{ line }}</div>

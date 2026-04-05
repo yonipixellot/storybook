@@ -1,5 +1,5 @@
 <template>
-  <div class="fr" :class="{ 'fr--no-border': !borderBottom }">
+  <div class="fr" :class="{ 'fr--no-border': !borderBottom }" role="listitem">
 
     <!-- Avatar slot -->
     <slot name="avatar" />

@@ -99,7 +99,7 @@
         <div class="home-page__footer-top">
           <div class="home-page__footer-logo">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-              <circle cx="14" cy="14" r="14" fill="#E8332B"/>
+              <circle cx="14" cy="14" r="14" fill="var(--color-jersey-red)"/>
               <text x="14" y="19" text-anchor="middle" fill="white" font-size="13" font-weight="700" font-family="sans-serif">S</text>
             </svg>
           </div>

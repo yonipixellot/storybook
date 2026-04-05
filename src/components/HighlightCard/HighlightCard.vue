@@ -10,7 +10,7 @@
     </div>
     <div v-if="locked" class="highlight-card__lock"
       role="img" aria-label="This video is locked">
-      <svg width="8" height="10" viewBox="0 0 7.999 10" fill="#FFE000">
+      <svg width="8" height="10" viewBox="0 0 7.999 10" fill="var(--color-premium-yellow)">
         <path d="M7.026 4.069H6.738L6.737 2.701C6.736 1.211 5.465-.001 3.903 0 2.341.001 1.07 1.213 1.072 2.703L1.074 4.071H.971C.434 4.072-.001 4.488 0 5v4.072c0 .512.437.928.974.928l6.055-.003c.537 0 .972-.416.972-.928V4.996c0-.512-.437-.928-.974-.928ZM2.118 4.071L2.115 2.703c0-.94.802-1.707 1.788-1.707.987 0 1.789.765 1.789 1.706l.003 1.368H2.118Z" />
       </svg>
     </div>

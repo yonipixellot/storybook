@@ -41,6 +41,11 @@ defineEmits<{ click: [] }>()
 .psal:hover {
   text-decoration: underline;
 }
+.psal:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
 
 .psal__chevron {
   flex-shrink: 0;

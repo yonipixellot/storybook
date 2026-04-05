@@ -1,5 +1,10 @@
 <template>
-  <div class="live-game-card" :style="{ cursor: clickable ? 'pointer' : 'default' }">
+  <div
+    class="live-game-card"
+    role="article"
+    :aria-label="`Live game: ${homeTeam.name} vs ${awayTeam.name}`"
+    :style="{ cursor: clickable ? 'pointer' : 'default' }"
+  >
     <!-- Header: LIVE badge + date -->
     <div class="live-game-card__header">
       <div class="live-game-card__badge">

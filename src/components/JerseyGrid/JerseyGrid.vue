@@ -1,5 +1,5 @@
 <template>
-  <div class="jg">
+  <div class="jg" role="group" aria-label="Select jersey number">
     <JerseyItem
       v-for="num in resolvedNumbers"
       :key="num"

@@ -113,6 +113,11 @@ const resolvedItems = computed(() => props.items ?? DEFAULT_ITEMS)
 .hfs__chip:hover {
   transform: scale(1.05);
 }
+.hfs__chip:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-full);
+}
 
 /* ── Team variants ── */
 .hfs__team-img {
