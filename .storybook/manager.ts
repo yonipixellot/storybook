@@ -9,5 +9,6 @@ addons.setConfig({
     brandTitle: 'Pixellot DS',
     brandImage: logo,
     brandUrl: 'https://yonipixellot.github.io/pixellot-design-system/',
+    brandTarget: '_blank',
   }),
 })
