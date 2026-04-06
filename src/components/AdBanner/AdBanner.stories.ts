@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import AdBanner from './AdBanner.vue'
 
 const meta: Meta<typeof AdBanner> = {
@@ -38,6 +39,22 @@ export const ThreeSlots: Story = {
       { bg: 'linear-gradient(135deg, #D0142C 0%, #8B0010 100%)', label: 'Sponsor C' },
     ],
     startIndex: 0,
+  },
+  play: async ({ canvasElement }) => {
+    const banner = canvasElement.querySelector('.ab') as HTMLElement
+    await expect(banner).not.toBeNull()
+    // Swipe left (exercises onPointerDown, onPointerMove, onPointerUp → activeIndex++)
+    await userEvent.pointer([
+      { target: banner, keys: '[MouseLeft>]', coords: { x: 200, y: 40 } },
+      { coords: { x: 140, y: 40 } },  // drag -60px → > 40px threshold
+      { keys: '[/MouseLeft]' },
+    ])
+    // Swipe right (exercises reverse direction → activeIndex--)
+    await userEvent.pointer([
+      { target: banner, keys: '[MouseLeft>]', coords: { x: 100, y: 40 } },
+      { coords: { x: 160, y: 40 } },  // drag +60px → > 40px threshold
+      { keys: '[/MouseLeft]' },
+    ])
   },
 }
 

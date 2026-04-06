@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
+import { expect, userEvent, within } from 'storybook/test'
 import TeamFollowCard from './TeamFollowCard.vue'
 
 const meta: Meta<typeof TeamFollowCard> = {
@@ -35,6 +36,15 @@ export const NotFollowed: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click the card — exercises handleClick() → isFollowed toggles true, emit('click')
+    const card = canvas.getByRole('button', { name: /follow s\.d spartans men/i })
+    await expect(card).toBeVisible()
+    await userEvent.click(card)
+    // Click again — toggles back to false (covers both branches of isFollowed ternary)
+    await userEvent.click(card)
+  },
 }
 
 export const Followed: Story = {
@@ -90,6 +100,16 @@ export const Grid: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    // Click "Ironi Nahariya" card — toggle(1) changes followed prop: false→true
+    // → watch(props.followed) fires with val=true (covering the watch callback branch)
+    const cards = canvasElement.querySelectorAll<HTMLElement>('.tfc')
+    const nahariyaCard = cards[1] // index 1 = Ironi Nahariya
+    if (nahariyaCard) {
+      await userEvent.click(nahariyaCard) // followed prop: false → true → watch fires (val=true)
+      await userEvent.click(nahariyaCard) // followed prop: true → false → watch fires (val=false)
+    }
+  },
 }
 
 export const DarkMode: Story = {

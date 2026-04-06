@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within, fireEvent } from 'storybook/test'
 import VideoActionBar from './VideoActionBar.vue'
 
 const meta: Meta<typeof VideoActionBar> = {
@@ -126,6 +127,17 @@ export const Disabled: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const buttons = canvas.getAllByRole('button')
+    for (const btn of buttons) {
+      await expect(btn).toBeDisabled()
+    }
+    // fireEvent bypasses HTML disabled — fires the click handler directly,
+    // covering the `if (props.disabled) return` true branch (line 79)
+    const bookmarkBtn = canvas.getByRole('button', { name: /bookmark video/i })
+    await fireEvent.click(bookmarkBtn)
+  },
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -165,6 +177,20 @@ export const Default: Story = {
     views: '1 view',
     bookmarked: false,
     disabled: false,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const downloadBtn = canvas.getByRole('button', { name: /download video/i })
+    const shareBtn    = canvas.getByRole('button', { name: /share video/i })
+    const bookmarkBtn = canvas.getByRole('button', { name: /bookmark video/i })
+    await expect(downloadBtn).not.toBeDisabled()
+    await expect(shareBtn).not.toBeDisabled()
+    await expect(bookmarkBtn).not.toBeDisabled()
+    await userEvent.click(downloadBtn)
+    await userEvent.click(shareBtn)
+    await userEvent.click(bookmarkBtn) // exercises handleBookmark(), animating = true
+    // Wait 450ms for the setTimeout callback to fire → animating.value = false (line 79)
+    await new Promise(resolve => setTimeout(resolve, 450))
   },
 }
 

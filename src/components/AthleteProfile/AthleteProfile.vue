@@ -1,8 +1,8 @@
 <template>
-  <div class="ap" :style="{ width: width + 'px' }">
+  <div class="ap" :style="width ? { width: width + 'px' } : {}">
 
-    <!-- Back Bar -->
-    <div class="ap__nav">
+    <!-- Back Bar (hidden when embedded inside AppShell which provides its own back nav) -->
+    <div v-if="showNav" class="ap__nav">
       <button class="ap__back-btn" @click="$emit('back')" aria-label="Go back">
         <ArrowLeft :size="16" class="ap__nav-icon" />
         <span class="ap__back-label">Back</span>
@@ -75,17 +75,16 @@
       <div class="ap__section-header-wrap">
         <h3 class="ap__section-title" style="font-size: var(--text-2xl)">My Highlights</h3>
       </div>
-      <!-- Highlights Grid Row 1 -->
-      <div class="ap__highlights-row">
+      <!-- Highlights Grid -->
+      <div class="ap__highlights-grid">
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="0:45" jersey-label="Player Highlights" />
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="1:23" jersey-label="Player Highlights" />
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="0:32" jersey-label="Player Highlights" />
-      </div>
-      <!-- Highlights Grid Row 2 -->
-      <div class="ap__highlights-row">
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="1:05" jersey-label="Player Highlights" />
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="0:55" jersey-label="Player Highlights" />
         <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="2:10" jersey-label="Player Highlights" />
+        <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="0:38" jersey-label="Player Highlights" />
+        <VideoThumbnail orientation="vertical" :show-jersey-badge="true" :jersey-number="number" duration="1:47" jersey-label="Player Highlights" />
       </div>
       <!-- See All -->
       <div class="ap__see-all-wrap">
@@ -134,13 +133,16 @@ const props = withDefaults(defineProps<{
   accentColor?: string
   photoUrl?: string
   width?: number
+  /** Set false when embedded inside AppShell, which provides its own back navigation */
+  showNav?: boolean
 }>(), {
   name: 'TAL WEISS',
   number: 1,
   position: 'Guard',
   teamName: 'S.D Spartans',
   accentColor: '#007cbe',
-  width: 390,
+  showNav: true,
+  // width intentionally has no default — omitting it lets the component fill its container
 })
 
 defineEmits<{
@@ -402,12 +404,18 @@ const seasonStats: StatCard[] = [
   color: var(--color-black);
 }
 
-.ap__highlights-row {
-  display: flex;
-  justify-content: center;
+.ap__highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md2);
   padding: 0 var(--space-lg);
   margin-bottom: var(--space-md2);
+}
+
+@media (min-width: 1024px) {
+  .ap__highlights-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
 }
 
 /* See All */

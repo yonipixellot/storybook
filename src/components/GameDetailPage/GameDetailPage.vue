@@ -1,11 +1,5 @@
 <template>
   <div class="game-detail">
-    <!-- Sticky header -->
-    <AppHeader variant="home" org-name="S.D Spartans" />
-
-    <!-- Back bar -->
-    <BackBar label="Back" />
-
     <!-- Scrollable content -->
     <div class="game-detail__scroll">
 
@@ -228,27 +222,23 @@
       <div class="game-detail__footer-spacer" />
     </div>
 
-    <!-- Bottom navigation -->
-    <BottomTabBar active="games" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import AppHeader from '../AppHeader/AppHeader.vue'
-import BackBar from '../BackBar/BackBar.vue'
 import ScoreCard from '../ScoreCard/ScoreCard.vue'
 import VideoTypeChips from '../VideoTypeChips/VideoTypeChips.vue'
 import VideoThumbnail from '../VideoThumbnail/VideoThumbnail.vue'
 import PlayerStats from '../PlayerStats/PlayerStats.vue'
 import GameLeaders from '../GameLeaders/GameLeaders.vue'
 import GameResultCard from '../GameResultCard/GameResultCard.vue'
-import BottomTabBar from '../BottomTabBar/BottomTabBar.vue'
 
 interface TeamInfo {
-  name:     string
-  score:    number
+  name:      string
+  score:     number
   isWinner?: boolean
+  standing?: string
 }
 
 const props = withDefaults(defineProps<{
@@ -256,8 +246,8 @@ const props = withDefaults(defineProps<{
   awayTeam?: TeamInfo
   gameDate?: string
 }>(), {
-  homeTeam: () => ({ name: 'S.D Spartans',   score: 121, isWinner: true  }),
-  awayTeam: () => ({ name: 'Logan Thunder',  score: 89,  isWinner: false }),
+  homeTeam: () => ({ name: 'S.D Spartans',   score: 121, isWinner: true,  standing: '1st' }),
+  awayTeam: () => ({ name: 'Logan Thunder',  score: 89,  isWinner: false, standing: '3rd' }),
   gameDate: 'Feb 11, 2025',
 })
 
@@ -294,14 +284,9 @@ const videoChips = computed(() => [
   min-height: 100vh;
   background: var(--color-white);
   font-family: var(--font-family-base);
-  max-width: 430px;
-  margin: 0 auto;
-  position: relative;
 }
 
 .game-detail__scroll {
-  flex: 1;
-  overflow-y: auto;
 }
 
 .game-detail__section {
@@ -537,5 +522,35 @@ const videoChips = computed(() => [
 
 .game-detail__footer-spacer {
   height: 60px;
+}
+
+/* ── Desktop responsive ── */
+@media (min-width: 1024px) {
+  /* Landscape thumbnails: 4 fixed-width items, extras scroll */
+  .game-detail__hscroll .vt--landscape {
+    width: calc(25% - 17px * 3 / 4);
+    flex-shrink: 0;
+  }
+
+  /* Vertical thumbnails: scale up but keep 9:16 portrait ratio */
+  .game-detail__hscroll .vt--vertical {
+    width: 140px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    flex-shrink: 0;
+  }
+
+  /* Other Players row: remove wrap at desktop — 4-col scroll */
+  .game-detail__hscroll--wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  /* More Games: 3-column grid */
+  .game-detail__more-games-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
 }
 </style>

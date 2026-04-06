@@ -1,8 +1,5 @@
 <template>
-  <div class="tp" :style="{ width: width + 'px' }">
-
-    <!-- Back Bar (DS component) -->
-    <BackBar :label="teamName" @back="$emit('back')" />
+  <div class="tp">
 
     <!-- Hero Card — centered column, matches DS bundle exactly -->
     <div class="tp__hero-wrap">
@@ -37,14 +34,40 @@
     </div>
 
     <!-- Live Games Section -->
-    <div class="tp__section">
+    <div class="tp__section tp__section--live">
       <PSectionHeader title="Live" :seeAll="true" @see-all="$emit('see-all-live')" />
-      <LiveGameCard
-        :homeTeam="{ name: 'S.D Spartans', score: 58 }"
-        :awayTeam="{ name: 'Logan Thunder', score: 51 }"
-        date="Q3 7:42"
-        league="Men's Basketball"
-      />
+      <div class="tp__live-scroll">
+        <LiveGameCard
+          :homeTeam="{ name: 'S.D Spartans', score: 58 }"
+          :awayTeam="{ name: 'Logan Thunder', score: 51 }"
+          date="Q3 7:42"
+          league="Men's Basketball"
+        />
+        <LiveGameCard
+          :homeTeam="{ name: 'River Hawks', score: 44 }"
+          :awayTeam="{ name: 'City Bulls', score: 39 }"
+          date="Q2 3:15"
+          league="Men's Basketball"
+        />
+        <LiveGameCard
+          :homeTeam="{ name: 'Ipswich Force', score: 71 }"
+          :awayTeam="{ name: 'Queens Park', score: 68 }"
+          date="Q4 1:08"
+          league="Women's Basketball"
+        />
+        <LiveGameCard
+          :homeTeam="{ name: 'Logan Thunder', score: 22 }"
+          :awayTeam="{ name: 'S.D Spartans', score: 19 }"
+          date="H1 18:30"
+          league="Men's Basketball"
+        />
+        <LiveGameCard
+          :homeTeam="{ name: 'Peterhead', score: 33 }"
+          :awayTeam="{ name: 'Northside', score: 33 }"
+          date="HT"
+          league="Women's Basketball"
+        />
+      </div>
     </div>
 
     <!-- Recent Games Section -->
@@ -80,7 +103,6 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import BackBar        from '../BackBar/BackBar.vue'
 import AppButton      from '../AppButton/AppButton.vue'
 import PSectionHeader from '../PSectionHeader/PSectionHeader.vue'
 import SocialLinks    from '../SocialLinks/SocialLinks.vue'
@@ -92,12 +114,10 @@ const props = withDefaults(defineProps<{
   sport?:       string
   logoUrl?:     string
   accentColor?: string
-  width?:       number
 }>(), {
   teamName:    'S.D Spartans',
   sport:       "Men's Basketball",
   accentColor: '#116DFF',
-  width:       390,
 })
 
 defineEmits<{
@@ -132,14 +152,7 @@ const socialLinks = [
 /* ── Page — gradient from DS bundle exactly ── */
 .tp {
   font-family: var(--font-family-base);
-  background: linear-gradient(
-    180deg,
-    var(--color-white)   0%,
-    var(--color-gray-100) 25%,
-    var(--color-gray-200) 50%,
-    var(--color-gray-100) 75%,
-    var(--color-white)   100%
-  );
+  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-100) 100%);
   overflow-x: hidden;
   min-height: 100vh;
 }
@@ -220,5 +233,38 @@ const socialLinks = [
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
+}
+
+/* Live scroll row — mobile: stacked, desktop: horizontal */
+.tp__live-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ── Desktop responsive ── */
+@media (min-width: 1024px) {
+  /* Live: horizontal scroll row, 4 cards visible */
+  .tp__live-scroll {
+    flex-direction: row;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: var(--space-md);
+  }
+
+  .tp__live-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tp__live-scroll .live-game-card {
+    flex: 0 0 calc(25% - var(--space-md) * 3 / 4);
+  }
+
+  /* Recent Games: 3-column grid */
+  .tp__games {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
 }
 </style>

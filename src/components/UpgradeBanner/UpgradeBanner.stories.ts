@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import UpgradeBanner from './UpgradeBanner.vue'
 
 const meta: Meta<typeof UpgradeBanner> = {
@@ -29,6 +30,12 @@ const hr    = 'border:none;border-top:1px solid #E8E8E8;margin:16px 0 24px'
 export const Default: Story = {
   name: 'Default — Highlights Upgrade',
   args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const upgradeBtn = canvas.getByRole('button', { name: /upgrade/i })
+    await expect(upgradeBtn).toBeVisible()
+    await userEvent.click(upgradeBtn) // exercises $emit('upgrade')
+  },
 }
 
 /* ═══════════════════════════════════════════

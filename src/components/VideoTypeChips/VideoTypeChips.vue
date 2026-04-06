@@ -150,11 +150,10 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
   fill: var(--color-premium-yellow);
 }
 
-/* Desktop: all chips visible, no horizontal scroll */
+/* Desktop: no horizontal scroll, single row (container is wide enough) */
 @media (min-width: 1024px) {
   .vtc {
     overflow-x: visible;
-    flex-wrap: wrap;
     padding-right: 0;
   }
 }

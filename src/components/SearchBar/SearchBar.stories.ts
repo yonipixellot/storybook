@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import SearchBar from './SearchBar.vue'
 
 const meta: Meta<typeof SearchBar> = {
@@ -47,6 +48,14 @@ const stLabel = 'font-size:12px;color:#979797;text-align:center;margin-top:6px;f
 export const Default: Story = {
   name: 'Empty — default state',
   args: { modelValue: '' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('textbox')
+    await expect(input).not.toBeDisabled()
+    await userEvent.click(input)    // triggers focused = true
+    await userEvent.type(input, 'Barcelona')
+    await userEvent.clear(input)   // reset
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -55,6 +64,13 @@ export const Default: Story = {
 export const Filled: Story = {
   name: 'Filled with value',
   args: { modelValue: 'Premier League' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Clear button is visible because modelValue is non-empty and clearable=true
+    const clearBtn = canvas.getByRole('button', { name: /clear search/i })
+    await expect(clearBtn).toBeVisible()
+    await userEvent.click(clearBtn) // exercises update:modelValue('')
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -63,6 +79,11 @@ export const Filled: Story = {
 export const Disabled: Story = {
   name: 'Disabled state',
   args: { disabled: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('textbox')
+    await expect(input).toBeDisabled()
+  },
 }
 
 /* ═══════════════════════════════════════════

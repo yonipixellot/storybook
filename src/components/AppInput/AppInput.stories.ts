@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import AppInput from './AppInput.vue'
 
 const meta: Meta<typeof AppInput> = {
@@ -53,11 +54,30 @@ const singleDeco = () => ({ template: '<div style="max-width:400px"><story /></d
 export const Default: Story = {
   decorators: [singleDeco],
   args: { type: 'email', placeholder: 'Email Address...' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const input = canvas.getByRole('textbox') // email input
+    await expect(input).not.toBeDisabled()
+    await userEvent.click(input)                    // isFocused = true
+    await userEvent.type(input, 'test@example.com') // update:modelValue
+    await userEvent.tab()                           // isFocused = false (blur)
+  },
 }
 
 export const Password: Story = {
   decorators: [singleDeco],
   args: { type: 'password', placeholder: 'Enter password...' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Show password" toggle — exercises showPwd = true, computedType → 'text'
+    const showBtn = canvas.getByRole('button', { name: /show password/i })
+    await expect(showBtn).toBeVisible()
+    await userEvent.click(showBtn)
+    // Now toggle back — exercises showPwd = false, computedType → 'password'
+    const hideBtn = canvas.getByRole('button', { name: /hide password/i })
+    await expect(hideBtn).toBeVisible()
+    await userEvent.click(hideBtn)
+  },
 }
 
 export const WithError: Story = {
@@ -78,6 +98,19 @@ export const ReadOnly: Story = {
 export const Tel: Story = {
   decorators: [() => ({ template: '<div style="max-width:400px;min-height:360px"><story /></div>' })],
   args: { type: 'tel', placeholder: 'Phone Number...', defaultCountry: 'IL' },
+  play: async ({ canvasElement }) => {
+    // Click the country button to open the dropdown — exercises toggleDropdown()
+    const telBtn = canvasElement.querySelector('.app-input__tel-btn') as HTMLElement
+    await expect(telBtn).not.toBeNull()
+    await userEvent.click(telBtn)
+    // Type in the dropdown search — exercises filteredCountries computed
+    const searchInput = canvasElement.querySelector('.app-input__dropdown-input') as HTMLInputElement
+    await expect(searchInput).not.toBeNull()
+    await userEvent.type(searchInput, 'United')
+    // Click first visible result — exercises selectCountry()
+    const firstItem = canvasElement.querySelector('.app-input__dropdown-item') as HTMLElement
+    if (firstItem) await userEvent.click(firstItem) // dropdownOpen = false, selectedCountry updated
+  },
 }
 
 // ── Variants ──

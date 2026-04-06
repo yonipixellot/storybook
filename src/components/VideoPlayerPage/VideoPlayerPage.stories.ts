@@ -1,5 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import { userEvent, within } from 'storybook/test'
 import VideoPlayerPage from './VideoPlayerPage.vue'
+import AppShell from '../AppShell/AppShell.vue'
 
 const meta: Meta<typeof VideoPlayerPage> = {
   title: 'Pages/VideoPlayerPage',
@@ -10,7 +12,8 @@ const meta: Meta<typeof VideoPlayerPage> = {
     docs: {
       description: {
         component:
-          'Video Player Page. Structure: AppHeader → BackBar → Video Player → Video Title + VideoActionBar → ScoreCard + Box Score (PlayerStats with Q1-Q4 columns) → Player Highlights (team tabs + Followed/Other) → BottomTabBar.',
+          'Video player page. Content only — wrap in AppShell (variant="back") for the sticky header. ' +
+          'Sections: Video player (16:9) → Title + VideoActionBar → ScoreCard + Box Score → Player Highlights (Followed/Other, 4-col scroll at desktop).',
       },
     },
   },
@@ -19,38 +22,80 @@ const meta: Meta<typeof VideoPlayerPage> = {
 export default meta
 type Story = StoryObj<typeof VideoPlayerPage>
 
+/* ═══════════════════════════════════════════
+   1. Mobile
+   ═══════════════════════════════════════════ */
 export const Default: Story = {
-  args: {
-    homeTeam: { name: 'S.D Spartans', score: 121, standing: '(5-4)' },
-    awayTeam: { name: 'Logan Thunder', score: 89, standing: '(5-6)' },
-    gameDate: 'Mar 14, 2025',
-    videoTitle: 'Full Game',
-    videoDuration: '01:55:30',
-    videoViews: '1.2K views',
+  name: 'Mobile',
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, VideoPlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Full Game">
+        <VideoPlayerPage />
+      </AppShell>
+    `,
+  }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Logan Thunder" tab — exercises activeTeamTab = 'away' (both team-tab branches)
+    const awayTab = canvas.getByRole('button', { name: /logan thunder/i })
+    await userEvent.click(awayTab)
+    // Click home tab back — exercises activeTeamTab = 'home'
+    const homeTab = canvas.getByRole('button', { name: /s\.d spartans/i })
+    await userEvent.click(homeTab)
   },
 }
 
+/* ═══════════════════════════════════════════
+   2. Desktop
+   ═══════════════════════════════════════════ */
+export const Desktop: Story = {
+  name: 'Desktop',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
+  render: () => ({
+    components: { AppShell, VideoPlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Full Game">
+        <VideoPlayerPage />
+      </AppShell>
+    `,
+  }),
+}
+
+/* ═══════════════════════════════════════════
+   3. Highlight Clip
+   ═══════════════════════════════════════════ */
 export const HighlightClip: Story = {
   name: 'Highlight Clip',
-  args: {
-    homeTeam: { name: 'S.D Spartans', score: 121, standing: '(5-4)' },
-    awayTeam: { name: 'Logan Thunder', score: 89, standing: '(5-6)' },
-    gameDate: 'Mar 14, 2025',
-    videoTitle: 'Game Recap',
-    videoDuration: '01:30',
-    videoViews: '856 views',
-  },
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, VideoPlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Game Recap">
+        <VideoPlayerPage
+          video-title="Game Recap"
+          video-duration="01:30"
+          video-views="856 views"
+        />
+      </AppShell>
+    `,
+  }),
 }
 
+/* ═══════════════════════════════════════════
+   4. Dark Mode
+   ═══════════════════════════════════════════ */
 export const DarkMode: Story = {
   name: 'Dark Mode',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A"><story /></div>' })],
-  args: {
-    homeTeam: { name: 'S.D Spartans', score: 121, standing: '(5-4)' },
-    awayTeam: { name: 'Logan Thunder', score: 89, standing: '(5-6)' },
-    gameDate: 'Mar 14, 2025',
-    videoTitle: 'Full Game',
-    videoDuration: '01:55:30',
-    videoViews: '1.2K views',
-  },
+  render: () => ({
+    components: { AppShell, VideoPlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Full Game">
+        <VideoPlayerPage />
+      </AppShell>
+    `,
+  }),
 }

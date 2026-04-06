@@ -140,4 +140,5 @@ const awayScoreColor = computed(() =>
   font-weight: 400;
   color: var(--color-gray-500);
 }
+
 </style>

@@ -115,8 +115,13 @@ function handleToggle(num: string | number) {
   min-height: 100vh;
   background: var(--color-white);
   font-family: var(--font-family-base);
-  max-width: 430px;
-  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .player-select {
+    max-width: 640px;
+    margin: 0 auto;
+  }
 }
 
 .player-select__header {

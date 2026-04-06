@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within, fireEvent } from 'storybook/test'
 import SideMenu from './SideMenu.vue'
 
 const meta: Meta<typeof SideMenu> = {
@@ -38,6 +39,24 @@ export const Default: Story = {
     orgName:     'PBA',
     orgSubtitle: 'Basketball Association',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Divisions" accordion header — exercises toggleItem() add branch
+    const divisionsBtn = canvas.getByRole('button', { name: /divisions/i })
+    await userEvent.click(divisionsBtn)
+    // Click again to close — exercises toggleItem() delete branch
+    await userEvent.click(divisionsBtn)
+    // Click Log Out — exercises $emit('logout')
+    const logoutBtn = canvas.getByRole('button', { name: /log out/i })
+    await expect(logoutBtn).toBeVisible()
+    await userEvent.click(logoutBtn)
+    // Click backdrop — exercises $emit('close') from backdrop click (mode='overlay' line 4)
+    const backdrop = canvasElement.querySelector<HTMLElement>('.sm__backdrop')
+    if (backdrop) await userEvent.click(backdrop)
+    // Click Close button — exercises $emit('close') from header close btn
+    const closeBtn = canvas.getByRole('button', { name: /^close$/i })
+    await userEvent.click(closeBtn)
+  },
 }
 
 export const WithLogo: Story = {
@@ -48,6 +67,11 @@ export const WithLogo: Story = {
     orgSubtitle: 'Basketball Association',
     logoUrl:     'https://placehold.co/40x40/116DFF/FFFFFF?text=PBA',
   },
+  play: async ({ canvasElement }) => {
+    // Simulate image load error — exercises @error="logoError = true" handler (line 29)
+    const img = canvasElement.querySelector<HTMLImageElement>('.sm__logo-img')
+    if (img) await fireEvent.error(img)
+  },
 }
 
 export const ProfileVariant: Story = {
@@ -56,6 +80,16 @@ export const ProfileVariant: Story = {
     variant:      'profile',
     userName:     'Brenden Rogers',
     userInitials: 'BR',
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Open "Premier League" accordion — exercises profile variant resolvedItems + toggleItem()
+    const premierBtn = canvas.getByRole('button', { name: /premier league/i })
+    await userEvent.click(premierBtn)
+    await userEvent.click(premierBtn) // close it
+    // Click Close button in profile header — exercises $emit('close') from sm__header--profile (line 16)
+    const closeBtn = canvas.getByRole('button', { name: /^close$/i })
+    await userEvent.click(closeBtn)
   },
 }
 
@@ -73,6 +107,38 @@ export const CustomItems: Story = {
       { label: 'Language' },
     ],
   },
+}
+
+// All plain items (no subItems) — exercises hasAccordionItems = false → sm__divider NOT rendered (line 83 false branch)
+export const PlainItems: Story = {
+  name: 'Plain Items Only (no accordion)',
+  args: {
+    variant:     'org',
+    orgName:     'PBA',
+    orgSubtitle: 'Basketball Association',
+    items: [
+      { label: 'Saved Videos' },
+      { label: 'My Highlights' },
+      { label: 'My Account' },
+      { label: 'Language' },
+    ],
+  },
+}
+
+/* ═══════════════════════════════════════════
+   Dropdown — desktop avatar popover mode
+   ═══════════════════════════════════════════ */
+export const Dropdown: Story = {
+  name: 'Dropdown (desktop)',
+  parameters: { layout: 'padded' },
+  render: () => ({
+    components: { SideMenu },
+    template: `
+      <div style="display:flex;justify-content:flex-end;padding:16px;">
+        <SideMenu mode="dropdown" variant="profile" user-name="Yoni Levy" user-initials="YL" />
+      </div>
+    `,
+  }),
 }
 
 export const DarkMode: Story = {

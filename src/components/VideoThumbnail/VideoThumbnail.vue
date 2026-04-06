@@ -549,7 +549,7 @@ onUnmounted(() => {
 .vt__jersey-label {
   font-size: var(--text-caption);
   font-weight: 700;
-  color: var(--color-gray-200);
+  color: #FFFFFF;
   line-height: 14px;
 }
 

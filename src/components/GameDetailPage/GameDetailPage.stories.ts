@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import GameDetailPage from './GameDetailPage.vue'
+import AppShell from '../AppShell/AppShell.vue'
 
 const meta: Meta<typeof GameDetailPage> = {
   title: 'Pages/GameDetailPage',
@@ -10,7 +11,8 @@ const meta: Meta<typeof GameDetailPage> = {
     docs: {
       description: {
         component:
-          'Full game detail page. Structure: AppHeader → BackBar → ScoreCard → VideoTypeChips → Full Game video → Game Highlights (horizontal) → Player Highlights (team tabs + Followed/Other Players) → Team Stats (paywalled) → Player Stats (paywalled) → Game Leaders → BottomTabBar.',
+          'Full game detail page. Content only — wrap in AppShell (variant="back") to get the header. ' +
+          'Sections: BackBar → ScoreCard → VideoTypeChips → Full Game → Game Highlights (4-col scroll at desktop) → Player Highlights → Team/Player Stats (paywalled) → More Games (3-col grid at desktop).',
       },
     },
   },
@@ -19,28 +21,71 @@ const meta: Meta<typeof GameDetailPage> = {
 export default meta
 type Story = StoryObj<typeof GameDetailPage>
 
+/* ═══════════════════════════════════════════
+   1. Mobile (default)
+   ═══════════════════════════════════════════ */
 export const Default: Story = {
-  args: {
-    homeTeam: { name: 'S.D Spartans',  score: 121, isWinner: true  },
-    awayTeam: { name: 'Logan Thunder', score: 89,  isWinner: false },
-    gameDate: 'Feb 11, 2025',
-  },
+  name: 'Mobile',
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, GameDetailPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Game Detail">
+        <GameDetailPage />
+      </AppShell>
+    `,
+  }),
 }
 
+/* ═══════════════════════════════════════════
+   2. Desktop
+   ═══════════════════════════════════════════ */
+export const Desktop: Story = {
+  name: 'Desktop',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
+  render: () => ({
+    components: { AppShell, GameDetailPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Game Detail">
+        <GameDetailPage />
+      </AppShell>
+    `,
+  }),
+}
+
+/* ═══════════════════════════════════════════
+   3. Close Game score variant
+   ═══════════════════════════════════════════ */
 export const CloseGame: Story = {
-  args: {
-    homeTeam: { name: 'Peterhead',   score: 88, isWinner: false },
-    awayTeam: { name: 'Queens Park', score: 91, isWinner: true  },
-    gameDate: 'Nov 25, 2024',
-  },
+  name: 'Close Game',
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, GameDetailPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Game Detail">
+        <GameDetailPage
+          :home-team="{ name: 'Peterhead',   score: 88, isWinner: false, standing: '4th' }"
+          :away-team="{ name: 'Queens Park', score: 91, isWinner: true,  standing: '2nd' }"
+          game-date="Nov 25, 2024"
+        />
+      </AppShell>
+    `,
+  }),
 }
 
+/* ═══════════════════════════════════════════
+   4. Dark Mode
+   ═══════════════════════════════════════════ */
 export const DarkMode: Story = {
   name: 'Dark Mode',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A"><story /></div>' })],
-  args: {
-    homeTeam: { name: 'S.D Spartans',  score: 121, isWinner: true  },
-    awayTeam: { name: 'Logan Thunder', score: 89,  isWinner: false },
-    gameDate: 'Feb 11, 2025',
-  },
+  render: () => ({
+    components: { AppShell, GameDetailPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Game Detail">
+        <GameDetailPage />
+      </AppShell>
+    `,
+  }),
 }

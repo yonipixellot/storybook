@@ -1,11 +1,5 @@
 <template>
   <div class="vp-page">
-    <!-- Sticky header -->
-    <AppHeader variant="home" org-name="S.D Spartans" />
-
-    <!-- Back bar -->
-    <BackBar label="Back" />
-
     <!-- Scrollable content -->
     <div class="vp-page__scroll">
 
@@ -103,21 +97,15 @@
 
       <div class="vp-page__footer-spacer" />
     </div>
-
-    <!-- Bottom navigation -->
-    <BottomTabBar active="games" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import AppHeader from '../AppHeader/AppHeader.vue'
-import BackBar from '../BackBar/BackBar.vue'
 import ScoreCard from '../ScoreCard/ScoreCard.vue'
 import PlayerStats from '../PlayerStats/PlayerStats.vue'
 import VideoActionBar from '../VideoActionBar/VideoActionBar.vue'
 import VideoThumbnail from '../VideoThumbnail/VideoThumbnail.vue'
-import BottomTabBar from '../BottomTabBar/BottomTabBar.vue'
 
 interface TeamInfo {
   name: string
@@ -172,14 +160,9 @@ const otherPlayers = [
   min-height: 100vh;
   background: var(--color-white);
   font-family: var(--font-family-base);
-  max-width: 430px;
-  margin: 0 auto;
-  position: relative;
 }
 
 .vp-page__scroll {
-  flex: 1;
-  overflow-y: auto;
 }
 
 /* ── Video player placeholder ── */
@@ -303,5 +286,28 @@ const otherPlayers = [
 /* ── Footer spacer ── */
 .vp-page__footer-spacer {
   height: 60px;
+}
+
+/* ── Desktop responsive ── */
+@media (min-width: 1024px) {
+  /* Landscape thumbnails: 4 fixed-width items, extras scroll */
+  .vp-page__hscroll .vt--landscape {
+    width: calc(25% - 17px * 3 / 4);
+    flex-shrink: 0;
+  }
+
+  /* Vertical thumbnails: scale up but keep 9:16 portrait ratio */
+  .vp-page__hscroll .vt--vertical {
+    width: 140px;
+    height: auto;
+    aspect-ratio: 9 / 16;
+    flex-shrink: 0;
+  }
+
+  /* Other Players: remove wrap at desktop — 4-col scroll */
+  .vp-page__hscroll--wrap {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
 }
 </style>

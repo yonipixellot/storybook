@@ -42,7 +42,7 @@
             class="ps__col ps__col--stat"
           >{{ cell }}</span>
         </div>
-        <hr class="ps__hr ps__hr--red" />
+        <hr class="ps__hr ps__hr--track" />
       </div>
 
     </div>

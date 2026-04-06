@@ -78,7 +78,7 @@ withDefaults(defineProps<{
   display: flex;
   gap: var(--space-lg);
   border-radius: var(--radius-card);
-  overflow: hidden;
+  overflow: visible;
   background-color: var(--color-gray-100);
   font-family: var(--font-family-system); /* DS uses system font throughout this card */
   min-height: 116px;
@@ -91,6 +91,8 @@ withDefaults(defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
+  /* self-clips into the card's left rounded corners without overflow:hidden on parent */
+  border-radius: var(--radius-card) 0 0 var(--radius-card);
 }
 
 .game-result-card__date-inner {
@@ -178,6 +180,12 @@ withDefaults(defineProps<{
   font-size: var(--text-micro);
   font-weight: 400;
   color: var(--color-gray-400);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+  margin-right: var(--space-xs);
 }
 
 .game-result-card__highlights {

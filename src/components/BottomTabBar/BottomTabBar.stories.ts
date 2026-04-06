@@ -74,3 +74,22 @@ export const DarkMode: Story = {
     `,
   }),
 }
+
+/* ═══════════════════════════════════════════
+   Desktop — hidden at ≥1024px
+   ═══════════════════════════════════════════ */
+export const DesktopHidden: Story = {
+  name: 'Desktop — hidden at ≥1024px',
+  decorators: [() => ({ template: '<div style="width:1200px;background:#fff;padding:24px;"><story /></div>' })],
+  render: () => ({
+    components: { BottomTabBar },
+    template: `
+      <div>
+        <p style="font-size:13px;color:#979797;margin:0 0 12px;font-family:Red Hat Display,sans-serif">
+          At ≥1024px the BottomTabBar is hidden (display:none). Resize the viewport to mobile to see it.
+        </p>
+        <BottomTabBar active="games" />
+      </div>
+    `,
+  }),
+}

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import OfflineBanner from './OfflineBanner.vue'
 
 const meta: Meta<typeof OfflineBanner> = {
@@ -22,6 +23,12 @@ type Story = StoryObj<typeof OfflineBanner>
 export const Default: Story = {
   name: 'Offline Banner',
   args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const retryBtn = canvas.getByRole('button', { name: /retry connection/i })
+    await expect(retryBtn).toBeVisible()
+    await userEvent.click(retryBtn) // exercises $emit('retry')
+  },
 }
 
 export const DarkMode: Story = {

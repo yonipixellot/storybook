@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import Toast from './Toast.vue'
 
 const meta: Meta<typeof Toast> = {
@@ -50,6 +51,22 @@ export const AllVariants: Story = {
 // ── Individual variants ───────────────────────────────────
 export const Success: Story = {
   args: { variant: 'success', message: 'Profile saved successfully.' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const dismissBtn = canvas.getByRole('button', { name: /dismiss notification/i })
+    await expect(dismissBtn).toBeVisible()
+    await userEvent.click(dismissBtn) // exercises dismiss(), update:modelValue, clearTimer()
+  },
+}
+
+// Exercises startTimer() setTimeout path (duration > 0, line 76)
+export const AutoDismiss: Story = {
+  name: 'Auto-dismiss (50ms)',
+  args: { variant: 'info', message: 'Auto-dismissing…', dismissible: false, duration: 50 },
+  play: async () => {
+    // Wait long enough for the 50ms timer to fire → exercises timer = setTimeout(dismiss, duration)
+    await new Promise(resolve => setTimeout(resolve, 100))
+  },
 }
 
 export const Error: Story = {
@@ -117,6 +134,17 @@ export const Interactive: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click Success — sets show=true → watch fires with val=true → startTimer() called (line 63 true branch)
+    const successBtn = canvas.getByRole('button', { name: /^success$/i })
+    await userEvent.click(successBtn)
+    // Dismiss the toast — calls dismiss() → emits update:modelValue(false) → watch fires with val=false (line 63 false branch)
+    const dismissBtn = await canvas.findByRole('button', { name: /dismiss notification/i })
+    await userEvent.click(dismissBtn)
+    // Click again to trigger watch once more (val=true path confirming startTimer)
+    await userEvent.click(successBtn)
+  },
 }
 
 // ── Dark Mode ─────────────────────────────────────────────

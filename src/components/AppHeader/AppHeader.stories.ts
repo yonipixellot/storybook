@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import AppHeader from './AppHeader.vue'
+import AppNavTabs from '../AppNavTabs/AppNavTabs.vue'
 
 const meta: Meta<typeof AppHeader> = {
   title: 'Layout & Overlays/AppHeader',
@@ -47,6 +49,16 @@ type Story = StoryObj<typeof AppHeader>
 export const Home: Story = {
   name: 'Home Variant — no logo',
   args: { variant: 'home' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click Search button — exercises $emit('search')
+    const searchBtn = canvas.getByRole('button', { name: /search/i })
+    await expect(searchBtn).toBeVisible()
+    await userEvent.click(searchBtn)
+    // Click Notifications button — exercises $emit('notifications')
+    const notifBtn = canvas.getByRole('button', { name: /notifications/i })
+    await userEvent.click(notifBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -63,6 +75,13 @@ export const HomeWithLogo: Story = {
 export const Back: Story = {
   name: 'Back Variant',
   args: { variant: 'back', pageTitle: 'Tal Weiss' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click back button — exercises BackBar @back → $emit('back')
+    const backBtn = canvas.getByRole('button', { name: /go back/i })
+    await expect(backBtn).toBeVisible()
+    await userEvent.click(backBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -79,6 +98,48 @@ export const BackWithShare: Story = {
 export const WithBadge: Story = {
   name: 'With Notification Badge',
   args: { notifCount: 5 },
+}
+
+/* ═══════════════════════════════════════════
+   6. Desktop — with nav tabs + avatar
+   ═══════════════════════════════════════════ */
+export const Desktop: Story = {
+  name: 'Desktop — with nav tabs + avatar',
+  decorators: [() => ({ template: '<div style="width:1200px;background:#fff"><story /></div>' })],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Nav tabs are inside .ah__nav (display:none below 1024px in tests),
+    // so use querySelector to reach them directly in the DOM
+    const tabs = canvasElement.querySelectorAll<HTMLElement>('.ant__tab')
+    if (tabs.length >= 2) {
+      await userEvent.click(tabs[1]) // WNBL — exercises AppNavTabs update:modelValue
+    }
+    // Avatar btn is display:none below 1024px — use querySelector to reach it
+    const avatarBtn = canvasElement.querySelector<HTMLElement>('.ah__avatar-btn')
+    if (avatarBtn) await userEvent.click(avatarBtn) // exercises $emit('menu')
+  },
+  render: () => ({
+    components: { AppHeader, AppNavTabs },
+    data() {
+      return {
+        activeTab: 'nbl1',
+        tabs: [
+          { id: 'nbl1',     label: 'NBL1' },
+          { id: 'wnbl',     label: 'WNBL' },
+          { id: 'domestic', label: 'Senior Domestic' },
+          { id: 'qsl',      label: 'QSL' },
+          { id: 'junior',   label: 'Junior Domestic' },
+        ],
+      }
+    },
+    template: `
+      <AppHeader variant="home" org-name="PBA" user-initials="YL" :show-menu="false">
+        <template #nav>
+          <AppNavTabs :tabs="tabs" v-model="activeTab" aria-label="Main navigation" />
+        </template>
+      </AppHeader>
+    `,
+  }),
 }
 
 export const DarkMode: Story = {

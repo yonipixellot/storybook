@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import ShareCurtain from './ShareCurtain.vue'
 
 const meta: Meta<typeof ShareCurtain> = {
@@ -32,6 +33,26 @@ const btn = 'height:40px;padding:0 20px;background:#116DFF;color:#fff;border:non
    Bottom sheet with 6 social share channels + Cancel
 ───────────────────────────────────────────────────────────── */
 export const Interactive: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Open the sheet
+    const openBtn = canvas.getByRole('button', { name: /open share sheet/i })
+    await userEvent.click(openBtn)
+    // Sheet teleports to body — use findByRole (async, waits for Vue render + transition)
+    // Channel buttons have role="listitem" (explicit attr overrides implicit button role)
+    const body = within(document.body)
+    const copyLink = await body.findByRole('listitem', { name: /share via copy link/i })
+    await expect(copyLink).toBeVisible()
+    await userEvent.click(copyLink) // exercises $emit('share', 'copy'), closes sheet
+    // Open again to test backdrop click — exercises @click="$emit('close')" on backdrop (line 10)
+    await userEvent.click(openBtn)
+    const backdrop = document.querySelector<HTMLElement>('.sc__backdrop')
+    if (backdrop) await userEvent.click(backdrop)
+    // Open again to test Cancel (plain <button>, no role override)
+    await userEvent.click(openBtn)
+    const cancelBtn = await body.findByRole('button', { name: /cancel sharing/i })
+    await userEvent.click(cancelBtn) // exercises $emit('close')
+  },
   render: () => ({
     components: { ShareCurtain },
     data() { return { open: false, lastShare: '' } },
@@ -168,4 +189,14 @@ export const DarkMode: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Open sheet in dark mode — currentTheme = 'dark' (MutationObserver picks up data-theme="dark")
+    const openBtn = canvas.getByRole('button', { name: /open share sheet/i })
+    await userEvent.click(openBtn)
+    // Click X channel (has darkColor: '#333333') — covers currentTheme==='dark' && ch.darkColor true branch (line 34)
+    const body = within(document.body)
+    const xBtn = await body.findByRole('listitem', { name: /share via x/i })
+    await userEvent.click(xBtn)
+  },
 }

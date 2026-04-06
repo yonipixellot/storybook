@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import VideoThumbnail from './VideoThumbnail.vue'
 
 const meta: Meta<typeof VideoThumbnail> = {
@@ -76,6 +77,17 @@ export const Landscape: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click the free card — exercises $emit('click') and @click handler
+    const freeCard = canvas.getByRole('button', { name: /full game/i })
+    await userEvent.click(freeCard)
+    // Press Enter on focused card — exercises @keydown.enter="$emit('click')" (line 13)
+    await userEvent.keyboard('{Enter}')
+    // Click the locked card — exercises locked=true click path
+    const lockedCard = canvas.getByRole('button', { name: /condensed game/i })
+    await userEvent.click(lockedCard)
+  },
 }
 
 /* ── Vertical (9:16) ── */
@@ -254,6 +266,12 @@ export const CountdownNotify: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Notify me" — exercises $emit('notify') via @click.stop (countdownNotify=true branch)
+    const notifyBtn = canvas.getByRole('button', { name: /notify me/i })
+    await userEvent.click(notifyBtn)
+  },
 }
 
 /* ── Error Fallback ── */
@@ -278,6 +296,12 @@ export const ErrorFallback: Story = {
       </div>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click the error card — exercises @click → $emit('click') on the vt--error card
+    const errorCard = canvas.getByRole('button')
+    await userEvent.click(errorCard)
+  },
 }
 
 /* ── Countdown → New Transition ── */
@@ -306,6 +330,34 @@ export const CountdownTransition: Story = {
       </div>
     `,
   }),
+}
+
+/* ── Fast Countdown → Transition (covers setInterval else branch) ── */
+
+// countdownSeconds=1: IntersectionObserver fires → startCountdown() → after 1s tick remaining=0
+// → else branch: transitioned=true + clearInterval(timer) (lines 216-220)
+export const FastCountdown: Story = {
+  name: 'Fast Countdown (1s transition)',
+  render: () => ({
+    components: { VideoThumbnail },
+    template: `
+      <div style="padding:20px;display:inline-block">
+        <VideoThumbnail
+          orientation="vertical"
+          :locked="true"
+          variant="countdown"
+          :countdownSeconds="1"
+        />
+      </div>
+    `,
+  }),
+  play: async ({ canvasElement }) => {
+    // Scroll card into center of viewport so IntersectionObserver threshold:0.5 fires
+    const card = canvasElement.querySelector<HTMLElement>('.vt')
+    if (card) card.scrollIntoView({ block: 'center', inline: 'center' })
+    // Wait: observer fires → startCountdown() → 1s tick: remaining→0 → else branch fires
+    await new Promise(resolve => setTimeout(resolve, 2500))
+  },
 }
 
 export const DarkMode: Story = {

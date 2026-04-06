@@ -49,6 +49,30 @@ export const InputSized: Story = {
   decorators: [() => ({ template: '<div style="max-width:390px;"><story /></div>' })],
 }
 
+// Covers: height as string (line 20 else), width as number (line 22 number branch),
+// width as string (line 22 string branch), borderRadius as number (line 25 number branch),
+// borderRadius as string (line 25 string branch)
+export const AllPropBranches: Story = {
+  name: 'All prop type branches',
+  render: () => ({
+    components: { SkeletonBlock },
+    template: `
+      <div style="max-width:390px;display:flex;flex-direction:column;gap:8px">
+        <!-- height as string — covers line 20 else branch -->
+        <SkeletonBlock height="2rem" />
+        <!-- width as number — covers line 22 number branch -->
+        <SkeletonBlock :height="16" :width="200" />
+        <!-- width as string — covers line 22 string branch -->
+        <SkeletonBlock :height="16" width="75%" />
+        <!-- borderRadius as number — covers line 25 number branch -->
+        <SkeletonBlock :height="40" :width="120" :border-radius="20" />
+        <!-- borderRadius as string — covers line 25 string branch -->
+        <SkeletonBlock :height="40" :width="120" border-radius="50%" />
+      </div>
+    `,
+  }),
+}
+
 export const Card: Story = {
   name: 'Skeleton Card',
   render: () => ({

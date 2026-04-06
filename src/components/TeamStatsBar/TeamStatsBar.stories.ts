@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import TeamStatsBar from './TeamStatsBar.vue'
 import type { StatRow } from './TeamStatsBar.vue'
 
@@ -58,6 +59,23 @@ export const Paywall: Story = {
       { label: 'Blocks',       leftVal: 4,  rightVal: 3  },
       { label: 'Turnovers',    leftVal: 12, rightVal: 15 },
     ],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Buy Now" — exercises $emit('buy') (line 50)
+    const buyBtn = canvas.getByRole('button', { name: /buy now/i })
+    await userEvent.click(buyBtn)
+  },
+}
+
+/* ═══════════════════════════════════════════
+   3a. Zero Total — exercises total===0 branch (returns 50)
+   ═══════════════════════════════════════════ */
+export const ZeroTotal: Story = {
+  name: 'Zero Total (both 0)',
+  args: {
+    paywall: false,
+    rows: [{ label: 'Blocks', leftVal: 0, rightVal: 0 }],
   },
 }
 

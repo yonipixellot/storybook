@@ -1,5 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryObj } from '@storybook/vue3-vite'
 import PlayerPage from './PlayerPage.vue'
+import AppShell from '../AppShell/AppShell.vue'
 
 const meta: Meta<typeof PlayerPage> = {
   title: 'Pages/PlayerPage',
@@ -10,7 +11,8 @@ const meta: Meta<typeof PlayerPage> = {
     docs: {
       description: {
         component:
-          'Player Page. Structure: AppHeader → AthleteProfile (BackBar + Hero Card + Career Stats 2×3 grid + My Highlights 3-column grid + Season Stats row) → BottomTabBar.',
+          'Player profile page. Content only — wrap in AppShell (variant="back") for the sticky header. ' +
+          'Contains AthleteProfile: BackBar + Hero Card + Career Stats (2×3 grid) + My Highlights (3-col grid) + Season Stats.',
       },
     },
   },
@@ -19,35 +21,67 @@ const meta: Meta<typeof PlayerPage> = {
 export default meta
 type Story = StoryObj<typeof PlayerPage>
 
+/* ═══════════════════════════════════════════
+   1. Mobile (default)
+   ═══════════════════════════════════════════ */
 export const Default: Story = {
-  args: {
-    playerName: 'James Carter',
-    playerNumber: 1,
-    playerPosition: 'Forward',
-    teamName: 'S.D Spartans',
-    accentColor: '#E8332B',
-  },
+  name: 'Mobile',
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, PlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Player Profile">
+        <PlayerPage player-name="James Carter" :player-number="1" player-position="Forward" team-name="S.D Spartans" accent-color="#E8332B" />
+      </AppShell>
+    `,
+  }),
 }
 
+/* ═══════════════════════════════════════════
+   2. Desktop
+   ═══════════════════════════════════════════ */
+export const Desktop: Story = {
+  name: 'Desktop',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
+  render: () => ({
+    components: { AppShell, PlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Player Profile">
+        <PlayerPage player-name="James Carter" :player-number="1" player-position="Forward" team-name="S.D Spartans" accent-color="#E8332B" />
+      </AppShell>
+    `,
+  }),
+}
+
+/* ═══════════════════════════════════════════
+   3. Different Player
+   ═══════════════════════════════════════════ */
 export const DifferentPlayer: Story = {
   name: 'Different Player',
-  args: {
-    playerName: 'Tal Weiss',
-    playerNumber: 4,
-    playerPosition: 'Guard',
-    teamName: 'S.D Spartans',
-    accentColor: '#E8332B',
-  },
+  parameters: { viewport: { defaultViewport: 'mobile390' } },
+  render: () => ({
+    components: { AppShell, PlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Player Profile">
+        <PlayerPage player-name="Tal Weiss" :player-number="4" player-position="Guard" team-name="S.D Spartans" accent-color="#E8332B" />
+      </AppShell>
+    `,
+  }),
 }
 
+/* ═══════════════════════════════════════════
+   4. Dark Mode
+   ═══════════════════════════════════════════ */
 export const DarkMode: Story = {
   name: 'Dark Mode',
+  parameters: { viewport: { defaultViewport: 'desktop1440' } },
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A"><story /></div>' })],
-  args: {
-    playerName: 'James Carter',
-    playerNumber: 1,
-    playerPosition: 'Forward',
-    teamName: 'S.D Spartans',
-    accentColor: '#E8332B',
-  },
+  render: () => ({
+    components: { AppShell, PlayerPage },
+    template: `
+      <AppShell variant="back" org-name="SD Spartans" page-title="Player Profile">
+        <PlayerPage player-name="James Carter" :player-number="1" player-position="Forward" team-name="S.D Spartans" accent-color="#E8332B" />
+      </AppShell>
+    `,
+  }),
 }

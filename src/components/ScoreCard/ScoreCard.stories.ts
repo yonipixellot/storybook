@@ -67,6 +67,17 @@ export const CloseGame: Story = {
   },
 }
 
+// No standings — exercises v-if="homeTeam.standing" and v-if="awayTeam.standing" false branches
+export const NoStandings: Story = {
+  name: 'No Standings',
+  args: {
+    homeTeam: { name: 'Team A', score: 72 },
+    awayTeam: { name: 'Team B', score: 68 },
+    status: 'Final',
+    date: '1 APR 2026',
+  },
+}
+
 export const DarkMode: Story = {
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:438px"><story /></div>' })],
   render: () => ({

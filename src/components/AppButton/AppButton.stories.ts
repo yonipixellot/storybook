@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { h, defineComponent } from 'vue'
+import { expect, userEvent, within } from 'storybook/test'
 import AppButton from './AppButton.vue'
 
 const meta: Meta<typeof AppButton> = {
@@ -77,6 +78,44 @@ export const Primary: Story = {
     setup: () => ({ args }),
     template: '<AppButton v-bind="args">Sign in</AppButton>',
   }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const btn = canvas.getByRole('button', { name: /sign in/i })
+    await expect(btn).not.toBeDisabled()
+    await userEvent.click(btn)
+  },
+}
+
+export const DisabledState: Story = {
+  name: 'Disabled — no click emitted',
+  args: { variant: 'primary', disabled: true },
+  render: (args) => ({
+    components: { AppButton },
+    setup: () => ({ args }),
+    template: '<AppButton v-bind="args">Sign in</AppButton>',
+  }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const btn = canvas.getByRole('button', { name: /sign in/i })
+    await expect(btn).toBeDisabled()
+  },
+}
+
+export const LoadingState: Story = {
+  name: 'Loading — spinner shown',
+  args: { variant: 'primary', loading: true },
+  render: (args) => ({
+    components: { AppButton },
+    setup: () => ({ args }),
+    template: '<AppButton v-bind="args">Sign in</AppButton>',
+  }),
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const btn = canvas.getByRole('button')
+    await expect(btn).toBeDisabled()
+    const spinner = canvasElement.querySelector('.app-button__spinner')
+    await expect(spinner).not.toBeNull()
+  },
 }
 
 export const Premium: Story = {

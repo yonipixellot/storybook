@@ -236,9 +236,9 @@ const ageOptions = Array.from({ length: 83 }, (_, i) => ({
     min-height: 100vh;
   }
 
-  /* Left panel: brand hero fills ~40% */
+  /* Left panel: brand hero fills 50% */
   .auth-page__brand {
-    flex: 0 0 40%;
+    flex: 0 0 50%;
     display: flex;
     flex-direction: column;
   }

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { expect, userEvent, within } from 'storybook/test'
 import VideoTypeChips from './VideoTypeChips.vue'
 
 const meta: Meta<typeof VideoTypeChips> = {
@@ -33,6 +34,16 @@ const stLabel = 'font-size:12px;color:#979797;text-align:left;margin:12px 0 6px;
    Click chips to switch active state. Lock icons persist.
 ───────────────────────────────────────────────────────────── */
 export const Interactive: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Game Highlights" — exercises update:modelValue emit
+    const highlightsBtn = canvas.getByRole('tab', { name: 'Game Highlights' })
+    await expect(highlightsBtn).not.toBeDisabled()
+    await userEvent.click(highlightsBtn)
+    // Click "Full Game" to switch back — exercises another chip click
+    const fullGameBtn = canvas.getByRole('tab', { name: 'Full Game' })
+    await userEvent.click(fullGameBtn)
+  },
   render: () => ({
     components: { VideoTypeChips },
     data() {
@@ -345,6 +356,32 @@ export const ScrollableRow: Story = {
             { label: 'Game Highlights' },
             { label: 'Clip Reel', locked: true },
             { label: 'Overtime Only' },
+          ]"
+          modelValue="Full Game"
+        />
+      </div>
+    `,
+  }),
+}
+
+/* ═══════════════════════════════════════════
+   Desktop — single row, no scroll
+   ═══════════════════════════════════════════ */
+export const DesktopWrap: Story = {
+  name: 'Desktop — single row, no scroll',
+  render: () => ({
+    components: { VideoTypeChips },
+    template: `
+      <div style="width:900px;padding:24px;border:1px solid #E8E8E8;border-radius:16px;">
+        <p style="font-size:13px;color:#979797;margin:0 0 12px;font-family:Red Hat Display,sans-serif">At ≥1024px chips are always a single row — no scroll, no wrap</p>
+        <VideoTypeChips
+          :chips="[
+            { label: 'Full Game' },
+            { label: 'Condensed Game', locked: true },
+            { label: 'Game Highlights' },
+            { label: 'Clip Reel', locked: true },
+            { label: 'Overtime Only' },
+            { label: 'Postgame' },
           ]"
           modelValue="Full Game"
         />
