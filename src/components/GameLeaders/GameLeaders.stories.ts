@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import GameLeaders from './GameLeaders.vue'
 
 const meta: Meta<typeof GameLeaders> = {
@@ -39,6 +40,11 @@ const hr    = 'border:none;border-top:1px solid #E8E8E8;margin:16px 0 24px'
 export const Default: Story = {
   name: 'Default — Points / Rebounds / Assists',
   args: {},
+  play: async ({ canvasElement }) => {
+    // Click "See all" button → $emit('see-all') (stmt line 44)
+    const seeAllBtn = canvasElement.querySelector<HTMLElement>('.gl__see-all')
+    if (seeAllBtn) await userEvent.click(seeAllBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════

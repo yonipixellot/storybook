@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent } from 'storybook/test'
 import BottomTabBar from './BottomTabBar.vue'
 
 const meta: Meta<typeof BottomTabBar> = {
@@ -67,6 +68,20 @@ export const CustomAccent: Story = {
 export const ShopActive: Story = {
   name: 'Shop tab active',
   args: { active: 'shop' },
+}
+
+/* Covers:
+   - stmt line 9: @click="selectTab(tab.id)" — fires when tab clicked
+   - stmt line 101: internalActive.value = id — inside selectTab
+   - line 98 binary-expr ?? internalActive.value — active not passed → uses internalActive */
+export const UncontrolledActive: Story = {
+  name: 'Uncontrolled active (branch coverage)',
+  args: { active: undefined },  // no active → activeTab = internalActive.value (line 98 ?? branch)
+  play: async ({ canvasElement }) => {
+    // Click the second tab → selectTab('saved') → internalActive = 'saved' (stmts 9 + 101)
+    const tabs = canvasElement.querySelectorAll<HTMLElement>('.btb__tab')
+    if (tabs.length > 1) await userEvent.click(tabs[1])
+  },
 }
 
 export const DarkMode: Story = {

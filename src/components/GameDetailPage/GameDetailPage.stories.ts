@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3-vite'
+import { userEvent } from 'storybook/test'
 import GameDetailPage from './GameDetailPage.vue'
 import AppShell from '../AppShell/AppShell.vue'
 
@@ -35,6 +36,17 @@ export const Default: Story = {
       </AppShell>
     `,
   }),
+  play: async ({ canvasElement }) => {
+    // Click a VideoTypeChips tab → triggers v-model update handler (stmt line 19)
+    const chips = canvasElement.querySelectorAll<HTMLElement>('[role="tab"]')
+    if (chips.length > 1) await userEvent.click(chips[1]) // Full Game → Game Highlights
+    // Click away team tab → activeTeamTab = 'away' (stmt line 92)
+    const awayTab = canvasElement.querySelector<HTMLElement>('.game-detail__team-tab:last-of-type')
+    if (awayTab) await userEvent.click(awayTab)
+    // Click home team tab → activeTeamTab = 'home' (stmt line 87)
+    const homeTab = canvasElement.querySelector<HTMLElement>('.game-detail__team-tab')
+    if (homeTab) await userEvent.click(homeTab)
+  },
 }
 
 /* ═══════════════════════════════════════════

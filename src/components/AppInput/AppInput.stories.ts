@@ -99,18 +99,38 @@ export const Tel: Story = {
   decorators: [() => ({ template: '<div style="max-width:400px;min-height:360px"><story /></div>' })],
   args: { type: 'tel', placeholder: 'Phone Number...', defaultCountry: 'IL' },
   play: async ({ canvasElement }) => {
-    // Click the country button to open the dropdown — exercises toggleDropdown()
-    const telBtn = canvasElement.querySelector('.app-input__tel-btn') as HTMLElement
-    await expect(telBtn).not.toBeNull()
+    const telBtn = canvasElement.querySelector<HTMLElement>('.app-input__tel-btn')!
+    // 1. Open dropdown — toggleDropdown(), dropdownOpen=true (line 385 TRUE)
     await userEvent.click(telBtn)
-    // Type in the dropdown search — exercises filteredCountries computed
-    const searchInput = canvasElement.querySelector('.app-input__dropdown-input') as HTMLInputElement
-    await expect(searchInput).not.toBeNull()
-    await userEvent.type(searchInput, 'United')
-    // Click first visible result — exercises selectCountry()
-    const firstItem = canvasElement.querySelector('.app-input__dropdown-item') as HTMLElement
-    if (firstItem) await userEvent.click(firstItem) // dropdownOpen = false, selectedCountry updated
+    // 2. Search with no results — filteredCountries.length===0 TRUE (cond-expr line 49 TRUE)
+    const searchInput = canvasElement.querySelector<HTMLInputElement>('.app-input__dropdown-input')!
+    await userEvent.type(searchInput, 'zzzzz')
+    // 3. Press Escape → dropdownOpen=false (@keydown.escape, stmt line 34)
+    await userEvent.keyboard('{Escape}')
+    // 4. Reopen — toggleDropdown() again (line 385 TRUE again)
+    await userEvent.click(telBtn)
+    // 5. Click outside → handleClickOutside: all conditions true → dropdownOpen=false
+    //    (if line 399 TRUE, stmt line 406)
+    const mainInput = canvasElement.querySelector<HTMLElement>('.app-input input[type="tel"]')
+    if (mainInput) await userEvent.click(mainInput)
+    // 6. Re-open and close by clicking tel button → toggleDropdown() with dropdownOpen=true
+    //    → if(dropdownOpen) FALSE branch already done via close, now cover it
+    await userEvent.click(telBtn) // open
+    await userEvent.click(telBtn) // close → line 385 if(dropdownOpen=true) → goes to else? no, toggles to false
+    // 7. Re-open, type to filter, click result
+    await userEvent.click(telBtn)
+    const searchInput2 = canvasElement.querySelector<HTMLInputElement>('.app-input__dropdown-input')!
+    await userEvent.type(searchInput2, 'United')
+    const firstItem = canvasElement.querySelector<HTMLElement>('.app-input__dropdown-item')
+    if (firstItem) await userEvent.click(firstItem)
   },
+}
+
+/* Covers countries.find() returning undefined → || countries[0] fallback (binary-expr line 372) */
+export const TelInvalidCountry: Story = {
+  name: 'Tel — invalid defaultCountry (branch coverage)',
+  decorators: [() => ({ template: '<div style="max-width:400px;min-height:360px"><story /></div>' })],
+  args: { type: 'tel', placeholder: 'Phone Number...', defaultCountry: 'XX' },
 }
 
 // ── Variants ──

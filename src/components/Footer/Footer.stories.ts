@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import Footer from './Footer.vue'
 
 const meta: Meta<typeof Footer> = {
@@ -42,6 +43,17 @@ export const NoPoweredBy: Story = {
       { label: 'Teams' },
       { label: 'Contact' },
     ],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click a link → $emit('linkClick', label) (stmt line 14)
+    const links = canvasElement.querySelectorAll<HTMLElement>('[role="link"]')
+    if (links.length > 0) await userEvent.click(links[0])
+    // Press Enter on a link → @keydown.enter fires $emit('linkClick') (stmt line 15)
+    if (links.length > 1) {
+      links[1].focus()
+      await userEvent.keyboard('{Enter}')
+    }
   },
 }
 

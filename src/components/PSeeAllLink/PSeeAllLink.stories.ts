@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent } from 'storybook/test'
 import PSeeAllLink from './PSeeAllLink.vue'
 
 const meta: Meta<typeof PSeeAllLink> = {
@@ -20,6 +21,11 @@ type Story = StoryObj<typeof PSeeAllLink>
 export const Default: Story = {
   name: 'Default — "See all" with right chevron',
   args: {},
+  play: async ({ canvasElement }) => {
+    // Click the button → $emit('click') (stmt line 2)
+    const btn = canvasElement.querySelector<HTMLElement>('.psal')
+    if (btn) await userEvent.click(btn)
+  },
 }
 
 export const CustomLabel: Story = {

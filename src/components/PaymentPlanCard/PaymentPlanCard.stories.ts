@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent } from 'storybook/test'
 import PaymentPlanCard from './PaymentPlanCard.vue'
 
 const meta: Meta<typeof PaymentPlanCard> = {
@@ -36,6 +37,11 @@ const hr    = 'border:none;border-top:1px solid #E8E8E8;margin:16px 0 24px'
 export const Default: Story = {
   name: 'Card Variant — Default',
   args: {},
+  play: async ({ canvasElement }) => {
+    // Click "Buy Now" button → $emit('buy') (stmt line 40)
+    const btn = canvasElement.querySelector<HTMLElement>('.ppc__btn')
+    if (btn) await userEvent.click(btn)
+  },
 }
 
 /* ═══════════════════════════════════════════

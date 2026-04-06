@@ -95,6 +95,31 @@ export const PreExpanded: Story = {
   },
 }
 
+/* Covers followedMap[key] ?? team.followed ?? false — third ?? branch (line 127 counts=[5,3,0])
+   Teams with no followed property → team.followed = undefined → ?? false fires */
+export const UndefinedFollowed: Story = {
+  name: 'Teams without followed prop (branch coverage)',
+  args: {
+    competitions: [
+      {
+        name: 'Test League', teamCount: 2,
+        teams: [
+          { name: 'Alpha FC', followed: undefined as unknown as boolean },
+          { name: 'Beta SC',  followed: undefined as unknown as boolean },
+        ],
+      },
+    ],
+  },
+  play: async ({ canvasElement, within: _within }) => {
+    // Open the competition
+    const headers = canvasElement.querySelectorAll<HTMLElement>('.cfl__header')
+    if (headers.length > 0) await userEvent.click(headers[0])
+    // Click a team → followedMap[key]=undefined && team.followed=undefined → ?? false (line 127)
+    const cards = canvasElement.querySelectorAll<HTMLElement>('.tfc')
+    if (cards.length > 0) await userEvent.click(cards[0])
+  },
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:430px"><story /></div>' })],

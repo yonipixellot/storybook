@@ -81,6 +81,16 @@ export const WithDefaultOpen: Story = {
   args: { defaultOpen: '1' },
 }
 
+/* Covers typeof item.header === 'string' ? ... : 'Toggle section' FALSE branch (line 13) */
+export const NonStringHeader: Story = {
+  name: 'Non-string header (branch coverage)',
+  args: {
+    items: [
+      { id: '1', header: 42 as unknown as string, content: 'Non-string header falls back to aria-label "Toggle section"' },
+    ],
+  },
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:430px"><story /></div>' })],

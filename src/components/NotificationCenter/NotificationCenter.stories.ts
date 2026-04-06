@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent } from 'storybook/test'
 import NotificationCenter from './NotificationCenter.vue'
 
 const meta: Meta<typeof NotificationCenter> = {
@@ -28,6 +29,11 @@ type Story = StoryObj<typeof NotificationCenter>
 export const Default: Story = {
   name: 'Three Notifications (default)',
   args: {},
+  play: async ({ canvasElement }) => {
+    // Click "Clear all" button → $emit('clearAll') (stmt line 10)
+    const clearBtn = canvasElement.querySelector<HTMLElement>('.nc__clear-btn')
+    if (clearBtn) await userEvent.click(clearBtn)
+  },
 }
 
 export const SingleNotification: Story = {

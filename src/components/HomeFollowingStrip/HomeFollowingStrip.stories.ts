@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent } from 'storybook/test'
 import HomeFollowingStrip from './HomeFollowingStrip.vue'
 
 const meta: Meta<typeof HomeFollowingStrip> = {
@@ -22,6 +23,13 @@ type Story = StoryObj<typeof HomeFollowingStrip>
 export const Default: Story = {
   name: 'Mixed (2 teams + 3 players)',
   args: {},
+  play: async ({ canvasElement }) => {
+    const chips = canvasElement.querySelectorAll<HTMLElement>('.hfs__chip')
+    // Click team chip → cond-expr TRUE → $emit('teamClick') (stmt line 8)
+    if (chips.length > 0) await userEvent.click(chips[0])
+    // Click player chip → cond-expr FALSE → $emit('playerClick') (stmt line 8)
+    if (chips.length > 2) await userEvent.click(chips[2])
+  },
 }
 
 export const TeamsOnly: Story = {
@@ -56,6 +64,17 @@ export const WithPhotos: Story = {
       { type: 'player', number: 7,  teamColor: '#D0142C', claimed: true,
         photoUrl: 'https://placehold.co/56x56/D0142C/FFFFFF?text=7' },
       { type: 'player', number: 11, teamColor: '#0052CC', claimed: false },
+    ],
+  },
+}
+
+/* Covers item.teamColor ?? 'var(--color-jersey-red)' FALSE branch (line 50) */
+export const NoTeamColor: Story = {
+  name: 'Player without teamColor (branch coverage)',
+  args: {
+    items: [
+      { type: 'player', number: 5, claimed: false },   // no teamColor → fallback 'var(--color-jersey-red)'
+      { type: 'player', number: 9, claimed: false },
     ],
   },
 }

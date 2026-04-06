@@ -172,3 +172,10 @@ export const DarkMode: Story = {
     `,
   }),
 }
+
+/* Covers w[0] ?? '' — when orgName has leading space, split produces empty first word
+   '' [0] = undefined → ?? '' fallback fires (line 104) */
+export const OrgNameWithSpace: Story = {
+  name: 'orgName with leading space (branch coverage)',
+  args: { orgName: ' PBA', variant: 'home' },
+}

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import MyFollowingList from './MyFollowingList.vue'
 
 const meta: Meta<typeof MyFollowingList> = {
@@ -35,6 +36,22 @@ export const MultipleFollowing: Story = {
       { name: 'Marcus Caldwell', number: 1,  teamColor: '#1e3a5f' },
       { name: 'Jayden Smith',    number: 11, teamColor: '#1e3a5f' },
     ],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Add team" → $emit('addTeam') (stmt line 7)
+    const addTeamBtn = canvas.getByRole('button', { name: /add team/i })
+    await userEvent.click(addTeamBtn)
+    // Click "Add player" → $emit('addPlayer') (stmt line 35)
+    const addPlayerBtn = canvas.getByRole('button', { name: /add player/i })
+    await userEvent.click(addPlayerBtn)
+    // Query all unfollow buttons: [team0, team1, player0, player1]
+    const unfollowBtns = canvasElement.querySelectorAll<HTMLElement>('.mfl__unfollow-btn')
+    // Click team unfollow → removeTeam() (stmt lines 26, 104)
+    if (unfollowBtns.length > 0) await userEvent.click(unfollowBtns[0])
+    // Click player unfollow → removePlayer() (stmt lines 53, 105)
+    // With 2 teams + 2 players: index 2 is the first player unfollow
+    if (unfollowBtns.length > 2) await userEvent.click(unfollowBtns[2])
   },
 }
 
