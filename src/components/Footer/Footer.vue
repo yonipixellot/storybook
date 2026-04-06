@@ -194,4 +194,54 @@ const currentYear   = computed(() => new Date().getFullYear())
 .ft__powered-brand {
   letter-spacing: 0.5px;
 }
+
+/* ── Desktop: two-column layout ── */
+@media (min-width: 1024px) {
+  .ft {
+    padding: var(--space-xl) var(--space-xl);
+  }
+
+  /* Top row: links left, social icons right */
+  .ft__nav {
+    justify-content: flex-start;
+    margin-bottom: var(--space-md);
+  }
+
+  .ft__social {
+    justify-content: flex-end;
+    margin-bottom: 0;
+  }
+
+  /* Combine nav + social into a single row */
+  .ft::before {
+    /* Use a wrapper trick via flex on the footer itself */
+    content: none;
+  }
+
+  /* Bottom row: copyright left, powered-by right */
+  .ft__copyright {
+    text-align: left;
+  }
+
+  .ft__powered {
+    text-align: right;
+  }
+}
+
+/* Desktop two-row flex structure */
+@media (min-width: 1024px) {
+  .ft {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    column-gap: var(--space-xl);
+    row-gap: var(--space-md);
+    align-items: center;
+  }
+
+  .ft__nav     { grid-column: 1; grid-row: 1; margin-bottom: 0; }
+  .ft__social  { grid-column: 2; grid-row: 1; }
+  .ft__copyright { grid-column: 1; grid-row: 2; margin: 0; }
+  .ft__powered   { grid-column: 2; grid-row: 2; margin: 0; }
+}
 </style>

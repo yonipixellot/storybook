@@ -149,4 +149,13 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
 .vtc__lock-icon {
   fill: var(--color-premium-yellow);
 }
+
+/* Desktop: all chips visible, no horizontal scroll */
+@media (min-width: 1024px) {
+  .vtc {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+}
 </style>

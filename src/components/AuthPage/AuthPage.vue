@@ -1,12 +1,15 @@
 <template>
   <div class="auth-page">
     <div class="auth-page__card">
-      <!-- Hero -->
-      <BrandHero
-        primary-color="#1A3B8A"
-        :logo-size="80"
-        :height="340"
-      />
+
+      <!-- Brand panel (mobile: stacked hero | desktop: left panel) -->
+      <div class="auth-page__brand">
+        <BrandHero
+          primary-color="#1A3B8A"
+          :logo-size="80"
+          :height="340"
+        />
+      </div>
 
       <!-- Form area -->
       <div class="auth-page__body">
@@ -213,5 +216,46 @@ const ageOptions = Array.from({ length: 83 }, (_, i) => ({
   font-weight: var(--font-medium);
   color: var(--color-gray-400);
   margin: 0;
+}
+
+/* ── Desktop: split-screen layout ── */
+@media (min-width: 1024px) {
+  .auth-page {
+    padding: 0;
+    align-items: stretch;
+    background: var(--color-white);
+  }
+
+  .auth-page__card {
+    width: 100%;
+    max-width: none;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+  }
+
+  /* Left panel: brand hero fills ~40% */
+  .auth-page__brand {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .auth-page__brand :deep(.bh) {
+    flex: 1;
+    height: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  /* Right panel: form centered vertically */
+  .auth-page__body {
+    flex: 1;
+    justify-content: center;
+    overflow-y: auto;
+    padding: var(--space-xl) 60px;
+  }
 }
 </style>

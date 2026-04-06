@@ -113,6 +113,13 @@ function selectTab(id: string) {
   width: 100%;
 }
 
+/* Desktop: bottom tab bar is replaced by header navigation */
+@media (min-width: 1024px) {
+  .btb {
+    display: none;
+  }
+}
+
 .btb__tab {
   display: flex;
   flex-direction: column;

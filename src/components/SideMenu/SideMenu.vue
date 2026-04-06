@@ -1,7 +1,7 @@
 <template>
-  <div class="sm">
-    <!-- Dark backdrop -->
-    <div class="sm__backdrop" @click="$emit('close')" />
+  <div class="sm" :class="[`sm--${mode}`]">
+    <!-- Dark backdrop (overlay mode only) -->
+    <div v-if="mode === 'overlay'" class="sm__backdrop" @click="$emit('close')" />
 
     <!-- Panel -->
     <nav class="sm__panel" role="navigation" aria-label="Side menu">
@@ -142,6 +142,11 @@ const PROFILE_PLAIN_ITEMS: SideMenuItem[] = [
 ]
 
 const props = withDefaults(defineProps<{
+  /**
+   * overlay — full-screen backdrop + slide-in panel (mobile default)
+   * dropdown — compact floating panel anchored by parent (desktop)
+   */
+  mode?:         'overlay' | 'dropdown'
   variant?:      'org' | 'profile'
   orgName?:      string
   orgSubtitle?:  string
@@ -150,6 +155,7 @@ const props = withDefaults(defineProps<{
   userName?:     string
   userInitials?: string
 }>(), {
+  mode:         'overlay',
   variant:      'org',
   orgName:      'PBA',
   orgSubtitle:  'Basketball Association',
@@ -447,5 +453,24 @@ function toggleItem(idx: number) {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-xs);
+}
+
+/* ── Dropdown mode (desktop user menu) ── */
+.sm--dropdown {
+  position: relative;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.sm--dropdown .sm__panel {
+  position: static;
+  width: 280px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0, 0, 0, 0.12));
+  border: 1px solid var(--color-gray-100);
+  max-height: 80vh;
+  overflow-y: auto;
 }
 </style>
