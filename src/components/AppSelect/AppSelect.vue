@@ -71,7 +71,7 @@ defineEmits<{
   font-weight: var(--font-regular);
   font-family: var(--font-family-base);
   background-color: var(--color-gray-100);
-  color: var(--color-gray-400);
+  color: var(--color-dark-text); /* DS: selected text = dark-text, not gray-400 */
   border: 2px solid transparent;
   border-radius: var(--radius-lg);
   appearance: none;
@@ -85,15 +85,14 @@ defineEmits<{
   border: 2px solid transparent;
 }
 
-.app-select:focus {
-  outline: none;
-  background-color: var(--color-gray-100);
-  border: 2px solid var(--color-primary);
+.app-select:focus-visible {
+  outline: 2px solid var(--color-primary); /* DS: outline, not border-swap */
+  outline-offset: 2px;
 }
 
 .app-select.error {
   background-color: var(--color-gray-100);
-  border: 2px solid var(--color-live-red);
+  border: 2px solid var(--color-error-red); /* DS: use --color-error-red (has dark mode override) */
 }
 
 .app-select:disabled {
@@ -115,7 +114,7 @@ defineEmits<{
 
 .error-message {
   display: block;
-  color: var(--color-live-red);
+  color: var(--color-error-red); /* DS: consistent with --color-error-red (has dark mode override) */
   font-size: var(--text-caption);
   padding-left: 16px;
   margin-top: 4px;
