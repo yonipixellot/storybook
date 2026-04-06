@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within, fireEvent } from 'storybook/test'
 import AppTabs from './AppTabs.vue'
 
 const meta: Meta<typeof AppTabs> = {
@@ -267,4 +268,23 @@ export const DisabledTabs: Story = {
       </div>
     `,
   }),
+}
+
+/* Covers !tab.disabled && ... false branch (disabled tab click) */
+export const DisabledClick: Story = {
+  name: 'Disabled Tab Click (branch coverage)',
+  args: {
+    tabs:    [{ label: 'Sign In', value: 'signin' }, { label: 'Sign Up', value: 'signup', disabled: true }],
+    active:  'signin',
+    variant: 'pill',
+  },
+  play: async ({ canvasElement }) => {
+    // fireEvent bypasses HTML disabled — triggers Vue @click handler with tab.disabled=true
+    // → !tab.disabled is false → short-circuit → emit NOT called (covers && false branch)
+    const disabledBtn = canvasElement.querySelector<HTMLElement>('.at__tab[disabled]')
+    if (disabledBtn) await fireEvent.click(disabledBtn)
+    // Also click enabled tab → !tab.disabled is true → emit fires (covers && true branch)
+    const enabledBtns = canvasElement.querySelectorAll<HTMLElement>('.at__tab:not([disabled])')
+    if (enabledBtns.length > 0) await userEvent.click(enabledBtns[0])
+  },
 }

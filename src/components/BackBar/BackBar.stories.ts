@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import BackBar from './BackBar.vue'
 
 const meta: Meta<typeof BackBar> = {
@@ -42,6 +43,15 @@ export const Default: Story = {
 export const WithShare: Story = {
   name: 'Back + Share',
   args: { showShare: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click back button → $emit('back')
+    const backBtn = canvas.getByRole('button', { name: /go back/i })
+    await userEvent.click(backBtn)
+    // Click share button → $emit('share') — covers line 14
+    const shareBtn = canvas.getByRole('button', { name: /share/i })
+    await userEvent.click(shareBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════

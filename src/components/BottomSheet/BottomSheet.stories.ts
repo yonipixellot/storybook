@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import { ref } from 'vue'
+import { userEvent, within } from 'storybook/test'
 import BottomSheet from './BottomSheet.vue'
 
 const meta: Meta<typeof BottomSheet> = {
@@ -18,6 +19,15 @@ const phoneFrame = 'position:relative;width:390px;height:600px;background:#F5F5F
 
 /* ── Default: handle only, no title, no close ── */
 export const Default: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Open the sheet
+    const openBtn = canvas.getByRole('button', { name: /open sheet/i })
+    await userEvent.click(openBtn)
+    // Backdrop is Teleported to body → use document.body to find it
+    const backdrop = document.body.querySelector<HTMLElement>('.bs__backdrop')
+    if (backdrop) await userEvent.click(backdrop) // closeOnBackdrop=true → $emit('close') — line 10
+  },
   render: () => ({
     components: { BottomSheet },
     setup() {
@@ -45,6 +55,15 @@ export const Default: Story = {
 
 /* ── With Title ── */
 export const WithTitle: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const openBtn = canvas.getByRole('button', { name: /open sheet/i })
+    await userEvent.click(openBtn)
+    // Close button is Teleported to body — covers line 35 @click="$emit('close')"
+    const body = within(document.body)
+    const closeBtn = await body.findByRole('button', { name: /close/i })
+    await userEvent.click(closeBtn)
+  },
   render: () => ({
     components: { BottomSheet },
     setup() {
@@ -115,6 +134,18 @@ export const TallContent: Story = {
 
 /* ── No Backdrop Dismiss ── */
 export const NoBackdropDismiss: Story = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const openBtn = canvas.getByRole('button', { name: /open sheet/i })
+    await userEvent.click(openBtn)
+    // Click backdrop with closeOnBackdrop=false → && short-circuits, no emit (covers false branch)
+    const backdrop = document.body.querySelector<HTMLElement>('.bs__backdrop')
+    if (backdrop) await userEvent.click(backdrop)
+    // Then close via the X button
+    const body = within(document.body)
+    const closeBtn = await body.findByRole('button', { name: /close/i })
+    await userEvent.click(closeBtn)
+  },
   render: () => ({
     components: { BottomSheet },
     setup() {

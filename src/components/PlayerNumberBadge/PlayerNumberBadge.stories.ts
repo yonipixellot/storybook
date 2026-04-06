@@ -60,6 +60,26 @@ export const WithPhoto: Story = {
   },
 }
 
+/* Covers isLight h.length===3 branches (3-char shorthand hex like '#FFF') */
+export const ShortHex: Story = {
+  name: 'Short Hex Color (#FFF)',
+  args: {
+    number:    8,
+    teamColor: '#FFF',
+  },
+  // '#FFF' → h='FFF', h.length===3 → r=h[0]+h[0] branch fires → isLight returns true → dark text
+}
+
+/* Covers isLight !hex.startsWith('#') guard → returns false → white text */
+export const NonHexColor: Story = {
+  name: 'Non-Hex Color (CSS var)',
+  args: {
+    number:    5,
+    teamColor: 'rgb(255, 0, 0)',
+  },
+  // 'rgb(...)'.startsWith('#') === false → isLight returns false → 'var(--color-white)' text
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px"><story /></div>' })],

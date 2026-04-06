@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import ErrorState from './ErrorState.vue'
 
 const meta: Meta<typeof ErrorState> = {
@@ -29,7 +30,14 @@ type Story = StoryObj<typeof ErrorState>
 
 export const Generic: Story = {
   args: { variant: 'generic' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click "Try Again" button → $emit('retry') — covers @click handler line 18
+    const retryBtn = canvas.getByRole('button', { name: /try again/i })
+    await userEvent.click(retryBtn)
+  },
 }
+
 
 export const Network: Story = {
   args: { variant: 'network' },

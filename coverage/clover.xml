@@ -1,0 +1,1311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1775485496697" clover="3.2.0">
+  <project timestamp="1775485496707" name="All files">
+    <metrics statements="870" coveredstatements="819" conditionals="947" coveredconditionals="899" methods="305" coveredmethods="253" elements="2122" coveredelements="1971" complexity="0" loc="870" ncloc="870" packages="70" files="75" classes="75"/>
+    <package name="mnt">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="storybook-repo" path="/sessions/busy-trusting-lamport/mnt/storybook-repo">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo..storybook">
+      <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="preview.ts" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/.storybook/preview.ts">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="8" count="71" type="stmt"/>
+        <line num="11" count="71" type="stmt"/>
+        <line num="20" count="71" type="stmt"/>
+        <line num="22" count="407" type="stmt"/>
+        <line num="25" count="71" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.Accordion">
+      <metrics statements="11" coveredstatements="11" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <file name="Accordion.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/Accordion/Accordion.vue">
+        <metrics statements="11" coveredstatements="11" conditionals="10" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="3" count="30" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="70" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="72" count="2" type="stmt"/>
+        <line num="74" count="4" type="stmt"/>
+        <line num="76" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AdBanner">
+      <metrics statements="24" coveredstatements="24" conditionals="16" coveredconditionals="12" methods="7" coveredmethods="7"/>
+      <file name="AdBanner.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AdBanner/AdBanner.vue">
+        <metrics statements="24" coveredstatements="24" conditionals="16" coveredconditionals="12" methods="7" coveredmethods="7"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="11" count="27" type="stmt"/>
+        <line num="23" count="27" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="47" count="4" type="stmt"/>
+        <line num="54" count="4" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
+        <line num="56" count="4" type="stmt"/>
+        <line num="57" count="4" type="stmt"/>
+        <line num="59" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="8" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="2" type="stmt"/>
+        <line num="72" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="77" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="78" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="85" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppBadge">
+      <metrics statements="4" coveredstatements="4" conditionals="9" coveredconditionals="8" methods="1" coveredmethods="1"/>
+      <file name="AppBadge.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppBadge/AppBadge.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="9" coveredconditionals="8" methods="1" coveredmethods="1"/>
+        <line num="2" count="30" type="stmt"/>
+        <line num="18" count="30" type="stmt"/>
+        <line num="27" count="30" type="stmt"/>
+        <line num="35" count="30" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppButton">
+      <metrics statements="3" coveredstatements="3" conditionals="16" coveredconditionals="16" methods="1" coveredmethods="1"/>
+      <file name="AppButton.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppButton/AppButton.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="16" coveredconditionals="16" methods="1" coveredmethods="1"/>
+        <line num="2" count="125" type="stmt"/>
+        <line num="12" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="119" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppDivider">
+      <metrics statements="1" coveredstatements="1" conditionals="12" coveredconditionals="11" methods="0" coveredmethods="0"/>
+      <file name="AppDivider.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppDivider/AppDivider.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="12" coveredconditionals="11" methods="0" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppHeader">
+      <metrics statements="16" coveredstatements="14" conditionals="25" coveredconditionals="23" methods="8" coveredmethods="6"/>
+      <file name="AppHeader.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppHeader/AppHeader.vue">
+        <metrics statements="16" coveredstatements="14" conditionals="25" coveredconditionals="23" methods="8" coveredmethods="6"/>
+        <line num="2" count="33" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="19" count="7" type="stmt"/>
+        <line num="23" count="7" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="3" falsecount="0"/>
+        <line num="32" count="1" type="cond" truecount="3" falsecount="1"/>
+        <line num="37" count="0" type="cond" truecount="3" falsecount="0"/>
+        <line num="42" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="54" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="68" count="31" type="stmt"/>
+        <line num="100" count="31" type="stmt"/>
+        <line num="101" count="24" type="stmt"/>
+        <line num="104" count="41" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppInput">
+      <metrics statements="48" coveredstatements="46" conditionals="63" coveredconditionals="58" methods="19" coveredmethods="18"/>
+      <file name="AppInput.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppInput/AppInput.vue">
+        <metrics statements="48" coveredstatements="46" conditionals="63" coveredconditionals="58" methods="19" coveredmethods="18"/>
+        <line num="2" count="48" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="31" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="2" type="stmt"/>
+        <line num="38" count="334" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="46" count="2" type="stmt"/>
+        <line num="47" count="2" type="stmt"/>
+        <line num="63" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="94" count="38" type="stmt"/>
+        <line num="332" count="38" type="stmt"/>
+        <line num="350" count="38" type="stmt"/>
+        <line num="355" count="38" type="stmt"/>
+        <line num="356" count="38" type="stmt"/>
+        <line num="357" count="38" type="stmt"/>
+        <line num="358" count="40" type="cond" truecount="4" falsecount="0"/>
+        <line num="360" count="38" type="stmt"/>
+        <line num="361" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="365" count="38" type="stmt"/>
+        <line num="366" count="38" type="stmt"/>
+        <line num="367" count="38" type="stmt"/>
+        <line num="368" count="38" type="stmt"/>
+        <line num="369" count="38" type="stmt"/>
+        <line num="371" count="38" type="stmt"/>
+        <line num="372" count="4045" type="cond" truecount="1" falsecount="1"/>
+        <line num="375" count="38" type="stmt"/>
+        <line num="376" count="7" type="stmt"/>
+        <line num="377" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="378" count="6" type="stmt"/>
+        <line num="379" count="1410" type="cond" truecount="3" falsecount="0"/>
+        <line num="384" count="1" type="stmt"/>
+        <line num="385" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="386" count="1" type="stmt"/>
+        <line num="387" count="1" type="stmt"/>
+        <line num="392" count="1" type="stmt"/>
+        <line num="393" count="1" type="stmt"/>
+        <line num="394" count="1" type="stmt"/>
+        <line num="399" count="7" type="cond" truecount="1" falsecount="1"/>
+        <line num="406" count="0" type="stmt"/>
+        <line num="410" count="38" type="stmt"/>
+        <line num="411" count="38" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppNavTabs">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="AppNavTabs.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppNavTabs/AppNavTabs.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="3" count="60" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppSelect">
+      <metrics statements="3" coveredstatements="3" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <file name="AppSelect.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppSelect/AppSelect.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="5" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="109" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppShell">
+      <metrics statements="10" coveredstatements="7" conditionals="18" coveredconditionals="18" methods="7" coveredmethods="4"/>
+      <file name="AppShell.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppShell/AppShell.vue">
+        <metrics statements="10" coveredstatements="7" conditionals="18" coveredconditionals="18" methods="7" coveredmethods="4"/>
+        <line num="2" count="24" type="stmt"/>
+        <line num="13" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="23" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="6" type="stmt"/>
+        <line num="76" count="23" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AppTabs">
+      <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="1"/>
+      <file name="AppTabs.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AppTabs/AppTabs.vue">
+        <metrics statements="4" coveredstatements="3" conditionals="6" coveredconditionals="4" methods="2" coveredmethods="1"/>
+        <line num="2" count="17" type="stmt"/>
+        <line num="3" count="42" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="28" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AthleteProfile">
+      <metrics statements="38" coveredstatements="34" conditionals="25" coveredconditionals="22" methods="13" coveredmethods="9"/>
+      <file name="AthleteProfile.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AthleteProfile/AthleteProfile.vue">
+        <metrics statements="38" coveredstatements="34" conditionals="25" coveredconditionals="22" methods="13" coveredmethods="9"/>
+        <line num="2" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="38" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="54" count="2" type="stmt"/>
+        <line num="55" count="33" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="66" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="33" type="stmt"/>
+        <line num="66" count="2" type="stmt"/>
+        <line num="67" count="66" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="74" count="2" type="stmt"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="90" count="2" type="stmt"/>
+        <line num="91" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="105" count="2" type="stmt"/>
+        <line num="106" count="44" type="stmt"/>
+        <line num="107" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="127" count="11" type="stmt"/>
+        <line num="155" count="11" type="stmt"/>
+        <line num="156" count="11" type="cond" truecount="1" falsecount="1"/>
+        <line num="157" count="11" type="stmt"/>
+        <line num="160" count="11" type="stmt"/>
+        <line num="162" count="11" type="stmt"/>
+        <line num="167" count="11" type="stmt"/>
+        <line num="172" count="11" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.AuthPage">
+      <metrics statements="23" coveredstatements="16" conditionals="42" coveredconditionals="42" methods="16" coveredmethods="7"/>
+      <file name="AuthPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/AuthPage/AuthPage.vue">
+        <metrics statements="23" coveredstatements="16" conditionals="42" coveredconditionals="42" methods="16" coveredmethods="7"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="42" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="1" type="stmt"/>
+        <line num="67" count="1" type="cond" truecount="4" falsecount="0"/>
+        <line num="73" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="85" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="90" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="108" count="3" type="stmt"/>
+        <line num="123" count="3" type="stmt"/>
+        <line num="125" count="249" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.BackBar">
+      <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <file name="BackBar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/BackBar/BackBar.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
+        <line num="2" count="25" type="stmt"/>
+        <line num="4" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="8" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.BottomSheet">
+      <metrics statements="17" coveredstatements="17" conditionals="22" coveredconditionals="20" methods="7" coveredmethods="7"/>
+      <file name="BottomSheet.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/BottomSheet/BottomSheet.vue">
+        <metrics statements="17" coveredstatements="17" conditionals="22" coveredconditionals="20" methods="7" coveredmethods="7"/>
+        <line num="2" count="14" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="11" count="14" type="stmt"/>
+        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="50" count="14" type="stmt"/>
+        <line num="60" count="8" type="stmt"/>
+        <line num="62" count="8" type="stmt"/>
+        <line num="64" count="8" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="66" count="8" type="stmt"/>
+        <line num="67" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="8" type="stmt"/>
+        <line num="70" count="8" type="stmt"/>
+        <line num="71" count="8" type="stmt"/>
+        <line num="78" count="8" type="stmt"/>
+        <line num="79" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.BottomTabBar">
+      <metrics statements="9" coveredstatements="7" conditionals="47" coveredconditionals="41" methods="6" coveredmethods="4"/>
+      <file name="BottomTabBar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/BottomTabBar/BottomTabBar.vue">
+        <metrics statements="9" coveredstatements="7" conditionals="47" coveredconditionals="41" methods="6" coveredmethods="4"/>
+        <line num="2" count="13" type="stmt"/>
+        <line num="3" count="52" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="79" count="12" type="stmt"/>
+        <line num="94" count="12" type="stmt"/>
+        <line num="95" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="12" type="cond" truecount="1" falsecount="1"/>
+        <line num="98" count="13" type="cond" truecount="1" falsecount="1"/>
+        <line num="101" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.BrandHero">
+      <metrics statements="15" coveredstatements="15" conditionals="12" coveredconditionals="9" methods="5" coveredmethods="5"/>
+      <file name="BrandHero.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/BrandHero/BrandHero.vue">
+        <metrics statements="15" coveredstatements="15" conditionals="12" coveredconditionals="9" methods="5" coveredmethods="5"/>
+        <line num="2" count="11" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="10" type="stmt"/>
+        <line num="50" count="10" type="stmt"/>
+        <line num="54" count="10" type="stmt"/>
+        <line num="55" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="56" count="10" type="stmt"/>
+        <line num="57" count="10" type="stmt"/>
+        <line num="58" count="10" type="stmt"/>
+        <line num="59" count="10" type="stmt"/>
+        <line num="62" count="10" type="stmt"/>
+        <line num="63" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="65" count="10" type="cond" truecount="1" falsecount="1"/>
+        <line num="68" count="10" type="stmt"/>
+        <line num="73" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.CompetitionFollowList">
+      <metrics statements="33" coveredstatements="32" conditionals="24" coveredconditionals="23" methods="15" coveredmethods="14"/>
+      <file name="CompetitionFollowList.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/CompetitionFollowList/CompetitionFollowList.vue">
+        <metrics statements="33" coveredstatements="32" conditionals="24" coveredconditionals="23" methods="15" coveredmethods="14"/>
+        <line num="2" count="14" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="58" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="47" count="53" type="stmt"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="88" count="3" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+        <line num="112" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="115" count="3" type="stmt"/>
+        <line num="116" count="3" type="stmt"/>
+        <line num="119" count="6" type="stmt"/>
+        <line num="120" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="121" count="4" type="stmt"/>
+        <line num="122" count="6" type="stmt"/>
+        <line num="126" count="5" type="stmt"/>
+        <line num="127" count="5" type="cond" truecount="2" falsecount="1"/>
+        <line num="128" count="5" type="stmt"/>
+        <line num="131" count="3" type="stmt"/>
+        <line num="132" count="8" type="stmt"/>
+        <line num="133" count="34" type="stmt"/>
+        <line num="134" count="46" type="cond" truecount="2" falsecount="0"/>
+        <line num="139" count="3" type="stmt"/>
+        <line num="140" count="34" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.EmptyState">
+      <metrics statements="14" coveredstatements="14" conditionals="25" coveredconditionals="25" methods="6" coveredmethods="6"/>
+      <file name="EmptyState.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/EmptyState/EmptyState.vue">
+        <metrics statements="14" coveredstatements="14" conditionals="25" coveredconditionals="25" methods="6" coveredmethods="6"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="40" count="12" type="stmt"/>
+        <line num="77" count="12" type="stmt"/>
+        <line num="93" count="12" type="stmt"/>
+        <line num="106" count="12" type="stmt"/>
+        <line num="107" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="110" count="12" type="cond" truecount="5" falsecount="0"/>
+        <line num="111" count="12" type="cond" truecount="3" falsecount="0"/>
+        <line num="112" count="12" type="cond" truecount="3" falsecount="0"/>
+        <line num="113" count="12" type="stmt"/>
+        <line num="114" count="12" type="cond" truecount="4" falsecount="0"/>
+        <line num="115" count="9" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.ErrorState">
+      <metrics statements="10" coveredstatements="10" conditionals="12" coveredconditionals="10" methods="5" coveredmethods="5"/>
+      <file name="ErrorState.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/ErrorState/ErrorState.vue">
+        <metrics statements="10" coveredstatements="10" conditionals="12" coveredconditionals="10" methods="5" coveredmethods="5"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="8" type="stmt"/>
+        <line num="63" count="8" type="stmt"/>
+        <line num="73" count="8" type="cond" truecount="2" falsecount="2"/>
+        <line num="74" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="75" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.FollowingRow">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <file name="FollowingRow.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/FollowingRow/FollowingRow.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <line num="2" count="19" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.Footer">
+      <metrics statements="10" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="3"/>
+      <file name="Footer.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/Footer/Footer.vue">
+        <metrics statements="10" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="3"/>
+        <line num="2" count="10" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="8" count="30" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="78" count="7" type="stmt"/>
+        <line num="97" count="10" type="stmt"/>
+        <line num="103" count="10" type="stmt"/>
+        <line num="115" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="116" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.GameDetailPage">
+      <metrics statements="33" coveredstatements="30" conditionals="30" coveredconditionals="30" methods="6" coveredmethods="3"/>
+      <file name="GameDetailPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/GameDetailPage/GameDetailPage.vue">
+        <metrics statements="33" coveredstatements="30" conditionals="30" coveredconditionals="30" methods="6" coveredmethods="3"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="79" count="1" type="stmt"/>
+        <line num="83" count="1" type="stmt"/>
+        <line num="87" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="92" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="97" count="1" type="stmt"/>
+        <line num="99" count="1" type="stmt"/>
+        <line num="100" count="8" type="stmt"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="115" count="1" type="stmt"/>
+        <line num="116" count="24" type="stmt"/>
+        <line num="135" count="1" type="stmt"/>
+        <line num="147" count="1" type="stmt"/>
+        <line num="149" count="1" type="stmt"/>
+        <line num="150" count="1" type="stmt"/>
+        <line num="178" count="1" type="stmt"/>
+        <line num="181" count="1" type="stmt"/>
+        <line num="183" count="1" type="stmt"/>
+        <line num="208" count="1" type="stmt"/>
+        <line num="210" count="1" type="stmt"/>
+        <line num="244" count="4" type="stmt"/>
+        <line num="254" count="4" type="stmt"/>
+        <line num="255" count="4" type="stmt"/>
+        <line num="257" count="4" type="stmt"/>
+        <line num="262" count="4" type="stmt"/>
+        <line num="271" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.GameLeaders">
+      <metrics statements="13" coveredstatements="12" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="1"/>
+      <file name="GameLeaders.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/GameLeaders/GameLeaders.vue">
+        <metrics statements="13" coveredstatements="12" conditionals="9" coveredconditionals="9" methods="2" coveredmethods="1"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="44" count="0" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.GameResultCard">
+      <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="7" methods="0" coveredmethods="0"/>
+      <file name="GameResultCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/GameResultCard/GameResultCard.vue">
+        <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="7" methods="0" coveredmethods="0"/>
+        <line num="2" count="48" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="23" count="4" type="stmt"/>
+        <line num="25" count="4" type="stmt"/>
+        <line num="29" count="4" type="stmt"/>
+        <line num="30" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="38" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.HighlightCard">
+      <metrics statements="9" coveredstatements="8" conditionals="16" coveredconditionals="15" methods="3" coveredmethods="1"/>
+      <file name="HighlightCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/HighlightCard/HighlightCard.vue">
+        <metrics statements="9" coveredstatements="8" conditionals="16" coveredconditionals="15" methods="3" coveredmethods="1"/>
+        <line num="2" count="9" type="stmt"/>
+        <line num="4" count="0" type="cond" truecount="4" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="33" count="9" type="stmt"/>
+        <line num="50" count="9" type="stmt"/>
+        <line num="51" count="9" type="cond" truecount="4" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.HomeFollowingStrip">
+      <metrics statements="9" coveredstatements="8" conditionals="24" coveredconditionals="21" methods="3" coveredmethods="2"/>
+      <file name="HomeFollowingStrip.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/HomeFollowingStrip/HomeFollowingStrip.vue">
+        <metrics statements="9" coveredstatements="8" conditionals="24" coveredconditionals="21" methods="3" coveredmethods="2"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="21" type="stmt"/>
+        <line num="8" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="5" type="stmt"/>
+        <line num="76" count="5" type="stmt"/>
+        <line num="82" count="5" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.HomePage">
+      <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="5" coveredmethods="5"/>
+      <file name="HomePage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/HomePage/HomePage.vue">
+        <metrics statements="20" coveredstatements="20" conditionals="12" coveredconditionals="12" methods="5" coveredmethods="5"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="36" count="6" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="51" count="9" type="stmt"/>
+        <line num="69" count="1" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="72" count="6" type="stmt"/>
+        <line num="100" count="3" type="stmt"/>
+        <line num="108" count="3" type="stmt"/>
+        <line num="114" count="3" type="stmt"/>
+        <line num="131" count="3" type="stmt"/>
+        <line num="158" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.InfoAlert">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="InfoAlert.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/InfoAlert/InfoAlert.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.JerseyGrid">
+      <metrics statements="14" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
+      <file name="JerseyGrid.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/JerseyGrid/JerseyGrid.vue">
+        <metrics statements="14" coveredstatements="14" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
+        <line num="2" count="20" type="stmt"/>
+        <line num="3" count="194" type="stmt"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="18" count="15" type="stmt"/>
+        <line num="20" count="15" type="stmt"/>
+        <line num="30" count="15" type="stmt"/>
+        <line num="32" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="36" count="20" type="stmt"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="40" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="5" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.JerseyItem">
+      <metrics statements="19" coveredstatements="19" conditionals="23" coveredconditionals="21" methods="6" coveredmethods="6"/>
+      <file name="JerseyItem.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/JerseyItem/JerseyItem.vue">
+        <metrics statements="19" coveredstatements="19" conditionals="23" coveredconditionals="21" methods="6" coveredmethods="6"/>
+        <line num="2" count="149" type="stmt"/>
+        <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="44" count="272" type="stmt"/>
+        <line num="45" count="272" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="270" type="stmt"/>
+        <line num="47" count="270" type="stmt"/>
+        <line num="48" count="270" type="stmt"/>
+        <line num="49" count="270" type="stmt"/>
+        <line num="52" count="144" type="stmt"/>
+        <line num="65" count="144" type="stmt"/>
+        <line num="67" count="144" type="stmt"/>
+        <line num="68" count="149" type="cond" truecount="2" falsecount="0"/>
+        <line num="69" count="128" type="cond" truecount="3" falsecount="1"/>
+        <line num="74" count="144" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.LiveGameCard">
+      <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
+      <file name="LiveGameCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/LiveGameCard/LiveGameCard.vue">
+        <metrics statements="13" coveredstatements="13" conditionals="6" coveredconditionals="6" methods="0" coveredmethods="0"/>
+        <line num="2" count="33" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="30" count="3" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.LoadingSpinner">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="LoadingSpinner.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/LoadingSpinner/LoadingSpinner.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="13" count="15" type="stmt"/>
+        <line num="22" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.MyFollowingList">
+      <metrics statements="26" coveredstatements="20" conditionals="14" coveredconditionals="14" methods="18" coveredmethods="12"/>
+      <file name="MyFollowingList.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/MyFollowingList/MyFollowingList.vue">
+        <metrics statements="26" coveredstatements="20" conditionals="14" coveredconditionals="14" methods="18" coveredmethods="12"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="5" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="47" count="5" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="5" type="stmt"/>
+        <line num="80" count="4" type="stmt"/>
+        <line num="84" count="4" type="stmt"/>
+        <line num="88" count="4" type="stmt"/>
+        <line num="95" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="96" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="98" count="4" type="stmt"/>
+        <line num="99" count="4" type="stmt"/>
+        <line num="101" count="5" type="stmt"/>
+        <line num="102" count="5" type="stmt"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="105" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.NotificationCenter">
+      <metrics statements="14" coveredstatements="13" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="2"/>
+      <file name="NotificationCenter.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/NotificationCenter/NotificationCenter.vue">
+        <metrics statements="14" coveredstatements="13" conditionals="8" coveredconditionals="8" methods="3" coveredmethods="2"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="13" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="58" count="5" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="77" count="1" type="stmt"/>
+        <line num="78" count="5" type="stmt"/>
+        <line num="80" count="5" type="stmt"/>
+        <line num="86" count="5" type="stmt"/>
+        <line num="87" count="5" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.OfflineBanner">
+      <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="OfflineBanner.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/OfflineBanner/OfflineBanner.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PAvatar">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="PAvatar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PAvatar/PAvatar.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="40" type="stmt"/>
+        <line num="10" count="40" type="stmt"/>
+        <line num="18" count="40" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PBellIcon">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+      <file name="PBellIcon.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PBellIcon/PBellIcon.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
+        <line num="2" count="39" type="stmt"/>
+        <line num="5" count="8" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PPlayerPhoto">
+      <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="PPlayerPhoto.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PPlayerPhoto/PPlayerPhoto.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="39" count="10" type="stmt"/>
+        <line num="40" count="10" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PSectionHeader">
+      <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="PSectionHeader.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PSectionHeader/PSectionHeader.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="24" type="stmt"/>
+        <line num="10" count="2" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PSeeAllLink">
+      <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="0"/>
+      <file name="PSeeAllLink.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PSeeAllLink/PSeeAllLink.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="0"/>
+        <line num="2" count="4" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PStatCard">
+      <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+      <file name="PStatCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PStatCard/PStatCard.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
+        <line num="2" count="45" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="19" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PTeamLogo">
+      <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="PTeamLogo.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PTeamLogo/PTeamLogo.vue">
+        <metrics statements="8" coveredstatements="8" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="28" count="265" type="stmt"/>
+        <line num="34" count="265" type="stmt"/>
+        <line num="43" count="265" type="stmt"/>
+        <line num="44" count="262" type="cond" truecount="2" falsecount="0"/>
+        <line num="45" count="3179" type="stmt"/>
+        <line num="46" count="261" type="stmt"/>
+        <line num="49" count="265" type="stmt"/>
+        <line num="50" count="262" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PaymentPlanCard">
+      <metrics statements="11" coveredstatements="10" conditionals="13" coveredconditionals="13" methods="3" coveredmethods="2"/>
+      <file name="PaymentPlanCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PaymentPlanCard/PaymentPlanCard.vue">
+        <metrics statements="11" coveredstatements="10" conditionals="13" coveredconditionals="13" methods="3" coveredmethods="2"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="40" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="7" type="stmt"/>
+        <line num="68" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PlayerNumberBadge">
+      <metrics statements="15" coveredstatements="15" conditionals="22" coveredconditionals="22" methods="5" coveredmethods="5"/>
+      <file name="PlayerNumberBadge.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PlayerNumberBadge/PlayerNumberBadge.vue">
+        <metrics statements="15" coveredstatements="15" conditionals="22" coveredconditionals="22" methods="5" coveredmethods="5"/>
+        <line num="12" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="20" type="stmt"/>
+        <line num="51" count="20" type="stmt"/>
+        <line num="54" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="20" type="stmt"/>
+        <line num="60" count="16" type="cond" truecount="4" falsecount="0"/>
+        <line num="61" count="14" type="stmt"/>
+        <line num="62" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="64" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="16" type="stmt"/>
+        <line num="68" count="20" type="stmt"/>
+        <line num="69" count="20" type="stmt"/>
+        <line num="70" count="20" type="cond" truecount="2" falsecount="0"/>
+        <line num="71" count="16" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PlayerPage">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="PlayerPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PlayerPage/PlayerPage.vue">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PlayerSelectPage">
+      <metrics statements="19" coveredstatements="12" conditionals="15" coveredconditionals="12" methods="5" coveredmethods="1"/>
+      <file name="PlayerSelectPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PlayerSelectPage/PlayerSelectPage.vue">
+        <metrics statements="19" coveredstatements="12" conditionals="15" coveredconditionals="12" methods="5" coveredmethods="1"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="47" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="51" count="5" type="stmt"/>
+        <line num="63" count="5" type="stmt"/>
+        <line num="93" count="5" type="stmt"/>
+        <line num="99" count="5" type="stmt"/>
+        <line num="102" count="0" type="stmt"/>
+        <line num="103" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="104" count="0" type="stmt"/>
+        <line num="106" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.PlayerStats">
+      <metrics statements="15" coveredstatements="13" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="4"/>
+      <file name="PlayerStats.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/PlayerStats/PlayerStats.vue">
+        <metrics statements="15" coveredstatements="13" conditionals="11" coveredconditionals="11" methods="6" coveredmethods="4"/>
+        <line num="2" count="17" type="stmt"/>
+        <line num="9" count="24" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="25" count="73" type="stmt"/>
+        <line num="36" count="103" type="stmt"/>
+        <line num="37" count="3" type="stmt"/>
+        <line num="38" count="3" type="stmt"/>
+        <line num="39" count="422" type="stmt"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="59" count="3" type="stmt"/>
+        <line num="61" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="70" count="17" type="stmt"/>
+        <line num="97" count="17" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.ScoreCard">
+      <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+      <file name="ScoreCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/ScoreCard/ScoreCard.vue">
+        <metrics statements="14" coveredstatements="14" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="48" count="15" type="stmt"/>
+        <line num="60" count="15" type="stmt"/>
+        <line num="61" count="15" type="cond" truecount="2" falsecount="0"/>
+        <line num="65" count="15" type="stmt"/>
+        <line num="66" count="15" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SearchBar">
+      <metrics statements="6" coveredstatements="6" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+      <file name="SearchBar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SearchBar/SearchBar.vue">
+        <metrics statements="6" coveredstatements="6" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="20" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="57" count="14" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SeasonStatsRow">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="SeasonStatsRow.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SeasonStatsRow/SeasonStatsRow.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.ShareCurtain">
+      <metrics statements="25" coveredstatements="25" conditionals="16" coveredconditionals="16" methods="8" coveredmethods="8"/>
+      <file name="ShareCurtain.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/ShareCurtain/ShareCurtain.vue">
+        <metrics statements="25" coveredstatements="25" conditionals="16" coveredconditionals="16" methods="8" coveredmethods="8"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="10" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="24" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="44" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="48" count="12" type="stmt"/>
+        <line num="59" count="4" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+        <line num="64" count="4" type="stmt"/>
+        <line num="65" count="4" type="stmt"/>
+        <line num="66" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="68" count="4" type="stmt"/>
+        <line num="69" count="4" type="stmt"/>
+        <line num="70" count="4" type="stmt"/>
+        <line num="77" count="4" type="stmt"/>
+        <line num="78" count="3" type="stmt"/>
+        <line num="82" count="4" type="stmt"/>
+        <line num="86" count="4" type="stmt"/>
+        <line num="91" count="4" type="stmt"/>
+        <line num="96" count="4" type="stmt"/>
+        <line num="100" count="4" type="stmt"/>
+        <line num="105" count="4" type="stmt"/>
+        <line num="120" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SideMenu">
+      <metrics statements="39" coveredstatements="39" conditionals="42" coveredconditionals="42" methods="15" coveredmethods="15"/>
+      <file name="SideMenu.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SideMenu/SideMenu.vue">
+        <metrics statements="39" coveredstatements="39" conditionals="42" coveredconditionals="42" methods="15" coveredmethods="15"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="29" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="44" count="1" type="stmt"/>
+        <line num="45" count="1" type="stmt"/>
+        <line num="47" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="61" count="4" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
+        <line num="72" count="7" type="stmt"/>
+        <line num="87" count="59" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="102" count="1" type="stmt"/>
+        <line num="104" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="120" count="7" type="stmt"/>
+        <line num="130" count="7" type="stmt"/>
+        <line num="137" count="7" type="stmt"/>
+        <line num="144" count="7" type="stmt"/>
+        <line num="168" count="7" type="stmt"/>
+        <line num="170" count="7" type="stmt"/>
+        <line num="171" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="172" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="175" count="7" type="stmt"/>
+        <line num="176" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="179" count="7" type="stmt"/>
+        <line num="180" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="181" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="184" count="7" type="stmt"/>
+        <line num="187" count="4" type="stmt"/>
+        <line num="188" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="189" count="2" type="stmt"/>
+        <line num="190" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SkeletonBlock">
+      <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+      <file name="SkeletonBlock.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SkeletonBlock/SkeletonBlock.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
+        <line num="2" count="72" type="stmt"/>
+        <line num="8" count="72" type="stmt"/>
+        <line num="19" count="72" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SkeletonCard">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="SkeletonCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SkeletonCard/SkeletonCard.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="15" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.SocialLinks">
+      <metrics statements="4" coveredstatements="4" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3"/>
+      <file name="SocialLinks.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/SocialLinks/SocialLinks.vue">
+        <metrics statements="4" coveredstatements="4" conditionals="15" coveredconditionals="15" methods="3" coveredmethods="3"/>
+        <line num="2" count="7" type="stmt"/>
+        <line num="3" count="26" type="stmt"/>
+        <line num="44" count="7" type="stmt"/>
+        <line num="48" count="26" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.StatsGrid">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="StatsGrid.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/StatsGrid/StatsGrid.vue">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.TeamFollowCard">
+      <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="TeamFollowCard.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/TeamFollowCard/TeamFollowCard.vue">
+        <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="2" count="37" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="31" count="28" type="stmt"/>
+        <line num="40" count="28" type="stmt"/>
+        <line num="44" count="28" type="stmt"/>
+        <line num="45" count="35" type="stmt"/>
+        <line num="48" count="9" type="stmt"/>
+        <line num="49" count="9" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.TeamPage">
+      <metrics statements="23" coveredstatements="23" conditionals="14" coveredconditionals="14" methods="8" coveredmethods="8"/>
+      <file name="TeamPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/TeamPage/TeamPage.vue">
+        <metrics statements="23" coveredstatements="23" conditionals="14" coveredconditionals="14" methods="8" coveredmethods="8"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="27" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
+        <line num="75" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="1" type="stmt"/>
+        <line num="112" count="4" type="stmt"/>
+        <line num="130" count="4" type="stmt"/>
+        <line num="131" count="3" type="stmt"/>
+        <line num="134" count="6" type="stmt"/>
+        <line num="140" count="4" type="stmt"/>
+        <line num="141" count="1" type="stmt"/>
+        <line num="143" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.TeamStatsBar">
+      <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="4" coveredmethods="4"/>
+      <file name="TeamStatsBar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/TeamStatsBar/TeamStatsBar.vue">
+        <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="4" coveredmethods="4"/>
+        <line num="2" count="8" type="stmt"/>
+        <line num="6" count="26" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="50" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="8" type="stmt"/>
+        <line num="80" count="26" type="stmt"/>
+        <line num="81" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="84" count="26" type="stmt"/>
+        <line num="85" count="26" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.Toast">
+      <metrics statements="20" coveredstatements="20" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
+      <file name="Toast.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/Toast/Toast.vue">
+        <metrics statements="20" coveredstatements="20" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
+        <line num="2" count="19" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="30" count="21" type="stmt"/>
+        <line num="38" count="16" type="stmt"/>
+        <line num="53" count="16" type="stmt"/>
+        <line num="58" count="16" type="stmt"/>
+        <line num="59" count="16" type="stmt"/>
+        <line num="61" count="19" type="stmt"/>
+        <line num="62" count="3" type="stmt"/>
+        <line num="63" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="67" count="3" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
+        <line num="69" count="3" type="stmt"/>
+        <line num="70" count="3" type="stmt"/>
+        <line num="74" count="17" type="stmt"/>
+        <line num="75" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="76" count="3" type="stmt"/>
+        <line num="81" count="32" type="cond" truecount="2" falsecount="0"/>
+        <line num="84" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="85" count="16" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.UpgradeBanner">
+      <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="UpgradeBanner.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/UpgradeBanner/UpgradeBanner.vue">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="cond" truecount="2" falsecount="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.VideoActionBar">
+      <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <file name="VideoActionBar.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/VideoActionBar/VideoActionBar.vue">
+        <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+        <line num="2" count="23" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="21" type="stmt"/>
+        <line num="70" count="21" type="stmt"/>
+        <line num="76" count="21" type="stmt"/>
+        <line num="79" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="81" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.VideoPlayerPage">
+      <metrics statements="23" coveredstatements="23" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+      <file name="VideoPlayerPage.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/VideoPlayerPage/VideoPlayerPage.vue">
+        <metrics statements="23" coveredstatements="23" conditionals="12" coveredconditionals="12" methods="4" coveredmethods="4"/>
+        <line num="2" count="6" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="56" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="66" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="12" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="85" count="36" type="stmt"/>
+        <line num="117" count="4" type="stmt"/>
+        <line num="133" count="4" type="stmt"/>
+        <line num="135" count="4" type="stmt"/>
+        <line num="136" count="4" type="stmt"/>
+        <line num="141" count="4" type="stmt"/>
+        <line num="146" count="4" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.VideoThumbnail">
+      <metrics statements="56" coveredstatements="56" conditionals="91" coveredconditionals="86" methods="14" coveredmethods="13"/>
+      <file name="VideoThumbnail.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/VideoThumbnail/VideoThumbnail.vue">
+        <metrics statements="56" coveredstatements="56" conditionals="91" coveredconditionals="86" methods="14" coveredmethods="13"/>
+        <line num="2" count="200" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="5" type="stmt"/>
+        <line num="40" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="45" count="1" type="cond" truecount="4" falsecount="0"/>
+        <line num="49" count="5" type="stmt"/>
+        <line num="122" count="5" type="stmt"/>
+        <line num="127" count="5" type="stmt"/>
+        <line num="128" count="5" type="stmt"/>
+        <line num="138" count="198" type="stmt"/>
+        <line num="172" count="198" type="stmt"/>
+        <line num="173" count="198" type="cond" truecount="4" falsecount="0"/>
+        <line num="177" count="198" type="stmt"/>
+        <line num="178" count="91" type="stmt"/>
+        <line num="179" count="91" type="stmt"/>
+        <line num="180" count="91" type="stmt"/>
+        <line num="181" count="91" type="stmt"/>
+        <line num="182" count="91" type="stmt"/>
+        <line num="183" count="91" type="cond" truecount="2" falsecount="0"/>
+        <line num="187" count="198" type="stmt"/>
+        <line num="188" count="198" type="stmt"/>
+        <line num="189" count="198" type="stmt"/>
+        <line num="190" count="198" type="stmt"/>
+        <line num="192" count="198" type="stmt"/>
+        <line num="193" count="198" type="cond" truecount="4" falsecount="0"/>
+        <line num="194" count="197" type="stmt"/>
+        <line num="197" count="198" type="stmt"/>
+        <line num="198" count="5" type="stmt"/>
+        <line num="199" count="5" type="stmt"/>
+        <line num="202" count="198" type="stmt"/>
+        <line num="203" count="6" type="stmt"/>
+        <line num="204" count="6" type="stmt"/>
+        <line num="205" count="6" type="stmt"/>
+        <line num="206" count="6" type="stmt"/>
+        <line num="209" count="198" type="stmt"/>
+        <line num="210" count="198" type="stmt"/>
+        <line num="211" count="198" type="stmt"/>
+        <line num="214" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="215" count="5" type="stmt"/>
+        <line num="216" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="217" count="1" type="stmt"/>
+        <line num="219" count="1" type="stmt"/>
+        <line num="220" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="225" count="198" type="stmt"/>
+        <line num="226" count="198" type="cond" truecount="2" falsecount="0"/>
+        <line num="227" count="5" type="stmt"/>
+        <line num="229" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="230" count="5" type="stmt"/>
+        <line num="231" count="5" type="stmt"/>
+        <line num="236" count="5" type="stmt"/>
+        <line num="237" count="5" type="cond" truecount="1" falsecount="1"/>
+        <line num="241" count="198" type="stmt"/>
+        <line num="242" count="168" type="cond" truecount="2" falsecount="0"/>
+        <line num="243" count="168" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.components.VideoTypeChips">
+      <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="VideoTypeChips.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/components/VideoTypeChips/VideoTypeChips.vue">
+        <metrics statements="5" coveredstatements="5" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="2" count="26" type="stmt"/>
+        <line num="3" count="77" type="stmt"/>
+        <line num="14" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="37" count="24" type="stmt"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.stories">
+      <metrics statements="20" coveredstatements="16" conditionals="14" coveredconditionals="14" methods="9" coveredmethods="5"/>
+      <file name="Button.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/Button.vue">
+        <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
+        <line num="2" count="12" type="stmt"/>
+        <line num="10" count="12" type="stmt"/>
+        <line num="32" count="12" type="stmt"/>
+        <line num="36" count="12" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="47" count="12" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+      </file>
+      <file name="Header.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/Header.vue">
+        <metrics statements="5" coveredstatements="3" conditionals="12" coveredconditionals="12" methods="3" coveredmethods="1"/>
+        <line num="2" count="5" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="28" count="0" type="cond" truecount="3" falsecount="0"/>
+        <line num="29" count="1" type="cond" truecount="3" falsecount="0"/>
+        <line num="33" count="0" type="cond" truecount="2" falsecount="0"/>
+      </file>
+      <file name="Page.vue" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/Page.vue">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="1"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="62" count="2" type="stmt"/>
+        <line num="64" count="2" type="stmt"/>
+        <line num="65" count="1" type="stmt"/>
+        <line num="67" count="2" type="stmt"/>
+        <line num="68" count="0" type="stmt"/>
+        <line num="70" count="2" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+      </file>
+      <file name="button.css" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/button.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="header.css" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/header.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="page.css" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/stories/page.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="mnt.storybook-repo.src.tokens">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="tokens.css" path="/sessions/busy-trusting-lamport/mnt/storybook-repo/src/tokens/tokens.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+  </project>
+</coverage>

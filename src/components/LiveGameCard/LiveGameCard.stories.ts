@@ -142,3 +142,23 @@ export const MultipleCards: Story = {
     `,
   }),
 }
+
+/* ── Non-Clickable: covers cursor:'default' branch (clickable=false) ── */
+
+export const NonClickable: Story = {
+  name: 'Non-Clickable (display only)',
+  render: () => ({
+    components: { LiveGameCard },
+    template: `
+      <div style="max-width:500px;padding:20px">
+        <LiveGameCard
+          :homeTeam="{ name: 'M. Kiryat Gat', score: 87 }"
+          :awayTeam="{ name: 'H. Haifa', score: 79 }"
+          date="21 NOV, 2024"
+          :clickable="false"
+        />
+      </div>
+    `,
+  }),
+  // :style="{ cursor: clickable ? 'pointer' : 'default' }" — clickable=false → 'default' branch
+}
