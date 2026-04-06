@@ -78,6 +78,14 @@ export const SingleName: Story = {
   },
 }
 
+/* Covers v-if="teamLogoUrl" true branch (line 41) — SVG data URL loads without network */
+export const WithTeamLogo: Story = {
+  name: 'With Team Logo (data URL)',
+  args: {
+    teamLogoUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==',
+  },
+}
+
 /* ═══════════════════════════════════════════
    2. Custom Player
    ═══════════════════════════════════════════ */

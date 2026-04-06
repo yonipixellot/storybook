@@ -41,6 +41,9 @@ export const SignIn: Story = {
     const btns = canvas.getAllByRole('button', { name: /continue with/i })
     if (btns.length >= 1) await userEvent.click(btns[0]) // Continue with Apple (line 39)
     if (btns.length >= 2) await userEvent.click(btns[1]) // Continue with Google (line 45)
+    // Click Sign Up tab → AppTabs emits update:active → v-model handler fires (stmt line 19)
+    const signUpTab = canvas.getByRole('tab', { name: /sign up/i })
+    await userEvent.click(signUpTab)
   },
 }
 

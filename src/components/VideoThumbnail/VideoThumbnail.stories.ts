@@ -432,3 +432,15 @@ export const Props: Story = {
     `,
   }),
 }
+
+/* Covers v-if="thumbnailUrl" TRUE branch (line 28) — SVG data URL loads without network */
+export const WithThumbnailUrl: Story = {
+  name: 'With Thumbnail URL',
+  args: {
+    orientation: 'vertical',
+    thumbnailUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==',
+    title: 'Highlight with thumbnail',
+    duration: '1:23',
+    locked: false,
+  },
+}

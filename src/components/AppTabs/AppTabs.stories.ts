@@ -281,10 +281,10 @@ export const DisabledClick: Story = {
   play: async ({ canvasElement }) => {
     // fireEvent bypasses HTML disabled — triggers Vue @click handler with tab.disabled=true
     // → !tab.disabled is false → short-circuit → emit NOT called (covers && false branch)
-    const disabledBtn = canvasElement.querySelector<HTMLElement>('.at__tab[disabled]')
+    const disabledBtn = canvasElement.querySelector<HTMLElement>('.app-tabs__btn[disabled]')
     if (disabledBtn) await fireEvent.click(disabledBtn)
     // Also click enabled tab → !tab.disabled is true → emit fires (covers && true branch)
-    const enabledBtns = canvasElement.querySelectorAll<HTMLElement>('.at__tab:not([disabled])')
+    const enabledBtns = canvasElement.querySelectorAll<HTMLElement>('.app-tabs__btn:not([disabled])')
     if (enabledBtns.length > 0) await userEvent.click(enabledBtns[0])
   },
 }

@@ -243,3 +243,26 @@ export const AllVariants: Story = {
     `,
   }),
 }
+
+
+/* Covers v-if="showHandle" FALSE branch (line 25) + v-if="title || showClose" FALSE branch (line 29):
+   showHandle=false → handle NOT rendered; no title + showClose=false → header NOT rendered */
+export const NoHandleNoHeader: Story = {
+  name: 'No Handle / No Header (branch coverage)',
+  args: {
+    open: true,
+    showHandle: false,
+    // No title + showClose defaults to false → title || showClose = false → header v-if FALSE
+  },
+}
+
+/* Covers v-if="title" FALSE branch (line 29):
+   showClose=true makes the header render, but title is absent → h3 NOT rendered */
+export const CloseButtonNoTitle: Story = {
+  name: 'Close Button — No Title (branch coverage)',
+  args: {
+    open: true,
+    showClose: true,
+    // No title → v-if="title" = false → h3 NOT rendered (covers line 29 FALSE)
+  },
+}
