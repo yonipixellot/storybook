@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import AthleteProfile from './AthleteProfile.vue'
 
 const meta: Meta<typeof AthleteProfile> = {
@@ -44,6 +45,37 @@ const row    = 'display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap'
 export const Default: Story = {
   name: 'Default — Tal Weiss #1',
   args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click back button — exercises $emit('back') (showNav=true by default, stmt line 6)
+    const backBtn = canvas.getByRole('button', { name: /go back/i })
+    await userEvent.click(backBtn)
+    // Click share button — exercises $emit('share') (stmt line 10)
+    const shareBtn = canvas.getByRole('button', { name: /share/i })
+    await userEvent.click(shareBtn)
+    // Click team button — exercises $emit('team-tap') (stmt line 38)
+    const teamBtn = canvas.getByRole('button', { name: /view.*team/i })
+    await userEvent.click(teamBtn)
+    // Click see-all highlights — exercises $emit('see-all-highlights') (stmt line 91)
+    const seeAllBtn = canvas.getByRole('button', { name: /see all/i })
+    await userEvent.click(seeAllBtn)
+  },
+}
+
+/* Covers v-if="photoUrl" true branch — data URL loads without network */
+export const WithPhotoDataUrl: Story = {
+  name: 'With Photo (data URL)',
+  args: {
+    photoUrl: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+  },
+}
+
+/* Covers v-if="lastName" false branch — single-word name has no last name */
+export const SingleName: Story = {
+  name: 'Single Name (no lastName)',
+  args: {
+    name: 'ANNA',
+  },
 }
 
 /* ═══════════════════════════════════════════

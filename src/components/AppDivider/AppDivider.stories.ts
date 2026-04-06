@@ -170,6 +170,12 @@ export const AllVariants: Story = {
 
 /* ── Dark Mode ── */
 
+/* ── Vertical with spacing — covers spacing-truthy ternary branch ── */
+export const VerticalWithSpacing: Story = {
+  name: 'Vertical — with spacing',
+  args: { vertical: true, spacing: 12 },
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:400px"><story /></div>' })],

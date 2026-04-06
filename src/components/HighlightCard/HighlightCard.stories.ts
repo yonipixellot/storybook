@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, fireEvent } from 'storybook/test'
 import HighlightCard from './HighlightCard.vue'
 
 const meta: Meta<typeof HighlightCard> = {
@@ -102,6 +103,28 @@ export const DarkMode: Story = {
       </div>
     `,
   }),
+}
+
+/* ── With Thumbnail — covers v-if="thumbnail" true branch + @keydown.enter ── */
+
+export const WithThumbnail: Story = {
+  name: 'With Thumbnail',
+  // 1x1 transparent GIF (data URL — no network needed)
+  args: {
+    thumbnail: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+    duration: '1:23',
+    title: '🏀 Highlight with thumbnail',
+    date: 'NOV 13, 2025',
+    locked: false,
+  },
+  play: async ({ canvasElement }) => {
+    const card = canvasElement.querySelector<HTMLElement>('.highlight-card')
+    if (card) {
+      await userEvent.click(card)          // @click="$emit('click')" — stmts on line 4
+      card.focus()
+      await fireEvent.keyDown(card, { key: 'Enter', code: 'Enter' }) // @keydown.enter="$emit('click')"
+    }
+  },
 }
 
 /* ── Props ── */

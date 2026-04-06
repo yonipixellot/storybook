@@ -70,6 +70,29 @@ export const WithLogo: Story = {
   },
 }
 
+/* Covers v-if="logoUrl && !logoError" true branch — data URL ensures image loads without network */
+export const WithLogoDataUrl: Story = {
+  name: 'With Logo (data URL)',
+  args: {
+    primaryColor: '#1A3B8A',
+    // 1×1 transparent GIF — always loads, no network needed → logoError stays false → img branch fires
+    logoUrl: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+    logoAlt: 'PBA',
+    logoSize: 80,
+    height: 200,
+  },
+}
+
+/* Covers c.startsWith('var(') true branch — omit primaryColor so withDefaults provides var(...) */
+export const DefaultColor: Story = {
+  name: 'Default color (CSS var fallback)',
+  args: {
+    // No primaryColor → withDefaults: 'var(--color-hero-bg-raw, #1A3B8A)' → startsWith('var(') true
+    logoSize: 80,
+    height: 200,
+  },
+}
+
 export const Compact: Story = {
   name: 'Compact (200px)',
   args: {

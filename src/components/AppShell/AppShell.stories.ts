@@ -46,9 +46,12 @@ export const MobileHome: Story = {
     if (tabs.length >= 2) {
       await userEvent.click(tabs[1]) // WNBL tab
     }
-    // Click search button to exercise AppHeader search emit
+    // Click search button to exercise AppHeader @search → AppShell emit
     const searchBtn = canvas.getByRole('button', { name: /search/i })
     await userEvent.click(searchBtn)
+    // Click notifications to exercise AppHeader @notifications → AppShell emit (stmt line 15)
+    const notifBtn = canvas.getByRole('button', { name: /notifications/i })
+    await userEvent.click(notifBtn)
   },
   render: () => ({
     components: { AppShell },
@@ -84,6 +87,11 @@ export const DesktopHome: Story = {
   name: 'Desktop — home',
   parameters: {
     viewport: { defaultViewport: 'desktop1440' },
+  },
+  play: async ({ canvasElement }) => {
+    // Avatar button replaces hamburger on desktop — exercises AppHeader @menu → AppShell emit (stmt line 13)
+    const avatarBtn = canvasElement.querySelector<HTMLElement>('.ah__avatar-btn')
+    if (avatarBtn) await userEvent.click(avatarBtn)
   },
   render: () => ({
     components: { AppShell },
@@ -132,6 +140,9 @@ export const DesktopBack: Story = {
     const backBtn = canvas.getByRole('button', { name: /go back/i })
     await expect(backBtn).toBeVisible()
     await userEvent.click(backBtn)
+    // Click search button in back variant — exercises AppHeader @search → AppShell emit (stmt line 38)
+    const searchBtn = canvas.getByRole('button', { name: /search/i })
+    await userEvent.click(searchBtn)
   },
   render: () => ({
     components: { AppShell },

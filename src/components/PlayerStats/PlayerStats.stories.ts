@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import PlayerStats from './PlayerStats.vue'
 
 const meta: Meta<typeof PlayerStats> = {
@@ -50,6 +51,11 @@ export const Default: Story = {
   decorators: [
     () => ({ template: '<div style="padding:20px;max-width:430px;background:#fff"><story /></div>' }),
   ],
+  play: async ({ canvasElement }) => {
+    // Click second team tab → @click="activeTab = idx" (stmt line 16)
+    const tabs = canvasElement.querySelectorAll<HTMLElement>('.ps__tab')
+    if (tabs.length > 1) await userEvent.click(tabs[1])
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -64,6 +70,12 @@ export const Paywall: Story = {
   decorators: [
     () => ({ template: '<div style="padding:20px;max-width:430px;background:#fff"><story /></div>' }),
   ],
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click Buy Now → @click="$emit('buy')" (stmt line 61)
+    const buyBtn = canvas.getByRole('button', { name: /buy now/i })
+    await userEvent.click(buyBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════

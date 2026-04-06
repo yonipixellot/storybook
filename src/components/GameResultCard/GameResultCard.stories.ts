@@ -126,6 +126,28 @@ export const DarkMode: Story = {
   }),
 }
 
+/* ── No League — covers v-else branch ── */
+
+export const NoLeague: Story = {
+  render: () => ({
+    components: { GameResultCard },
+    template: `
+      <div style="${box}">
+        <p style="${title}">No League Label</p>
+        <p style="${label}">When no league prop is passed the v-else span renders</p>
+        <hr style="${hr}" />
+        <GameResultCard
+          :homeTeam="{ name: 'Team Alpha', score: 3 }"
+          :awayTeam="{ name: 'Team Beta', score: 1 }"
+          day="5"
+          month="APR"
+          year="2026"
+        />
+      </div>
+    `,
+  }),
+}
+
 /* ── Multiple Cards ── */
 
 export const MultipleCards: Story = {

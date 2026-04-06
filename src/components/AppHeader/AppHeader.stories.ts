@@ -58,6 +58,9 @@ export const Home: Story = {
     // Click Notifications button — exercises $emit('notifications')
     const notifBtn = canvas.getByRole('button', { name: /notifications/i })
     await userEvent.click(notifBtn)
+    // Click Menu (hamburger) button — exercises $emit('menu') (stmt line 37)
+    const menuBtn = canvas.getByRole('button', { name: /^menu$/i })
+    await userEvent.click(menuBtn)
   },
 }
 
@@ -90,6 +93,12 @@ export const Back: Story = {
 export const BackWithShare: Story = {
   name: 'Back + Share',
   args: { variant: 'back', pageTitle: 'Highlight', showShare: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Click share button — exercises BackBar @share → $emit('share') (stmt line 55)
+    const shareBtn = canvas.getByRole('button', { name: /share/i })
+    await userEvent.click(shareBtn)
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -140,6 +149,12 @@ export const Desktop: Story = {
       </AppHeader>
     `,
   }),
+}
+
+/* Covers showNotifications v-if false branch */
+export const NoNotifications: Story = {
+  name: 'No Notifications Button',
+  args: { showNotifications: false },
 }
 
 export const DarkMode: Story = {

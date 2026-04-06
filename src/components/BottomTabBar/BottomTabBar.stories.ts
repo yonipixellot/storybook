@@ -61,6 +61,14 @@ export const CustomAccent: Story = {
   args: { accentColor: '#D0142C', active: 'following' },
 }
 
+/* ═══════════════════════════════════════════
+   5. Shop tab active — covers shop SVG active-state branches
+   ═══════════════════════════════════════════ */
+export const ShopActive: Story = {
+  name: 'Shop tab active',
+  args: { active: 'shop' },
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px;max-width:430px"><story /></div>' })],
