@@ -250,12 +250,19 @@ const ageOptions = Array.from({ length: 83 }, (_, i) => ({
     border-radius: 0;
   }
 
-  /* Right panel: form centered vertically */
+  /* Right panel: centered content with max-width cap */
   .auth-page__body {
     flex: 1;
+    align-items: center;
     justify-content: center;
     overflow-y: auto;
     padding: var(--space-xl) 60px;
+  }
+
+  /* Cap the inner form width so it doesn't stretch at 1440px */
+  .auth-page__body > * {
+    width: 100%;
+    max-width: 440px;
   }
 }
 </style>
