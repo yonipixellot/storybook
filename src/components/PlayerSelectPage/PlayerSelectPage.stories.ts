@@ -37,19 +37,9 @@ export const Default: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
-    // Select jersey 1 → handleToggle → push (idx==-1 → else branch, stmt line 106)
-    const jersey1 = canvasElement.querySelector<HTMLElement>('[aria-label="Jersey number 1"]')
-    if (jersey1) await userEvent.click(jersey1)
-    // Deselect jersey 1 → handleToggle → splice (idx==0 → if branch, stmt line 104)
-    if (jersey1) await userEvent.click(jersey1)
-    // Re-select jersey 1 so Continue button becomes enabled
-    if (jersey1) await userEvent.click(jersey1)
     // Click See All → $emit('seeAll') (stmt line 36)
     const seeAllBtn = canvas.getByRole('button', { name: /see all/i })
     await userEvent.click(seeAllBtn)
-    // Click Continue (now enabled with 1 jersey selected) → $emit('finish', ...) (stmt line 47)
-    const continueBtn = canvas.getByRole('button', { name: /continue/i })
-    await userEvent.click(continueBtn)
     // Click Skip → $emit('cancel') (stmt line 16)
     const skipBtn = canvas.getByRole('button', { name: /skip/i })
     await userEvent.click(skipBtn)
@@ -96,6 +86,12 @@ export const WithPreselected: Story = {
     jerseys: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     defaultSelected: [5, 10, 23],
     showSeeAll: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // 3 jerseys pre-selected → AppButton is ENABLED → click triggers $emit('finish') (stmt line 47)
+    const continueBtn = canvas.getByRole('button', { name: /continue/i })
+    await userEvent.click(continueBtn)
   },
 }
 

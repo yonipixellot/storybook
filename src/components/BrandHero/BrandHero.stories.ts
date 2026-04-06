@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { waitFor } from 'storybook/test'
 import BrandHero from './BrandHero.vue'
 
 const meta: Meta<typeof BrandHero> = {
@@ -70,16 +71,27 @@ export const WithLogo: Story = {
   },
 }
 
-/* Covers v-if="logoUrl && !logoError" true branch — data URL ensures image loads without network */
+/* Covers v-if="logoUrl && !logoError" true branch — inline SVG data URL loads synchronously,
+   no network needed, no error event → logoError stays false → img branch fires */
 export const WithLogoDataUrl: Story = {
   name: 'With Logo (data URL)',
   args: {
     primaryColor: '#1A3B8A',
-    // 1×1 transparent GIF — always loads, no network needed → logoError stays false → img branch fires
-    logoUrl: 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
+    // Minimal inline SVG — loads without network, never triggers @error → v-if true branch fires
+    logoUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxIiBoZWlnaHQ9IjEiPjwvc3ZnPg==',
     logoAlt: 'PBA',
     logoSize: 80,
     height: 200,
+  },
+  play: async ({ canvasElement }) => {
+    // Wait for img.bh__logo-img to appear — confirms v-if="logoUrl && !logoError" true branch fired
+    await waitFor(
+      () => {
+        const img = canvasElement.querySelector('img.bh__logo-img')
+        if (!img) throw new Error('bh__logo-img not in DOM')
+      },
+      { timeout: 5000 },
+    )
   },
 }
 
@@ -88,6 +100,17 @@ export const DefaultColor: Story = {
   name: 'Default color (CSS var fallback)',
   args: {
     // No primaryColor → withDefaults: 'var(--color-hero-bg-raw, #1A3B8A)' → startsWith('var(') true
+    logoSize: 80,
+    height: 200,
+  },
+}
+
+/* Covers darken30 early-return: if (h.length !== 6) return hex
+   '#FFF' → h = 'FFF' → length 3 ≠ 6 → return early (stmt line 55 + branch 0) */
+export const ShortHex: Story = {
+  name: 'Short hex (darken30 passthrough)',
+  args: {
+    primaryColor: '#FFF',
     logoSize: 80,
     height: 200,
   },
