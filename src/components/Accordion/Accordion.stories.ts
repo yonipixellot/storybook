@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import Accordion from './Accordion.vue'
 
 const meta: Meta<typeof Accordion> = {
@@ -41,6 +42,17 @@ type Story = StoryObj<typeof Accordion>
 export const SingleOpen: Story = {
   name: 'Single Open (default)',
   args: { allowMultiple: false },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // open item 1 (allowMultiple=false → s=new Set([]), openSet.has false → s.add)
+    const btn1 = canvas.getByRole('button', { name: /what is included/i })
+    await userEvent.click(btn1)
+    // close item 1 (openSet.has true → s.delete)
+    await userEvent.click(btn1)
+    // open item 2
+    const btn2 = canvas.getByRole('button', { name: /how long/i })
+    await userEvent.click(btn2)
+  },
 }
 
 /* ═══════════════════════════════════════════
@@ -49,6 +61,16 @@ export const SingleOpen: Story = {
 export const MultipleOpen: Story = {
   name: 'Multiple Open',
   args: { allowMultiple: true },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const btn1 = canvas.getByRole('button', { name: /what is included/i })
+    const btn2 = canvas.getByRole('button', { name: /how long/i })
+    // open both (allowMultiple=true → s=new Set(openSet.value) copies existing set)
+    await userEvent.click(btn1)
+    await userEvent.click(btn2)
+    // close item 1 while item 2 stays open (openSet.has true → s.delete)
+    await userEvent.click(btn1)
+  },
 }
 
 /* ═══════════════════════════════════════════

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import JerseyGrid from './JerseyGrid.vue'
 
 const meta: Meta<typeof JerseyGrid> = {
@@ -27,6 +28,16 @@ export const Default: Story = {
     selected: [],
     color:    '#D0142C',
   },
+  play: async ({ canvasElement }) => {
+    // Use querySelector with exact aria-label to avoid partial regex matches (e.g. "1" matching 10,11,12)
+    const jersey1 = canvasElement.querySelector<HTMLElement>('[aria-label="Jersey number 1"]')
+    const jersey2 = canvasElement.querySelector<HTMLElement>('[aria-label="Jersey number 2"]')
+    if (jersey1) {
+      await userEvent.click(jersey1) // select (s.has false → s.add → emit change)
+      await userEvent.click(jersey1) // deselect (s.has true → s.delete → emit change)
+    }
+    if (jersey2) await userEvent.click(jersey2) // select jersey 2
+  },
 }
 
 export const WithPreselected: Story = {
@@ -34,6 +45,13 @@ export const WithPreselected: Story = {
     numbers:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     selected: [5, 10, 12],
     color:    '#D0142C',
+  },
+  play: async ({ canvasElement }) => {
+    // Use exact aria-label selectors to avoid partial matches (e.g. /1/ hitting 10,11,12)
+    const jersey5 = canvasElement.querySelector<HTMLElement>('[aria-label="Jersey number 5"]')
+    const jersey1 = canvasElement.querySelector<HTMLElement>('[aria-label="Jersey number 1"]')
+    if (jersey5) await userEvent.click(jersey5) // pre-selected → deselect (s.has true → s.delete)
+    if (jersey1) await userEvent.click(jersey1) // unselected → select (s.has false → s.add)
   },
 }
 
@@ -58,6 +76,15 @@ export const LightJerseys: Story = {
     numbers:  [1, 2, 3, 4, 5, 6],
     selected: [1],
     color:    '#FFFFFF',
+  },
+}
+
+/* covers resolvedNumbers DEFAULT_NUMBERS branch (no numbers prop) */
+export const DefaultNumbers: Story = {
+  name: 'Default Numbers (no prop)',
+  args: {
+    selected: [],
+    color:    '#D0142C',
   },
 }
 

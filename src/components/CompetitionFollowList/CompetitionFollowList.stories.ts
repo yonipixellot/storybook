@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import CompetitionFollowList from './CompetitionFollowList.vue'
 
 const meta: Meta<typeof CompetitionFollowList> = {
@@ -22,6 +23,38 @@ type Story = StoryObj<typeof CompetitionFollowList>
 export const Default: Story = {
   name: 'Default (5 competitions)',
   args: {},
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+
+    // 1. Open "Varsity" (toggleComp → openSet.has false → s.add)
+    const varsityBtn = canvas.getByRole('button', { name: /^varsity$/i })
+    await userEvent.click(varsityBtn)
+
+    // 2. Follow Riverside Mustangs (first team card — key not in followedMap → current=false → set true)
+    const teamCards = canvasElement.querySelectorAll<HTMLElement>('.tfc')
+    if (teamCards.length > 0) await userEvent.click(teamCards[0])
+
+    // 3. Unfollow same team (key IS in followedMap now → current=true → set false)
+    if (teamCards.length > 0) await userEvent.click(teamCards[0])
+
+    // 4. Follow two teams so Continue shows count
+    if (teamCards.length > 0) await userEvent.click(teamCards[0])
+    if (teamCards.length > 1) await userEvent.click(teamCards[1])
+
+    // 5. Open "Junior Varsity" (empty teams → hits v-else "No teams available")
+    const jvBtn = canvas.getByRole('button', { name: /junior varsity/i })
+    await userEvent.click(jvBtn)
+
+    // 6. Close "Junior Varsity" (toggleComp → openSet.has true → s.delete)
+    await userEvent.click(jvBtn)
+
+    // 7. Click Continue button (emits 'continue' with totalFollowed count)
+    const continueBtn = canvas.getByRole('button', { name: /continue/i })
+    await userEvent.click(continueBtn)
+
+    // 8. Close Varsity (toggleComp → openSet.has true → s.delete)
+    await userEvent.click(varsityBtn)
+  },
 }
 
 export const PreExpanded: Story = {
@@ -44,6 +77,21 @@ export const PreExpanded: Story = {
         ],
       },
     ],
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    // Open Premier League (covers resolvedCompetitions via props.competitions)
+    const plBtn = canvas.getByRole('button', { name: /premier league/i })
+    await userEvent.click(plBtn)
+    // Follow Ironi Nahariya (index 1)
+    const cards = canvasElement.querySelectorAll<HTMLElement>('.tfc')
+    if (cards.length > 1) await userEvent.click(cards[1])
+    // Open Championship
+    const champBtn = canvas.getByRole('button', { name: /championship/i })
+    await userEvent.click(champBtn)
+    // Continue
+    const continueBtn = canvas.getByRole('button', { name: /continue/i })
+    await userEvent.click(continueBtn)
   },
 }
 

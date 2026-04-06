@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from 'storybook/test'
 import JerseyItem from './JerseyItem.vue'
 import JerseyGrid from '../JerseyGrid/JerseyGrid.vue'
 
@@ -28,11 +29,22 @@ type Story = StoryObj<typeof JerseyItem>
 export const Default: Story = {
   name: 'Default (red, unselected)',
   args: { number: 7, selected: false, color: '#D0142C' },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    const btn = canvas.getByRole('button', { name: /jersey number 7/i })
+    // click → $emit('click')
+    await userEvent.click(btn)
+    // focus → @focus handler (focused = true)
+    btn.focus()
+    // blur → @blur handler (focused = false)
+    btn.blur()
+  },
 }
 
 export const Selected: Story = {
   name: 'Selected',
   args: { number: 23, selected: true, color: '#D0142C' },
+  // selected=true → strokeColor returns 'var(--color-success-green)' branch
 }
 
 export const CustomBlue: Story = {
@@ -43,6 +55,19 @@ export const CustomBlue: Story = {
 export const LightColor: Story = {
   name: 'Light Color (dark number)',
   args: { number: 5, selected: false, color: '#FFE000' },
+  // isLight('#FFE000') returns true → strokeColor = 'var(--color-gray-300)', numberStyle = '#161616'
+}
+
+/* Covers isLight returning true AND selected=true simultaneously (strokeColor selected branch wins) */
+export const LightSelected: Story = {
+  name: 'Light Color + Selected',
+  args: { number: 9, selected: true, color: '#FFE000' },
+}
+
+/* Covers isLight short-hex guard: h.length < 6 → return false */
+export const ShortHexColor: Story = {
+  name: 'Short Hex Color',
+  args: { number: 3, selected: false, color: '#FFF' },
 }
 
 export const Grid: Story = {

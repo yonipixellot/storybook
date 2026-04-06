@@ -49,6 +49,14 @@ export const Default: Story = {
   args: {
     placeholder: 'Age...',
   },
+  play: async ({ canvasElement }) => {
+    // Select an option → fires @input → $emit('update:modelValue', value)
+    const select = canvasElement.querySelector<HTMLSelectElement>('.app-select')
+    if (select) {
+      select.value = '18'
+      select.dispatchEvent(new Event('input', { bubbles: true }))
+    }
+  },
 }
 
 export const ErrorWithMessage: Story = {

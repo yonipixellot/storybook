@@ -74,6 +74,15 @@ export const WithLogo: Story = {
   },
 }
 
+/* Covers teamColor `if (!props.name) return TEAM_COLORS[0]` and initial `? ... : 'T'` branches */
+export const NoName: Story = {
+  name: 'No Name (fallback initial)',
+  args: {
+    size: 40,
+    name: '',
+  },
+}
+
 export const DarkMode: Story = {
   name: 'Dark Mode',
   decorators: [() => ({ template: '<div data-theme="dark" style="background:#1A1A1A;padding:20px;border-radius:12px"><story /></div>' })],
