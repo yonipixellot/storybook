@@ -187,9 +187,18 @@
   --z-modal:    200;  /* modals, overlays */
   --z-toast:    300;  /* toasts, banners (always on top) */
 
-  /* ── Breakpoints (for reference — use in @media) ── */
-  /* --bp-mobile: 768px; */
-  /* --bp-tablet: 1024px; */
+  /* ── Breakpoints ──────────────────────────────────────
+     CSS custom properties can't be used inside @media
+     queries, so these are reference values only.
+     Use the JS constants from src/tokens/breakpoints.ts
+     in stories, or the raw px values in component CSS.
+
+     Strategy: mobile-first — default styles = mobile,
+     add overrides at each min-width breakpoint.
+     ────────────────────────────────────────────────── */
+  --bp-tablet:  768px;   /* ≥768 — tablet portrait */
+  --bp-desktop: 1024px;  /* ≥1024 — desktop / landscape tablet */
+  --bp-wide:    1440px;  /* ≥1440 — large desktop */
 }
 
 /* ══════════════════════════════════════════════
