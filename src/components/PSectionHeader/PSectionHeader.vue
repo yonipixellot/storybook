@@ -38,7 +38,7 @@ defineEmits<{ 'see-all': [] }>()
 .psh__title {
   margin: 0;
   font-family: var(--font-family-base);
-  font-size: var(--text-2xl);
+  font-size: var(--text-sm); /* DS: 15px, not 16px — override via titleFontSize prop */
   font-weight: var(--font-bold);
   color: var(--color-black);
 }

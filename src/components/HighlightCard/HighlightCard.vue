@@ -55,8 +55,8 @@ const computedAriaLabel = computed(() =>
 <style scoped>
 .highlight-card {
   position: relative;
-  width: 108px;
-  height: 192px;
+  width: 130px;
+  height: 190px;
   border: none;
   border-radius: var(--radius-badge);
   overflow: hidden;
@@ -104,8 +104,8 @@ const computedAriaLabel = computed(() =>
 }
 
 .highlight-card__duration span {
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 9px;        /* DS: 9px, not 8px */
+  font-weight: var(--font-medium); /* DS: 500, not 600 */
   color: #FFFFFF;
   line-height: 1;
 }

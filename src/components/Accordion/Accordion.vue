@@ -104,8 +104,8 @@ function toggle(id: string) {
   gap: var(--space-md);
   text-align: left;
   font-family: var(--font-family-base);
-  font-size: var(--text-xs);
-  font-weight: var(--font-medium);
+  font-size: var(--text-base); /* DS: 16px, not 14px (--text-xs) */
+  font-weight: var(--font-bold); /* DS: 700, not 500 (--font-medium) */
   color: var(--color-dark-text);
 }
 

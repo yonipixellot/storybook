@@ -55,7 +55,7 @@ const initial = computed(() =>
 .ptl {
   border-radius: var(--radius-full);
   background: var(--color-white);
-  border: var(--stroke-thin) solid var(--color-bar-track);
+  border: 0.5px solid var(--color-bar-track); /* DS: 0.5px, not --stroke-thin (0.67px) */
   flex-shrink: 0;
   overflow: hidden;
   display: flex;

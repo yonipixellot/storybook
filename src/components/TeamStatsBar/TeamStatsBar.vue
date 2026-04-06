@@ -147,7 +147,7 @@ function rightPct(row: StatRow): number {
   flex: 1;
   height: 8px;
   background: var(--color-bar-track);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xs); /* DS: 4px, not --radius-sm (6px) */
   overflow: hidden;
 }
 
@@ -156,7 +156,7 @@ function rightPct(row: StatRow): number {
 
 .tsb__fill {
   height: 8px;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xs); /* DS: 4px, not --radius-sm (6px) */
 }
 
 .tsb__fill--red  { background: var(--color-bar-red); }

@@ -36,7 +36,7 @@ defineEmits<{ upgrade: [] }>()
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  border: var(--stroke-thin) solid var(--color-premium-amber);
+  border: 0.5px solid var(--color-premium-amber); /* DS: 0.5px, not --stroke-thin (0.67px) */
 }
 
 /* Lock circle */
@@ -45,7 +45,7 @@ defineEmits<{ upgrade: [] }>()
   height: 32px;
   border-radius: var(--radius-full);
   background: var(--color-premium-dark);
-  border: var(--stroke-thin) solid var(--color-premium-yellow);
+  border: 0.5px solid var(--color-premium-yellow); /* DS: 0.5px, not --stroke-thin (0.67px) */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,11 +69,12 @@ defineEmits<{ upgrade: [] }>()
   font-size: var(--text-base);
   font-weight: var(--font-semibold);
   padding: 4px 12px;
+  line-height: var(--leading-normal); /* DS: 1.5 line-height aligns button height to ~32px */
   border-radius: var(--radius-pill);
   border: none;
   cursor: pointer;
   background: var(--color-premium-yellow);
-  color: var(--color-premium-dark);
+  color: var(--color-black); /* DS: pure black, not --color-premium-dark (#362F2C) */
   flex-shrink: 0;
   transition: background var(--duration-fast);
 }

@@ -58,7 +58,6 @@ defineEmits<{ retry: [] }>()
   font-size: var(--text-caption);
   font-weight: var(--font-regular);
   color: var(--color-gray-500);
-  margin-top: 2px;
 }
 
 /* ── Retry button ── */

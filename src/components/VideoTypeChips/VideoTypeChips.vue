@@ -95,7 +95,7 @@ defineEmits<{ 'update:modelValue': [value: string] }>()
 .vtc__chip--active {
   background: var(--color-jersey-red);
   color: #FFFFFF;
-  font-weight: var(--font-bold);
+  font-weight: var(--font-semibold);
 }
 
 .vtc__chip--active:hover:not(:disabled) {

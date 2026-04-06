@@ -11,7 +11,7 @@
           <PTeamLogo :name="homeTeam.name" :logoUrl="homeTeam.logoUrl" :size="44" />
           <span class="score-card__score" :style="{ color: homeScoreColor }">{{ homeTeam.score }}</span>
         </div>
-        <span class="score-card__name">{{ homeTeam.name }}</span>
+        <span class="score-card__name" :style="{ color: homeScoreColor }">{{ homeTeam.name }}</span>
         <span v-if="homeTeam.standing" class="score-card__standing">{{ homeTeam.standing }}</span>
       </div>
 
@@ -27,7 +27,7 @@
           <span class="score-card__score" :style="{ color: awayScoreColor }">{{ awayTeam.score }}</span>
           <PTeamLogo :name="awayTeam.name" :logoUrl="awayTeam.logoUrl" :size="44" />
         </div>
-        <span class="score-card__name">{{ awayTeam.name }}</span>
+        <span class="score-card__name" :style="{ color: awayScoreColor }">{{ awayTeam.name }}</span>
         <span v-if="awayTeam.standing" class="score-card__standing">{{ awayTeam.standing }}</span>
       </div>
     </div>

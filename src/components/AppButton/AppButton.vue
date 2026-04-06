@@ -62,7 +62,7 @@ defineEmits<{ click: [] }>()
 /* ── Sizes ── */
 .app-button--sm  { height: 32px; font-size: var(--text-xs); font-weight: 600; padding: 0 var(--space-lg); border-radius: var(--radius-lg); }
 .app-button--md  { height: 40px; font-size: var(--text-sm); font-weight: 500; padding: 0 var(--space-xl); border-radius: var(--radius-lg); }
-.app-button--lg  { height: 48px; font-size: var(--text-base); font-weight: 700; padding: 0 28px; border-radius: 28px; } /* DS: fw=700, radius=28px */
+.app-button--lg  { height: 48px; font-size: var(--text-base); font-weight: 700; padding: 0 40px; border-radius: 28px; } /* DS: fw=700, radius=28px, padding=40px (no token) */
 
 .app-button--full-width { width: 100%; }
 .app-button--icon-only  { padding: 0; aspect-ratio: 1; }

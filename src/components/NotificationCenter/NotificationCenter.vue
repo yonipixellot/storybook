@@ -142,7 +142,7 @@ const resolvedNotifications = computed(() =>
 .nc__item {
   display: flex;
   gap: var(--space-md);
-  padding: var(--space-md2) 0;
+  padding: var(--space-md2) 0; /* DS: 14px top+bottom, not 16px (--space-lg) */
   border-bottom: 1px solid var(--color-gray-100);
   align-items: flex-start;
 }

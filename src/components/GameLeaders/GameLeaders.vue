@@ -110,7 +110,7 @@ defineEmits<{ 'see-all': [] }>()
   height: 44px;
   border-radius: var(--radius-full);
   background: var(--color-gray-100);
-  border: 0.67px solid var(--color-gray-300);
+  border: 0.5px solid var(--color-gray-300);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -173,7 +173,7 @@ defineEmits<{ 'see-all': [] }>()
 /* Divider */
 .gl__divider {
   border: none;
-  border-top: 1px solid var(--color-divider-dark);
+  border-top: 0.5px solid var(--color-divider-dark); /* DS: divider-dark (#444746), not gray-300 */
   margin: 0 0 var(--space-sm2, 10px);
 }
 
@@ -188,15 +188,15 @@ defineEmits<{ 'see-all': [] }>()
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  background: var(--color-gray-100);
+  background: var(--color-gray-50); /* DS: gray-50 (#F5F5F5), not gray-100 (#EDEDED) */
   border: none;
   cursor: pointer;
   border-radius: var(--radius-stat-bar);
   padding: 8px 28px;
   font-family: var(--font-family-base);
   font-size: var(--text-xs);
-  font-weight: var(--font-medium);
-  color: var(--color-gray-500);
+  font-weight: var(--font-semibold); /* DS: 600, not 500 */
+  color: var(--color-dark-text); /* DS: dark-text (#161616), not gray-500 (#6C6C6C) */
 }
 
 .gl__see-all:hover {
@@ -204,6 +204,6 @@ defineEmits<{ 'see-all': [] }>()
 }
 
 .gl__chevron {
-  color: var(--color-gray-500);
+  color: var(--color-dark-text); /* DS: matches button text color */
 }
 </style>

@@ -36,7 +36,7 @@ const blockStyle = computed(() => ({
     var(--color-gray-100) 75%
   );
   background-size: 200% 100%;
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-xs); /* DS: 4px default, not 6px */
   animation: shimmer 1.5s infinite ease-in-out;
 }
 

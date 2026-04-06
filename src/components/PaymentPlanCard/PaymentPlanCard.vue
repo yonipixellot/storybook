@@ -187,10 +187,10 @@ const isHighlighted = computed(() => props.variant === 'highlighted')
 .ppc__btn {
   font-family: var(--font-family-base);
   font-size: var(--text-base);
-  font-weight: var(--font-semibold);
-  height: var(--size-button-height);
-  padding: 0 var(--space-xl);
-  border-radius: var(--radius-pill);
+  font-weight: var(--font-bold);      /* DS: 700, not 600 */
+  height: 48px;                       /* DS: 48px — larger than --size-button-height (40px); no token exists */
+  padding: 0 40px;                    /* DS: 40px horizontal — no exact token; closest is --space-xxl(32px) */
+  border-radius: var(--radius-chip);  /* DS: 26px chip, not full pill */
   border: none;
   cursor: pointer;
   background: var(--color-primary);
@@ -205,7 +205,7 @@ const isHighlighted = computed(() => props.variant === 'highlighted')
 /* Premium button variant */
 .ppc__btn--premium {
   background: var(--color-premium-yellow);
-  color: var(--color-premium-dark);
+  color: var(--color-black);  /* DS: pure black, not --color-premium-dark (#362F2C) */
 }
 
 .ppc__btn--premium:hover {

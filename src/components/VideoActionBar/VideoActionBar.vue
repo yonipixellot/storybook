@@ -114,7 +114,7 @@ function handleBookmark() {
   height: 40px;
   border-radius: var(--radius-full);  /* 50% — circle */
   background: var(--color-gray-100);
-  color: var(--color-gray-500);
+  color: var(--color-gray-500); /* DS: icon buttons = gray-500, not black */
   border: none;
   cursor: pointer;
   display: flex;

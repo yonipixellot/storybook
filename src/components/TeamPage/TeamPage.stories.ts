@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import TeamPage from './TeamPage.vue'
 
 const meta: Meta<typeof TeamPage> = {
-  title: 'Team Profile/TeamPage',
+  title: 'Pages/TeamPage',
   component: TeamPage,
   tags: ['autodocs'],
   argTypes: {

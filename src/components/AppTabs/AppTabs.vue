@@ -125,8 +125,8 @@ defineEmits<{ 'update:active': [value: string] }>()
 
 .app-tabs--underline .app-tabs__btn--active {
   background-color: transparent;
-  color: var(--color-dark-text, #161616);
-  font-weight: var(--font-semibold);
+  color: var(--color-black); /* DS: active tab = pure black, not dark-text (#161616) */
+  font-weight: 500; /* DS: active underline tab is NOT bolder — same weight as inactive; indicator is the bottom border */
   border-bottom: 3px solid;
   padding: 16px 0;
 }

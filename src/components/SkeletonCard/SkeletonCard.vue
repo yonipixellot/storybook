@@ -24,7 +24,7 @@ withDefaults(defineProps<{
 
 <style scoped>
 .skc {
-  background: var(--color-gray-50); /* #F5F5F5 light */
+  background: var(--color-white); /* DS: white, not gray-50 */
   border: 1px solid var(--color-gray-100);
   border-radius: var(--radius-md);
   overflow: hidden;

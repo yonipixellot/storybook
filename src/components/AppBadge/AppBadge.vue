@@ -5,7 +5,9 @@
     role="status"
   >
     <span v-if="variant === 'live'" class="app-badge__dot" />
-    <span v-if="variant === 'highlights'" class="app-badge__play">&#9654;</span>
+    <svg v-if="variant === 'highlights'" class="app-badge__play" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" fill="var(--color-premium-yellow)" />
+    </svg>
     {{ label }}
   </div>
 </template>
@@ -106,8 +108,8 @@ const label = computed(() => labels[props.variant || 'live'])
 }
 
 .app-badge__play {
-  font-size: 8px;
-  line-height: 1;
+  display: block;
+  flex-shrink: 0;
 }
 
 /* ── New ── */

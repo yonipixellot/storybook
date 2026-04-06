@@ -60,7 +60,7 @@
   --color-info-border-purple: rgba(139, 92, 246, 0.15);
   --color-link-blue: #2563EB;
   --color-highlight-gray: #6C6C6C;
-  --color-social-icon: #7d899b;
+  --color-social-icon: #161616; /* DS: social icons = dark-text color in light mode */
 
   /* ── Colors — Primary Tints ── */
   --color-primary-bg-light: #EBF2FF;   /* AppInput focus ring bg */
@@ -226,6 +226,8 @@
 
   /* ── Colors — Neutrals (continued) ── */
   --color-gray-400:     #888888; /* DS dark uses #888888 for inactive tab text etc. */
+
+  --color-social-icon:    #E8E8E8; /* DS dark: social icons use light text color */
 
   /* ── Colors — Status (adjusted for dark) ── */
   --color-link-blue:      #60A5FA; /* DS measured rgb(96,165,250) in dark mode */
