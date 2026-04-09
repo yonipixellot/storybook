@@ -149,12 +149,20 @@ const socialLinks = [
 </script>
 
 <style scoped>
-/* ── Page — gradient from DS bundle exactly ── */
+/* ── Page — full-bleed: break out of AppShell's content padding ── */
 .tp {
   font-family: var(--font-family-base);
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-100) 100%);
   overflow-x: hidden;
   min-height: 100vh;
+  /* Negate AppShell .ash__content padding so the page fills edge-to-edge */
+  margin: calc(-1 * var(--space-lg));
+}
+
+@media (min-width: 1024px) {
+  .tp {
+    margin: calc(-1 * var(--space-xl));
+  }
 }
 
 /* ── Hero Wrap — padding from DS bundle: "24px 16px" ── */

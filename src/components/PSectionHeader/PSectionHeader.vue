@@ -46,20 +46,22 @@ defineEmits<{ 'see-all': [] }>()
 .psh__see-all {
   background: none;
   border: none;
+  appearance: none;
+  -webkit-appearance: none;
   cursor: pointer;
   font-family: var(--font-family-base);
   font-size: var(--text-body2);
   font-weight: var(--font-semibold); /* DS: 600, not 400 */
   color: var(--color-link-blue);     /* DS: #2563EB, not primary #116DFF */
   padding: 0;
+  text-decoration: none;
 }
 
 .psh__see-all:hover {
   text-decoration: underline;
 }
 .psh__see-all:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: var(--radius-xs);
+  outline: none;
+  text-decoration: underline;
 }
 </style>
