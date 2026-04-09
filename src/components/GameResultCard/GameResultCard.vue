@@ -124,6 +124,7 @@ withDefaults(defineProps<{
 
 .game-result-card__content {
   flex: 1 1 0%;
+  min-width: 0; /* must pair with min-width:0 on card root — both needed to allow grid shrink */
   display: flex;
   flex-direction: column;
   justify-content: center;
