@@ -3,7 +3,7 @@ import { userEvent, within } from 'storybook/test'
 import AthleteProfile from './AthleteProfile.vue'
 
 const meta: Meta<typeof AthleteProfile> = {
-  title: 'Athlete Profile/AthleteProfile',
+  title: 'Pages/AthleteProfile',
   component: AthleteProfile,
   tags: ['autodocs'],
   argTypes: {
