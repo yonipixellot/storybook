@@ -125,6 +125,7 @@ defineEmits<{
 /* Centered, max-width content at desktop */
 .ash__content {
   width: 100%;
+  box-sizing: border-box; /* padding included in width — prevents 32px overflow */
   padding: var(--space-lg);
 }
 

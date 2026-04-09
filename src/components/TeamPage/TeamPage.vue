@@ -157,9 +157,9 @@ const socialLinks = [
   min-height: 100vh;
 }
 
-/* ── Hero Wrap — vertical padding only; horizontal comes from AppShell ── */
+/* ── Hero Wrap ── */
 .tp__hero-wrap {
-  padding: 24px 0;
+  padding: 24px 16px;
 }
 
 /* ── Hero Card — centered column, DS: gray50 bg, radius-badge, spacing-lg pad + gap ── */
@@ -224,9 +224,9 @@ const socialLinks = [
   gap: var(--space-md);
 }
 
-/* ── Sections — no horizontal padding: AppShell provides it ── */
+/* ── Sections ── */
 .tp__section {
-  padding: 0 0 var(--space-xl);
+  padding: 0 var(--space-lg) var(--space-xl);
 }
 
 .tp__games {
