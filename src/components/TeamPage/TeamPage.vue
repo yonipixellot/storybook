@@ -149,25 +149,17 @@ const socialLinks = [
 </script>
 
 <style scoped>
-/* ── Page — full-bleed: break out of AppShell's content padding ── */
+/* ── Page — gradient from DS bundle exactly ── */
 .tp {
   font-family: var(--font-family-base);
   background: linear-gradient(180deg, var(--color-white) 0%, var(--color-gray-100) 100%);
   overflow-x: hidden;
   min-height: 100vh;
-  /* Negate AppShell .ash__content padding so the page fills edge-to-edge */
-  margin: calc(-1 * var(--space-lg));
 }
 
-@media (min-width: 1024px) {
-  .tp {
-    margin: calc(-1 * var(--space-xl));
-  }
-}
-
-/* ── Hero Wrap — padding from DS bundle: "24px 16px" ── */
+/* ── Hero Wrap — vertical padding only; horizontal comes from AppShell ── */
 .tp__hero-wrap {
-  padding: 24px 16px;
+  padding: 24px 0;
 }
 
 /* ── Hero Card — centered column, DS: gray50 bg, radius-badge, spacing-lg pad + gap ── */
@@ -232,9 +224,9 @@ const socialLinks = [
   gap: var(--space-md);
 }
 
-/* ── Sections ── */
+/* ── Sections — no horizontal padding: AppShell provides it ── */
 .tp__section {
-  padding: 0 var(--space-lg) var(--space-xl);
+  padding: 0 0 var(--space-xl);
 }
 
 .tp__games {
