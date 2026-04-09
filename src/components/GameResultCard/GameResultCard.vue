@@ -78,7 +78,7 @@ withDefaults(defineProps<{
   display: flex;
   gap: var(--space-lg);
   border-radius: var(--radius-card);
-  overflow: visible;
+  overflow: hidden; /* clips content to rounded card — league text truncates, badge stays visible */
   background-color: var(--color-gray-100);
   font-family: var(--font-family-system); /* DS uses system font throughout this card */
   min-height: 116px;
@@ -92,7 +92,7 @@ withDefaults(defineProps<{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* self-clips into the card's left rounded corners without overflow:hidden on parent */
+  /* left corners match card radius; card overflow:hidden clips right corners cleanly */
   border-radius: var(--radius-card) 0 0 var(--radius-card);
 }
 
@@ -193,6 +193,7 @@ withDefaults(defineProps<{
 .game-result-card__highlights {
   display: flex;
   align-items: center;
+  flex-shrink: 0; /* never shrink — badge must always show at full width */
   gap: var(--space-xs);
   background-color: var(--color-gray-500);
   color: var(--color-premium-yellow);
