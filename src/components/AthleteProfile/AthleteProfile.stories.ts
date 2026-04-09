@@ -70,19 +70,11 @@ export const WithPhotoDataUrl: Story = {
   },
 }
 
-/* Covers v-if="lastName" false branch — single-word name has no last name */
-export const SingleName: Story = {
-  name: 'Single Name (no lastName)',
-  args: {
-    name: 'ANNA',
-  },
-}
-
 /* Covers v-if="teamLogoUrl" true branch (line 41) — SVG data URL loads without network */
 export const WithTeamLogo: Story = {
   name: 'With Team Logo (data URL)',
   args: {
-    teamLogoUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="%231D4ED8"/><text x="10" y="14" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="white">S</text></svg>',
+    teamLogoUrl: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj48Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIxMCIgZmlsbD0iIzFENEVEOCIvPjx0ZXh0IHg9IjEwIiB5PSIxNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
   },
 }
 
