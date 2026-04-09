@@ -82,6 +82,7 @@ withDefaults(defineProps<{
   background-color: var(--color-gray-100);
   font-family: var(--font-family-system); /* DS uses system font throughout this card */
   min-height: 116px;
+  min-width: 0; /* allows grid to shrink card below content min-size so both sections match */
 }
 
 .game-result-card__date-col {
