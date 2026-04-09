@@ -158,17 +158,24 @@ const recentGames = [
 const upcomingGames = [
   {
     id: 1,
-    homeTeam: { name: 'Peterhead',   score: '' },
-    awayTeam: { name: 'Queens Park', score: '' },
+    homeTeam: { name: 'Peterhead',    score: '' },
+    awayTeam: { name: 'Queens Park',  score: '' },
     day: 25, month: 'NOV', year: 2024,
     league: 'MEN | NBL 1 | League phase | Game 22',
   },
   {
     id: 2,
-    homeTeam: { name: 'Peterhead',   score: '' },
-    awayTeam: { name: 'Queens Park', score: '' },
-    day: 25, month: 'NOV', year: 2024,
-    league: 'MEN | NBL 1 | League phase | Game 22',
+    homeTeam: { name: 'S.D Spartans', score: '' },
+    awayTeam: { name: 'Logan Thunder', score: '' },
+    day: 26, month: 'NOV', year: 2024,
+    league: 'MEN | NBL 1 | League phase | Game 23',
+  },
+  {
+    id: 3,
+    homeTeam: { name: 'River Hawks',  score: '' },
+    awayTeam: { name: 'City Bulls',   score: '' },
+    day: 27, month: 'NOV', year: 2024,
+    league: 'MEN | NBL 1 | League phase | Game 24',
   },
 ]
 </script>
