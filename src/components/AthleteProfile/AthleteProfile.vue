@@ -43,7 +43,7 @@
                 <span class="ap__team-logo-initial">{{ teamName.charAt(0) }}</span>
               </div>
             </div>
-            <span class="ap__team-name" :style="{ color: accentColor }">{{ teamName }}</span>
+            <span class="ap__team-name">{{ teamName }}</span>
             <ChevronDown :size="12" class="ap__chevron" :style="{ color: accentColor, transform: 'rotate(-90deg)' }" />
           </button>
         </div>
@@ -347,6 +347,7 @@ const seasonStats: StatCard[] = [
   font-family: var(--font-family-base);
   font-size: var(--text-xs);
   font-weight: var(--font-medium);
+  color: var(--color-link-blue);
 }
 
 /* ── Stat Cards ── */
