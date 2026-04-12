@@ -9,12 +9,12 @@ const meta: Meta<typeof BottomTabBar> = {
   parameters: {
     docs: {
       description: {
-        component: 'Fixed bottom navigation with icon + label tabs for the primary app sections (Games, Saved, Following, Shop). Supports custom accent color and fully custom tab configuration.',
+        component: 'Fixed bottom navigation with icon + label tabs for the primary app sections (Games, Saved, Following, Shop, My Profile). Supports custom accent color and fully custom tab configuration.',
       },
     },
   },
   argTypes: {
-    active:      { control: 'select', options: ['games', 'saved', 'following', 'shop'], description: 'ID of the currently active tab' },
+    active:      { control: 'select', options: ['games', 'saved', 'following', 'shop', 'my-profile'], description: 'ID of the currently active tab' },
     accentColor: { control: 'color',  description: 'Override accent color for the active tab icon & label (defaults to --color-primary)' },
     tabs:        { control: 'object', description: 'Fully custom tab array — each item: { id: string, label: string, icon: string }' },
   },
@@ -68,6 +68,14 @@ export const CustomAccent: Story = {
 export const ShopActive: Story = {
   name: 'Shop tab active',
   args: { active: 'shop' },
+}
+
+/* ═══════════════════════════════════════════
+   6. My Profile tab active
+   ═══════════════════════════════════════════ */
+export const MyProfileActive: Story = {
+  name: 'My Profile tab active',
+  args: { active: 'my-profile' },
 }
 
 /* Covers:

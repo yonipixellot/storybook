@@ -57,6 +57,14 @@
         />
       </svg>
 
+      <User v-else-if="tab.icon === 'profile'"
+        :size="24"
+        :fill="activeTab === tab.id ? activeColor : 'none'"
+        :color="activeTab === tab.id ? activeColor : 'var(--color-gray-400)'"
+        :stroke-width="activeTab === tab.id ? 2 : 1.5"
+        aria-hidden="true"
+      />
+
       <!-- Tab label -->
       <span class="btb__label"
         :class="{ 'btb__label--active': activeTab === tab.id }"
@@ -68,12 +76,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { Bookmark } from 'lucide-vue-next'
+import { Bookmark, User } from 'lucide-vue-next'
 
 export interface TabItem {
   id:    string
   label: string
-  icon:  'games' | 'saved' | 'following' | 'shop'
+  icon:  'games' | 'saved' | 'following' | 'shop' | 'profile'
 }
 
 const props = withDefaults(defineProps<{
@@ -82,10 +90,11 @@ const props = withDefaults(defineProps<{
   accentColor?: string
 }>(), {
   tabs: () => [
-    { id: 'games',     label: 'Games',     icon: 'games'     },
-    { id: 'saved',     label: 'Saved',     icon: 'saved'     },
-    { id: 'following', label: 'Following', icon: 'following' },
-    { id: 'shop',      label: 'Shop',      icon: 'shop'      },
+    { id: 'games',      label: 'Games',      icon: 'games'     },
+    { id: 'saved',      label: 'Saved',      icon: 'saved'     },
+    { id: 'following',  label: 'Following',  icon: 'following' },
+    { id: 'shop',       label: 'Shop',       icon: 'shop'      },
+    { id: 'my-profile', label: 'My Profile', icon: 'profile'   },
   ],
 })
 
