@@ -141,6 +141,11 @@ defineEmits<{
     padding: var(--space-xl) var(--space-xl);
   }
 
+  /* BottomTabBar is a mobile-only nav — AppShell hides it at desktop */
+  .ash__btb {
+    display: none;
+  }
+
   .ash__footer {
     display: block;
   }

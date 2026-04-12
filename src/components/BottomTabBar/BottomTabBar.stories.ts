@@ -166,7 +166,7 @@ export const DesktopHidden: Story = {
     viewport: { defaultViewport: 'desktop1440' },
     docs: {
       description: {
-        story: 'At ≥1024px the bar is `display:none` — AppShell switches to header navigation. Resize to mobile to see it reappear.',
+        story: 'At ≥1024px, AppShell hides the bar via `.ash__btb { display:none }` and shows the footer nav instead. The component itself is always visible when used standalone.',
       },
     },
   },
